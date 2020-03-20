@@ -75,5 +75,25 @@ namespace Rent_a_Car
 
             }
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void button4_Click_1(object sender, EventArgs e)
+        {
+            Environment.Exit(0);
+        }
     }
 }

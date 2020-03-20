@@ -64,9 +64,7 @@ namespace Rent_a_Car
             {
                 if ((usernames.Contains(textBox1.Text) && passwords.Contains(textBox2.Text) && Array.IndexOf(usernames, textBox1.Text) == Array.IndexOf(passwords, textBox2.Text)))
                 {
-                    AdminCP secondform = new AdminCP();
-                    Hide();
-                    secondform.Show();
+                    
 
                     break;
 
@@ -91,13 +89,33 @@ namespace Rent_a_Car
             LoginAdmin loginAdmin = new LoginAdmin();
             loginAdmin.Location = this.Location;
             Hide();
-            
+
             loginAdmin.Show();
         }
+        //private void button3_Click(object sender, EventArgs e)
+        //{
+        //    Client loginAdmin = new Client();
+        //    loginAdmin.Location = this.Location;
+        //    Hide();
+
+        //    loginAdmin.Show();
+        //}
 
         private void LoginForm_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Client secondform = new Client();
+            Hide();
+            secondform.Show();
         }
     }
 }
