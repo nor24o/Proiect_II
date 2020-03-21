@@ -4,3 +4,5 @@
 2 calculare varsta si sex din cnp
 3 colturi rotunjite
 4 adaugat butoate close ,minimizare
+5 icon soft
+6 update functie cnp 
