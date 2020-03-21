@@ -13,7 +13,7 @@ namespace Rent_a_Car
 {
     public partial class AdminCP : Form
     {
-        #region
+        #region realizeaza colturi rotunde
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
         (
@@ -28,20 +28,23 @@ namespace Rent_a_Car
 
         public AdminCP()
         {
+            this.Icon = Properties.Resources.rencar;
             InitializeComponent();
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
         }
-
+        #region windows moving function 
         protected override void WndProc(ref Message m)
         {
             base.WndProc(ref m);
             if (m.Msg == WM_NCHITTEST)
                 m.Result = (IntPtr)(HT_CAPTION);
         }
+        
 
         private const int WM_NCHITTEST = 0x84;
         private const int HT_CLIENT = 0x1;
         private const int HT_CAPTION = 0x2;
+        #endregion
 
         private void button4_Click(object sender, EventArgs e)
         {

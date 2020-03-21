@@ -13,6 +13,7 @@ namespace Rent_a_Car
 {
     public partial class LoginForm : Form
     {
+        
         #region
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
@@ -28,6 +29,7 @@ namespace Rent_a_Car
 
         public LoginForm()
         {
+            this.Icon = Properties.Resources.rencar;
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.None;
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));

@@ -28,6 +28,7 @@ namespace Rent_a_Car
 
         public LoginAdmin()
         {
+            this.Icon = Properties.Resources.rencar;
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.None;
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));

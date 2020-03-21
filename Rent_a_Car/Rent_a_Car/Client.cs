@@ -28,6 +28,7 @@ namespace Rent_a_Car
 
         public Client()
         {
+            this.Icon = Properties.Resources.rencar;
             InitializeComponent();
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
         }
@@ -71,40 +72,54 @@ namespace Rent_a_Car
 
         private void textBox3_TextChanged(object sender, EventArgs e)
         {
+            #region // Autocompletare varsta,sex , verifica conditi baza corectitudine cnp
             while ((textBox3.Text != null) && (textBox3.Text.Length == 13))
             {
-                
                 string cnp= textBox3.Text;
-                var currentDate = DateTime.Today;
-                var cnp_age= Int32.Parse(cnp.Substring(1, 2));
-                if (cnp_age >= 00)
+                var cnp_luna = Int32.Parse(cnp.Substring(3, 2));
+                var cnp_zi = Int32.Parse(cnp.Substring(5, 2));
+                if (((cnp_luna >= 1) && (cnp_luna <= 12))&&((cnp_zi >= 1) && (cnp_zi <= 31)))
                 {
-                    cnp_age += 1900;
+                 
+
+                        var cnp_sex = Int32.Parse(cnp.Substring(0, 1));
+                    switch (cnp_sex)
+                    {
+                        case 1:
+                        case 5:
+                            textBox6.Text = "Masculin";
+                            break;
+                        case 2:
+                        case 6:
+                            textBox6.Text = "Feminin";
+                            break;
+                        default:
+                            textBox6.Text = "CNP invalid";
+                            break;
+
+                    }
+
+
+                    var currentDate = DateTime.Today;
+                    var cnp_age = Int32.Parse(cnp.Substring(1, 2));
+                    if ((cnp_sex == 1) || (cnp_sex == 2))
+                    {
+                        cnp_age += 1900;
+                    }
+                    else if ((cnp_sex == 5) || (cnp_sex == 6))
+                    {
+                        cnp_age += 2000;
+
+                    }
+                    var newage = currentDate.Year - cnp_age;
+
+                    textBox4.Text = newage.ToString();
                 }
                 else
-                {
-                    cnp_age += 2000;
-                }
-                var newage =  currentDate.Year - cnp_age;
-
-                textBox4.Text = newage.ToString();
-                
+                    MessageBox.Show("CNP Invalid");
 
 
-                var cnp_sex= Int32.Parse(cnp.Substring(0, 1));
-                  switch(cnp_sex)
-                {
-                    case 1:
-                        textBox6.Text = "Masculin";
-                        break;
-                    case 2:
-                        textBox6.Text = "Feminin";
-                        break;
-                    default:
-                        textBox6.Text = "CNP incomplet";
-                        break;
-
-                }
+               
                 break;
 
 
@@ -115,7 +130,8 @@ namespace Rent_a_Car
 
 
 
-
+            #endregion
         }
+        
     }
 }
