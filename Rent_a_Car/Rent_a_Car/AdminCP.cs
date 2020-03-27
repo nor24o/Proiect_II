@@ -50,5 +50,12 @@ namespace Rent_a_Car
         {
             Environment.Exit(0);
         }
+
+        private void AdminCP_Load(object sender, EventArgs e)
+        {
+            
+
+
+        }
     }
 }
