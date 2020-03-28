@@ -79,7 +79,7 @@ namespace Rent_a_Car
 
         private void button4_Click(object sender, EventArgs e)
         {
-            this.Close();
+            
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -94,7 +94,29 @@ namespace Rent_a_Car
 
         private void button4_Click_1(object sender, EventArgs e)
         {
-            Environment.Exit(0);
+            
+
+            string message = "Sunteti sigur ca doriti sa parasiti aplicatia ?";
+            string caption = "";
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+            DialogResult result;
+
+            // Displays the MessageBox.
+
+            result = MessageBox.Show(this, message, caption, buttons);
+
+            if (result == DialogResult.Yes)
+            {
+
+                // Closes the parent form.
+                Environment.Exit(0);
+                //this.Close();
+            }
+        }
+
+        private void LoginAdmin_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

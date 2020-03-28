@@ -57,7 +57,23 @@ namespace Rent_a_Car
 
         private void button4_Click(object sender, EventArgs e)
         {
-            Environment.Exit(0);
+            
+            string message = "Sunteti sigur ca doriti sa parasiti aplicatia ?";
+            string caption = "";
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+            DialogResult result;
+
+            // Displays the MessageBox.
+
+            result = MessageBox.Show(this, message, caption, buttons);
+
+            if (result == DialogResult.Yes)
+            {
+
+                // Closes the parent form.
+                Environment.Exit(0);
+                //this.Close();
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)

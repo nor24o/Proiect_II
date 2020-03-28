@@ -18,5 +18,12 @@ namespace Rent_a_Car
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new LoginForm());
         }
+
+
+
+
     }
+
+
+
 }

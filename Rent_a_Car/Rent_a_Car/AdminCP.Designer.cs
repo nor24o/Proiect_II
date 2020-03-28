@@ -67,6 +67,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ControlLight;
@@ -78,6 +79,7 @@
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.Controls.Add(this.button6);
             this.panel1.Controls.Add(this.button7);
             this.panel1.Controls.Add(this.button8);
@@ -173,6 +175,7 @@
             // 
             // panel2
             // 
+            this.panel2.BackColor = System.Drawing.Color.Transparent;
             this.panel2.Location = new System.Drawing.Point(242, 278);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(948, 189);
@@ -180,6 +183,7 @@
             // 
             // panel3
             // 
+            this.panel3.BackColor = System.Drawing.Color.Transparent;
             this.panel3.Location = new System.Drawing.Point(239, 84);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(942, 169);
@@ -190,6 +194,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DimGray;
+            this.BackgroundImage = global::Rent_a_Car.Properties.Resources.bg_login;
             this.ClientSize = new System.Drawing.Size(1202, 571);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
