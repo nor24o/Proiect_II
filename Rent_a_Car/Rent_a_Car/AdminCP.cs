@@ -39,7 +39,7 @@ namespace Rent_a_Car
             if (m.Msg == WM_NCHITTEST)
                 m.Result = (IntPtr)(HT_CAPTION);
         }
-        
+
 
         private const int WM_NCHITTEST = 0x84;
         private const int HT_CLIENT = 0x1;
@@ -48,7 +48,8 @@ namespace Rent_a_Car
 
         private void button4_Click(object sender, EventArgs e)
         {
-            
+
+
             string message = "Sunteti sigur ca doriti sa parasiti aplicatia ?";
             string caption = "";
             MessageBoxButtons buttons = MessageBoxButtons.YesNo;
@@ -71,7 +72,7 @@ namespace Rent_a_Car
 
         private void AdminCP_Load(object sender, EventArgs e)
         {
-            
+
 
 
         }

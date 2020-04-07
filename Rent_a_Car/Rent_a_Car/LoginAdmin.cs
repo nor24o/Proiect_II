@@ -47,8 +47,6 @@ namespace Rent_a_Car
         private const int HT_CAPTION = 0x2;
         #endregion
 
-        string[] usernames = { "user" };
-        string[] passwords = { "pass" };
         string[] adminuser = { "admin" };
         string[] adminpass = { "adminn" };
 
@@ -61,7 +59,7 @@ namespace Rent_a_Car
                     AdminCP admincp = new AdminCP();
                     admincp.Location = this.Location;
                     Hide();
-                    
+
                     admincp.ShowDialog();
 
                     break;
@@ -69,7 +67,7 @@ namespace Rent_a_Car
                 }
                 else
                 {
-                    MessageBox.Show("Try Again");
+                    MessageBox.Show("username sau passwrod gresit");
                     break;
                 }
 
@@ -79,7 +77,7 @@ namespace Rent_a_Car
 
         private void button4_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -94,7 +92,7 @@ namespace Rent_a_Car
 
         private void button4_Click_1(object sender, EventArgs e)
         {
-            
+
 
             string message = "Sunteti sigur ca doriti sa parasiti aplicatia ?";
             string caption = "";

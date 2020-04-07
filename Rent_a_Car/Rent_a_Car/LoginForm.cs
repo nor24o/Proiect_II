@@ -13,7 +13,7 @@ namespace Rent_a_Car
 {
     public partial class LoginForm : Form
     {
-        
+
         #region
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
@@ -34,11 +34,33 @@ namespace Rent_a_Car
             this.FormBorderStyle = FormBorderStyle.None;
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
         }
-        
+
+
+        //interogheaza utilizatorul daca doreste sa inchida aplicatia 
+        public void opresteaprilcatia()
+        {
+            string message = "Sunteti sigur ca doriti sa parasiti aplicatia ?";
+            string caption = "";
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+            DialogResult result;
+
+            // Afiseaza Mesagebox
+
+            result = MessageBox.Show(this, message, caption, buttons);
+
+            if (result == DialogResult.Yes)
+            {
+
+                // Inchide aplicatia 
+
+                this.Close();
+            }
+        }
 
 
 
-        #region //This function makes windows movable
+        //Aceasta functie realizarea miscari ferestrei cu mouse
+        #region
         protected override void WndProc(ref Message m)
         {
             base.WndProc(ref m);
@@ -56,24 +78,21 @@ namespace Rent_a_Car
         string[] adminuser = { "admin" };
         string[] adminpass = { "adminn" };
 
-         private void button1_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
 
-                {
-
-
-
+        {
             while ((textBox1 != null) && (textBox2 != null))
             {
                 if ((usernames.Contains(textBox1.Text) && passwords.Contains(textBox2.Text) && Array.IndexOf(usernames, textBox1.Text) == Array.IndexOf(passwords, textBox2.Text)))
                 {
-                    
+
 
                     break;
 
                 }
                 else
                 {
-                    MessageBox.Show("Numeutilizator sau parola grasit");
+                    MessageBox.Show("username sau passwrod gresit");
                     break;
                 }
 
@@ -84,26 +103,7 @@ namespace Rent_a_Car
         private void button4_Click(object sender, EventArgs e)
         {
             //this.Close();
-
-
-
-            string message = "Sunteti sigur ca doriti sa parasiti aplicatia ?";
-            string caption = "";
-            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
-            DialogResult result;
-
-            // Displays the MessageBox.
-
-            result = MessageBox.Show(this, message, caption, buttons);
-
-            if (result == DialogResult.Yes)
-            {
-
-                // Closes the parent form.
-
-                this.Close();
-            }
-
+            opresteaprilcatia();
         }
 
         private void button3_Click(object sender, EventArgs e)

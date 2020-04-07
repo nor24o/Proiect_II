@@ -32,6 +32,28 @@ namespace Rent_a_Car
             InitializeComponent();
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
         }
+
+        //interogheaza utilizatorul daca doreste sa inchida aplicatia 
+        private void opresteaplicatia()
+        {
+                        string message = "Sunteti sigur ca doriti sa parasiti aplicatia ?";
+            string caption = "";
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+            DialogResult result;
+
+            // Displays the MessageBox.
+
+            result = MessageBox.Show(this, message, caption, buttons);
+
+            if (result == DialogResult.Yes)
+            {
+
+                // Closes the parent form.
+                Environment.Exit(0);
+                //this.Close();
+            }
+        }
+
         #region //This function makes windows movable
         protected override void WndProc(ref Message m)
         {
@@ -57,23 +79,8 @@ namespace Rent_a_Car
 
         private void button4_Click(object sender, EventArgs e)
         {
-            
-            string message = "Sunteti sigur ca doriti sa parasiti aplicatia ?";
-            string caption = "";
-            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
-            DialogResult result;
 
-            // Displays the MessageBox.
-
-            result = MessageBox.Show(this, message, caption, buttons);
-
-            if (result == DialogResult.Yes)
-            {
-
-                // Closes the parent form.
-                Environment.Exit(0);
-                //this.Close();
-            }
+            opresteaplicatia();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -88,7 +95,8 @@ namespace Rent_a_Car
 
         private void textBox3_TextChanged(object sender, EventArgs e)
         {
-            #region // Autocompletare varsta,sex , verifica conditi baza corectitudine cnp
+            // Autocompletare varsta,sex , verifica conditi baza corectitudine cnp
+            #region 
             while ((textBox3.Text != null) && (textBox3.Text.Length == 13))
             {
                 string cnp= textBox3.Text;
@@ -96,28 +104,29 @@ namespace Rent_a_Car
                 var cnp_zi = Int32.Parse(cnp.Substring(5, 2));
                 if (((cnp_luna >= 1) && (cnp_luna <= 12))&&((cnp_zi >= 1) && (cnp_zi <= 31)))
                 {
-                 
-
                         var cnp_sex = Int32.Parse(cnp.Substring(0, 1));
+
                     switch (cnp_sex)
                     {
                         case 1:
                         case 5:
                             textBox6.Text = "Masculin";
+                            textBox6.BackColor = Color.Green;
                             break;
                         case 2:
                         case 6:
                             textBox6.Text = "Feminin";
+                            textBox6.BackColor = Color.Green;
                             break;
                         default:
-                            textBox6.Text = "CNP invalid";
+                           
                             break;
 
                     }
 
-
                     var currentDate = DateTime.Today;
                     var cnp_age = Int32.Parse(cnp.Substring(1, 2));
+
                     if ((cnp_sex == 1) || (cnp_sex == 2))
                     {
                         cnp_age += 1900;
@@ -130,24 +139,24 @@ namespace Rent_a_Car
                     var newage = currentDate.Year - cnp_age;
 
                     textBox4.Text = newage.ToString();
+                    textBox4.BackColor = Color.Green;
                 }
                 else
                     MessageBox.Show("CNP Invalid");
+                    
 
 
-               
                 break;
-
-
 
 
             }
 
-
-
-
             #endregion
         }
-        
+
+        private void label12_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

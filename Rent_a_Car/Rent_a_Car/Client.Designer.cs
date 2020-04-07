@@ -35,6 +35,7 @@
             this.monthCalendar2 = new System.Windows.Forms.MonthCalendar();
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.textBox7 = new System.Windows.Forms.TextBox();
@@ -55,16 +56,18 @@
             this.button4 = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.Controls.Add(this.button3);
             this.panel1.Controls.Add(this.label11);
             this.panel1.Controls.Add(this.label10);
             this.panel1.Controls.Add(this.monthCalendar2);
@@ -78,7 +81,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(37, 117);
+            this.label11.Location = new System.Drawing.Point(37, 15);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(103, 29);
             this.label11.TabIndex = 3;
@@ -88,7 +91,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(37, 367);
+            this.label10.Location = new System.Drawing.Point(37, 266);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(119, 29);
             this.label10.TabIndex = 2;
@@ -96,13 +99,13 @@
             // 
             // monthCalendar2
             // 
-            this.monthCalendar2.Location = new System.Drawing.Point(42, 405);
+            this.monthCalendar2.Location = new System.Drawing.Point(42, 304);
             this.monthCalendar2.Name = "monthCalendar2";
             this.monthCalendar2.TabIndex = 1;
             // 
             // monthCalendar1
             // 
-            this.monthCalendar1.Location = new System.Drawing.Point(42, 155);
+            this.monthCalendar1.Location = new System.Drawing.Point(42, 53);
             this.monthCalendar1.Name = "monthCalendar1";
             this.monthCalendar1.TabIndex = 0;
             // 
@@ -117,6 +120,14 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(512, 566);
             this.panel2.TabIndex = 1;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(4, 405);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(505, 158);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // panel4
             // 
@@ -249,6 +260,7 @@
             // 
             // textBox1
             // 
+            this.textBox1.BackColor = System.Drawing.SystemColors.Window;
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.Location = new System.Drawing.Point(137, 27);
             this.textBox1.MaxLength = 30;
@@ -348,19 +360,36 @@
             this.label9.AutoSize = true;
             this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(858, 57);
+            this.label9.Location = new System.Drawing.Point(853, 69);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(311, 29);
             this.label9.TabIndex = 28;
             this.label9.Text = "Date Personale si Facturare";
             // 
-            // pictureBox1
+            // label12
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(4, 405);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(505, 158);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.label12.AutoSize = true;
+            this.label12.BackColor = System.Drawing.Color.Transparent;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(339, 69);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(211, 29);
+            this.label12.TabIndex = 29;
+            this.label12.Text = "Masini Disponibile";
+            this.label12.Click += new System.EventHandler(this.label12_Click);
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.DarkCyan;
+            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Green;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Location = new System.Drawing.Point(42, 519);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(227, 33);
+            this.button3.TabIndex = 4;
+            this.button3.Text = "Cauta";
+            this.button3.UseVisualStyleBackColor = false;
             // 
             // Client
             // 
@@ -369,6 +398,7 @@
             this.BackColor = System.Drawing.Color.Gray;
             this.BackgroundImage = global::Rent_a_Car.Properties.Resources.bg_login;
             this.ClientSize = new System.Drawing.Size(1381, 680);
+            this.Controls.Add(this.label12);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.button2);
@@ -384,9 +414,9 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -421,5 +451,7 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Button button3;
     }
 }
