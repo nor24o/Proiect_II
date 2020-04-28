@@ -30,8 +30,10 @@ namespace Rent_a_Car
         {
             this.Icon = Properties.Resources.rencar;
             InitializeComponent();
+            this.Text = "Rent A Car";
             this.FormBorderStyle = FormBorderStyle.None;
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
+         
         }
 
         #region //This function makes windows movable
@@ -59,7 +61,6 @@ namespace Rent_a_Car
                     AdminCP admincp = new AdminCP();
                     admincp.Location = this.Location;
                     Hide();
-
                     admincp.ShowDialog();
 
                     break;
@@ -93,8 +94,8 @@ namespace Rent_a_Car
         private void button4_Click_1(object sender, EventArgs e)
         {
 
-
-            string message = "Sunteti sigur ca doriti sa parasiti aplicatia ?";
+/*
+            string message = "Doriti sa parasiti aceasta fereastra ?";
             string caption = "";
             MessageBoxButtons buttons = MessageBoxButtons.YesNo;
             DialogResult result;
@@ -105,11 +106,14 @@ namespace Rent_a_Car
 
             if (result == DialogResult.Yes)
             {
-
+            */
                 // Closes the parent form.
-                Environment.Exit(0);
+                LoginForm loginform = new LoginForm();
+                loginform.StartPosition = FormStartPosition.CenterParent;
+                Hide();
+                loginform.Show();
                 //this.Close();
-            }
+          //  }
         }
 
         private void LoginAdmin_Load(object sender, EventArgs e)

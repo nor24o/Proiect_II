@@ -11,9 +11,10 @@ using System.Runtime.InteropServices;
 
 namespace Rent_a_Car
 {
-    public partial class AdminCP : Form
+    public partial class Clientexistent : Form
     {
-        #region realizeaza colturi rotunde
+
+        #region
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
         (
@@ -26,32 +27,23 @@ namespace Rent_a_Car
         );
         #endregion
 
-        public AdminCP()
+        public Clientexistent()
         {
             this.Icon = Properties.Resources.rencar;
             InitializeComponent();
             this.Text = "Rent A Car";
+            this.FormBorderStyle = FormBorderStyle.None;
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
         }
-        #region windows moving function 
-        protected override void WndProc(ref Message m)
+
+        private void Form1_Load(object sender, EventArgs e)
         {
-            base.WndProc(ref m);
-            if (m.Msg == WM_NCHITTEST)
-                m.Result = (IntPtr)(HT_CAPTION);
+
         }
-
-
-        private const int WM_NCHITTEST = 0x84;
-        private const int HT_CLIENT = 0x1;
-        private const int HT_CAPTION = 0x2;
-        #endregion
-
-        private void button4_Click(object sender, EventArgs e)
+        //interogheaza utilizatorul daca doreste sa inchida aplicatia 
+        private void opresteaplicatia()
         {
-
-
-            string message = "Sunteti sigur ca doriti sa parasiti aplicatia ?";
+            string message = "Sunteti sigur ca doriti sa parasiti pagina ?";
             string caption = "";
             MessageBoxButtons buttons = MessageBoxButtons.YesNo;
             DialogResult result;
@@ -64,23 +56,36 @@ namespace Rent_a_Car
             {
 
                 // Closes the parent form.
-                Environment.Exit(0);
+                LoginForm loginForm= new LoginForm();
+                loginForm.Location = this.Location;
+                Hide();
+                loginForm.ShowDialog();
                 //this.Close();
             }
-
-
         }
 
-        private void AdminCP_Load(object sender, EventArgs e)
+        //Aceasta functie realizarea miscari ferestrei cu mouse
+        #region
+        protected override void WndProc(ref Message m)
         {
-
-
-
+            base.WndProc(ref m);
+            if (m.Msg == WM_NCHITTEST)
+                m.Result = (IntPtr)(HT_CAPTION);
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
+        private const int WM_NCHITTEST = 0x84;
+        private const int HT_CLIENT = 0x1;
+        private const int HT_CAPTION = 0x2;
+        #endregion
 
+        private void button4_Click(object sender, EventArgs e)
+        {
+            opresteaplicatia();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }

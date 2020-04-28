@@ -31,6 +31,7 @@ namespace Rent_a_Car
         {
             this.Icon = Properties.Resources.rencar;
             InitializeComponent();
+            this.Text = "Rent A Car";
             this.FormBorderStyle = FormBorderStyle.None;
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
         }
@@ -44,7 +45,7 @@ namespace Rent_a_Car
             MessageBoxButtons buttons = MessageBoxButtons.YesNo;
             DialogResult result;
 
-            // Afiseaza Mesagebox
+            // Afiseaza Mesagebox 
 
             result = MessageBox.Show(this, message, caption, buttons);
 
@@ -53,7 +54,7 @@ namespace Rent_a_Car
 
                 // Inchide aplicatia 
 
-                this.Close();
+                Environment.Exit(0);
             }
         }
 
@@ -85,8 +86,10 @@ namespace Rent_a_Car
             {
                 if ((usernames.Contains(textBox1.Text) && passwords.Contains(textBox2.Text) && Array.IndexOf(usernames, textBox1.Text) == Array.IndexOf(passwords, textBox2.Text)))
                 {
-
-
+                    Clientexistent clientexistent = new Clientexistent();
+                    clientexistent.Location = this.Location;
+                    Hide();
+                    clientexistent.Show();
                     break;
 
                 }
@@ -138,6 +141,16 @@ namespace Rent_a_Car
             Client secondform = new Client();
             Hide();
             secondform.Show();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            AboutBox1 aboutWindow = new AboutBox1();
+            aboutWindow.StartPosition = FormStartPosition.Manual;
+            aboutWindow.Left = this.Location.X+50;
+            aboutWindow.Top = this.Location.Y+80;
+            // aboutWindow.SetDesktopLocation(500, 500);
+            aboutWindow.ShowDialog();
         }
     }
 }

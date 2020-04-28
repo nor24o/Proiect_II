@@ -30,13 +30,14 @@ namespace Rent_a_Car
         {
             this.Icon = Properties.Resources.rencar;
             InitializeComponent();
+            this.Text = "Rent A Car";
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
         }
 
         //interogheaza utilizatorul daca doreste sa inchida aplicatia 
         private void opresteaplicatia()
         {
-                        string message = "Sunteti sigur ca doriti sa parasiti aplicatia ?";
+                        string message = "Doriti sa accesati pagina de Logare  ?";
             string caption = "";
             MessageBoxButtons buttons = MessageBoxButtons.YesNo;
             DialogResult result;
@@ -47,9 +48,12 @@ namespace Rent_a_Car
 
             if (result == DialogResult.Yes)
             {
-
+                LoginForm loginform = new LoginForm();
+                loginform.Location = this.Location;
+                Hide();
+                loginform.Show();
                 // Closes the parent form.
-                Environment.Exit(0);
+               // Environment.Exit(0);
                 //this.Close();
             }
         }
