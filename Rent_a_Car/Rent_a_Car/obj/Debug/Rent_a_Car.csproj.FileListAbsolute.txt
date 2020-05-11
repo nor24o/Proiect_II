@@ -1,0 +1,15 @@
+E:\AN3-S2\Info. Indust\Proiect II\Rent_a_Car\Rent_a_Car\bin\Debug\Rent_a_Car.exe.config
+E:\AN3-S2\Info. Indust\Proiect II\Rent_a_Car\Rent_a_Car\bin\Debug\Rent_a_Car.exe
+E:\AN3-S2\Info. Indust\Proiect II\Rent_a_Car\Rent_a_Car\bin\Debug\Rent_a_Car.pdb
+E:\AN3-S2\Info. Indust\Proiect II\Rent_a_Car\Rent_a_Car\obj\Debug\Rent_a_Car.csprojAssemblyReference.cache
+E:\AN3-S2\Info. Indust\Proiect II\Rent_a_Car\Rent_a_Car\obj\Debug\Rent_a_Car.Client.resources
+E:\AN3-S2\Info. Indust\Proiect II\Rent_a_Car\Rent_a_Car\obj\Debug\Rent_a_Car.LoginAdmin.resources
+E:\AN3-S2\Info. Indust\Proiect II\Rent_a_Car\Rent_a_Car\obj\Debug\Rent_a_Car.LoginForm.resources
+E:\AN3-S2\Info. Indust\Proiect II\Rent_a_Car\Rent_a_Car\obj\Debug\Rent_a_Car.AdminCP.resources
+E:\AN3-S2\Info. Indust\Proiect II\Rent_a_Car\Rent_a_Car\obj\Debug\Rent_a_Car.Properties.Resources.resources
+E:\AN3-S2\Info. Indust\Proiect II\Rent_a_Car\Rent_a_Car\obj\Debug\Rent_a_Car.csproj.GenerateResource.cache
+E:\AN3-S2\Info. Indust\Proiect II\Rent_a_Car\Rent_a_Car\obj\Debug\Rent_a_Car.csproj.CoreCompileInputs.cache
+E:\AN3-S2\Info. Indust\Proiect II\Rent_a_Car\Rent_a_Car\obj\Debug\Rent_a_Car.exe
+E:\AN3-S2\Info. Indust\Proiect II\Rent_a_Car\Rent_a_Car\obj\Debug\Rent_a_Car.pdb
+E:\AN3-S2\Info. Indust\Proiect II\Rent_a_Car\Rent_a_Car\bin\Debug\database.mdf
+E:\AN3-S2\Info. Indust\Proiect II\Rent_a_Car\Rent_a_Car\bin\Debug\database_log.ldf
