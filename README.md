@@ -13,3 +13,7 @@ usernames = { "user" };,\
 passwords = { "pass" };,\
 adminuser = { "admin" };,\
 adminpass = { "adminn" };,\
+
+
+admin user:norbi    :)_)
+password :1234
