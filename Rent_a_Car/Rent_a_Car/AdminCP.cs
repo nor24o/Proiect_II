@@ -72,8 +72,18 @@ namespace Rent_a_Car
 
         private void AdminCP_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'dataset.users' table. You can move, or remove it, as needed.
+            this.usersTableAdapter.Fill(this.dataset.users);
 
 
+
+        }
+
+        private void usersBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.usersBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.dataset);
 
         }
     }
