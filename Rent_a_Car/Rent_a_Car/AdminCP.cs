@@ -8,6 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using System.Collections;
+using System.Threading;
+using System.Runtime.CompilerServices;
 
 namespace Rent_a_Car
 {
@@ -30,7 +33,10 @@ namespace Rent_a_Car
         {
             this.Icon = Properties.Resources.rencar;
             InitializeComponent();
+            this.Text = "Rent A Car";
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
+            
+
         }
         #region windows moving function 
         protected override void WndProc(ref Message m)
@@ -45,6 +51,8 @@ namespace Rent_a_Car
         private const int HT_CLIENT = 0x1;
         private const int HT_CAPTION = 0x2;
         #endregion
+
+
 
         private void button4_Click(object sender, EventArgs e)
         {
@@ -63,7 +71,8 @@ namespace Rent_a_Car
             {
 
                 // Closes the parent form.
-                Environment.Exit(0);
+
+                Application.Exit();
                 //this.Close();
             }
 
@@ -72,19 +81,104 @@ namespace Rent_a_Car
 
         private void AdminCP_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'dataset.users' table. You can move, or remove it, as needed.
-            this.usersTableAdapter.Fill(this.dataset.users);
 
+
+            functions fun = new functions();
+            dataGridView1.DataSource = fun.afisaredb("masini");
+            dataGridView2.DataSource = fun.afisaredb("users");
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            functions fun = new functions();
+            dataGridView1.DataSource = fun.afisaredb("masini");
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            functions fun = new functions();
+            dataGridView2.DataSource = fun.afisaredb("users");
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            Adaugareuser newusers = new Adaugareuser();
+            newusers.Location = this.Location;
+            newusers.Show();
+        }
+
+        
+        private void button7_Click(object sender, EventArgs e)
+        {
+            if (label2.Text != "")
+            {
+                functions fun = new functions();
+
+                Console.WriteLine(label2.Text);
+
+                fun.stergeutilizator(Int32.Parse(label2.Text), "users", "Id");
+
+                dataGridView2.DataSource = fun.afisaredb("users");
+
+            }
+        
+        }
+
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+        }
+
+        public void dataGridView2_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = dataGridView2.Rows[e.RowIndex];
+                label2.Text = row.Cells[0].Value.ToString();
+                
+            };
 
 
         }
 
-        private void usersBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        private void button3_Click(object sender, EventArgs e)
         {
-            this.Validate();
-            this.usersBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.dataset);
+            if (label3.Text != "")
+            {
+                
+                functions fun = new functions();
 
+                Console.WriteLine(label3.Text);
+
+                fun.stergeutilizator(Int32.Parse(label3.Text), "masini", "Idmasini");
+
+                dataGridView1.DataSource = fun.afisaredb("masini");
+
+            }
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {       }
+
+        private void DataGridView2_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+           
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+             if (e.RowIndex >= 0)
+                        {
+                            DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
+                            label3.Text = row.Cells[0].Value.ToString();
+
+                        };
         }
     }
 }

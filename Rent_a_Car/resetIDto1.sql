@@ -1,0 +1,1 @@
+﻿DBCC CHECKIDENT('users', RESEED, 1)

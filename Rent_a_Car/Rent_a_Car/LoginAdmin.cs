@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using System.Data.SqlClient;
 
 namespace Rent_a_Car
 {
@@ -30,10 +31,11 @@ namespace Rent_a_Car
         {
             this.Icon = Properties.Resources.rencar;
             InitializeComponent();
+            this.Text = "Rent A Car";
             this.FormBorderStyle = FormBorderStyle.None;
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
+         
         }
-
         #region //This function makes windows movable
         protected override void WndProc(ref Message m)
         {
@@ -47,32 +49,45 @@ namespace Rent_a_Car
         private const int HT_CAPTION = 0x2;
         #endregion
 
-        string[] adminuser = { "admin" };
-        string[] adminpass = { "adminn" };
-
-        private void button1_Click(object sender, EventArgs e)
+        public void autentificare()
         {
-            while ((textBox1 != null) && (textBox2 != null))
+            if ((username != null) && (username.TextLength > 0) && ((password != null) && (password.TextLength > 0)))
             {
-                if ((adminuser.Contains(textBox1.Text) && adminpass.Contains(textBox2.Text) && Array.IndexOf(adminuser, textBox1.Text) == Array.IndexOf(adminpass, textBox2.Text)))
+                SqlConnection scn = new SqlConnection();
+                scn.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Xavier\Desktop\Proiect_II_Rent_a_car\Proiect_II\Rent_a_Car\Rent_a_Car\database.mdf;Integrated Security=True;Connect Timeout=30";
+                string cautare_dupa = "select count (*) as cnt from admins where nume=@usr and parola=@pass ";
+                SqlCommand scmd = new SqlCommand(cautare_dupa, scn);
+                scmd.Parameters.Clear();
+                scmd.Parameters.AddWithValue("@usr", username.Text);
+                scmd.Parameters.AddWithValue("@pass", password.Text);
+                scn.Open();
+                var res = scmd.ExecuteScalar().ToString();
+                if (res == "1")
                 {
+                    scn.Close();
                     AdminCP admincp = new AdminCP();
                     admincp.Location = this.Location;
                     Hide();
-
                     admincp.ShowDialog();
-
-                    break;
-
                 }
+
                 else
                 {
+                    scn.Close();
                     MessageBox.Show("username sau passwrod gresit");
-                    break;
                 }
-
-
             }
+            else
+            {
+                MessageBox.Show("Introduceti Numele de Administrator si Parola ");
+            }
+        }
+
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+             autentificare();
+
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -93,8 +108,8 @@ namespace Rent_a_Car
         private void button4_Click_1(object sender, EventArgs e)
         {
 
-
-            string message = "Sunteti sigur ca doriti sa parasiti aplicatia ?";
+/*
+            string message = "Doriti sa parasiti aceasta fereastra ?";
             string caption = "";
             MessageBoxButtons buttons = MessageBoxButtons.YesNo;
             DialogResult result;
@@ -105,11 +120,14 @@ namespace Rent_a_Car
 
             if (result == DialogResult.Yes)
             {
-
+            */
                 // Closes the parent form.
-                Environment.Exit(0);
+                LoginForm loginform = new LoginForm();
+                loginform.StartPosition = FormStartPosition.CenterParent;
+                Hide();
+                loginform.Show();
                 //this.Close();
-            }
+          //  }
         }
 
         private void LoginAdmin_Load(object sender, EventArgs e)

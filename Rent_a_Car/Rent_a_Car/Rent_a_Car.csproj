@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{742DFBEF-DC31-4355-9BDE-9044168BE1FB}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
+    <OutputType>Exe</OutputType>
     <RootNamespace>Rent_a_Car</RootNamespace>
     <AssemblyName>Rent_a_Car</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
@@ -58,7 +58,15 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.Install" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Transactions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -70,10 +78,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="dataset.Designer.cs">
+    <Compile Include="AboutBox1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AboutBox1.Designer.cs">
+      <DependentUpon>AboutBox1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Adaugareuser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Adaugareuser.Designer.cs">
+      <DependentUpon>Adaugareuser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="functions.cs" />
+    <Compile Include="Clientexistent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Clientexistent.Designer.cs">
+      <DependentUpon>Clientexistent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="databaseDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>dataset.xsd</DependentUpon>
+      <DependentUpon>databaseDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="LoginAdmin.cs">
       <SubType>Form</SubType>
@@ -101,8 +128,17 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AboutBox1.resx">
+      <DependentUpon>AboutBox1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Adaugareuser.resx">
+      <DependentUpon>Adaugareuser.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Client.resx">
       <DependentUpon>Client.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Clientexistent.resx">
+      <DependentUpon>Clientexistent.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginAdmin.resx">
       <DependentUpon>LoginAdmin.cs</DependentUpon>
@@ -123,16 +159,16 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="dataset.xsc">
-      <DependentUpon>dataset.xsd</DependentUpon>
+    <None Include="databaseDataSet.xsc">
+      <DependentUpon>databaseDataSet.xsd</DependentUpon>
     </None>
-    <None Include="dataset.xsd">
-      <SubType>Designer</SubType>
+    <None Include="databaseDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>dataset.Designer.cs</LastGenOutput>
+      <LastGenOutput>databaseDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </None>
-    <None Include="dataset.xss">
-      <DependentUpon>dataset.xsd</DependentUpon>
+    <None Include="databaseDataSet.xss">
+      <DependentUpon>databaseDataSet.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

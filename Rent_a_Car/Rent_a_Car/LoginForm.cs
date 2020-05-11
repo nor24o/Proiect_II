@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using System.Data.SqlClient;
 
 namespace Rent_a_Car
 {
@@ -31,6 +32,7 @@ namespace Rent_a_Car
         {
             this.Icon = Properties.Resources.rencar;
             InitializeComponent();
+            this.Text = "Rent A Car";
             this.FormBorderStyle = FormBorderStyle.None;
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
         }
@@ -44,7 +46,7 @@ namespace Rent_a_Car
             MessageBoxButtons buttons = MessageBoxButtons.YesNo;
             DialogResult result;
 
-            // Afiseaza Mesagebox
+            // Afiseaza Mesagebox 
 
             result = MessageBox.Show(this, message, caption, buttons);
 
@@ -53,7 +55,7 @@ namespace Rent_a_Car
 
                 // Inchide aplicatia 
 
-                this.Close();
+                Environment.Exit(0);
             }
         }
 
@@ -73,31 +75,51 @@ namespace Rent_a_Car
         private const int HT_CAPTION = 0x2;
         #endregion
 
-        string[] usernames = { "user" };
-        string[] passwords = { "pass" };
-        string[] adminuser = { "admin" };
-        string[] adminpass = { "adminn" };
+
+
+        public void autentificare()
+        {
+            if ((username != null)&&(username.TextLength > 0) && ((password != null) && (username.TextLength > 0)))
+            {
+                SqlConnection scn = new SqlConnection();
+                scn.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Xavier\Desktop\Proiect_II_Rent_a_car\Proiect_II\Rent_a_Car\Rent_a_Car\database.mdf;Integrated Security=True;Connect Timeout=30";
+                string cautare_dupa = "select count (*) as cnt from users where username=@usr and password=@pass ";
+                SqlCommand scmd = new SqlCommand(cautare_dupa, scn);
+                scmd.Parameters.Clear();
+                scmd.Parameters.AddWithValue("@usr", username.Text);
+                scmd.Parameters.AddWithValue("@pass", password.Text);
+                scn.Open();
+                var res = scmd.ExecuteScalar().ToString();
+                if (res == "1")
+                {
+                    scn.Close();
+                    Clientexistent clientexistent = new Clientexistent();
+                    clientexistent.Location = this.Location;
+                    Hide();
+                    clientexistent.Show();
+
+
+                }
+
+                else
+                {
+                    scn.Close();
+                    MessageBox.Show("username sau passwrod gresit");
+
+
+
+                }
+            }
+            else
+            {
+                MessageBox.Show("Introduceti Numele de Utilizator si Parola ");
+            }
+        }
 
         private void button1_Click(object sender, EventArgs e)
 
         {
-            while ((textBox1 != null) && (textBox2 != null))
-            {
-                if ((usernames.Contains(textBox1.Text) && passwords.Contains(textBox2.Text) && Array.IndexOf(usernames, textBox1.Text) == Array.IndexOf(passwords, textBox2.Text)))
-                {
-
-
-                    break;
-
-                }
-                else
-                {
-                    MessageBox.Show("username sau passwrod gresit");
-                    break;
-                }
-
-
-            }
+            autentificare();           
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -138,6 +160,42 @@ namespace Rent_a_Car
             Client secondform = new Client();
             Hide();
             secondform.Show();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            
+            AboutBox1 aboutWindow = new AboutBox1();
+            aboutWindow.StartPosition = FormStartPosition.Manual;
+            aboutWindow.Left = this.Location.X+50;
+            aboutWindow.Top = this.Location.Y+80;
+            // aboutWindow.SetDesktopLocation(500, 500);
+            aboutWindow.ShowDialog();
+
+            
+
+        }
+
+        private void LoginForm_Enter(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+            
+        }
+
+        private void username_TextChanged(object sender, EventArgs e)
+        {
+          
+        }
+        private void LoginForm_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                MessageBox.Show("Enter key pressed");
+            }
         }
     }
 }

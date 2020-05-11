@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using System.Data.SqlClient;
 
 namespace Rent_a_Car
 {
@@ -30,13 +31,15 @@ namespace Rent_a_Car
         {
             this.Icon = Properties.Resources.rencar;
             InitializeComponent();
+            this.Text = "Rent A Car";
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
         }
+        int atempt = 0;
 
         //interogheaza utilizatorul daca doreste sa inchida aplicatia 
         private void opresteaplicatia()
         {
-                        string message = "Sunteti sigur ca doriti sa parasiti aplicatia ?";
+            string message = "Doriti sa accesati pagina de Logare  ?";
             string caption = "";
             MessageBoxButtons buttons = MessageBoxButtons.YesNo;
             DialogResult result;
@@ -47,9 +50,13 @@ namespace Rent_a_Car
 
             if (result == DialogResult.Yes)
             {
+                LoginForm loginform = new LoginForm();
+                loginform.Location = this.Location;
+                Hide();
+                loginform.Show();
 
                 // Closes the parent form.
-                Environment.Exit(0);
+                // Environment.Exit(0);
                 //this.Close();
             }
         }
@@ -69,6 +76,8 @@ namespace Rent_a_Car
 
         private void Client_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'databaseDataSet.users' table. You can move, or remove it, as needed.
+            
 
         }
 
@@ -97,29 +106,29 @@ namespace Rent_a_Car
         {
             // Autocompletare varsta,sex , verifica conditi baza corectitudine cnp
             #region 
-            while ((textBox3.Text != null) && (textBox3.Text.Length == 13))
+            while ((cnp.Text != null) && (cnp.Text.Length == 13))
             {
-                string cnp= textBox3.Text;
+                string cnp = this.cnp.Text;
                 var cnp_luna = Int32.Parse(cnp.Substring(3, 2));
                 var cnp_zi = Int32.Parse(cnp.Substring(5, 2));
-                if (((cnp_luna >= 1) && (cnp_luna <= 12))&&((cnp_zi >= 1) && (cnp_zi <= 31)))
+                if (((cnp_luna >= 1) && (cnp_luna <= 12)) && ((cnp_zi >= 1) && (cnp_zi <= 31)))
                 {
-                        var cnp_sex = Int32.Parse(cnp.Substring(0, 1));
+                    var cnp_sex = Int32.Parse(cnp.Substring(0, 1));
 
                     switch (cnp_sex)
                     {
                         case 1:
                         case 5:
-                            textBox6.Text = "Masculin";
-                            textBox6.BackColor = Color.Green;
+                            sex.Text = "Masculin";
+                            sex.BackColor = Color.Green;
                             break;
                         case 2:
                         case 6:
-                            textBox6.Text = "Feminin";
-                            textBox6.BackColor = Color.Green;
+                            sex.Text = "Feminin";
+                            sex.BackColor = Color.Green;
                             break;
                         default:
-                           
+
                             break;
 
                     }
@@ -138,12 +147,12 @@ namespace Rent_a_Car
                     }
                     var newage = currentDate.Year - cnp_age;
 
-                    textBox4.Text = newage.ToString();
-                    textBox4.BackColor = Color.Green;
+                    varsta.Text = newage.ToString();
+                    varsta.BackColor = Color.Green;
                 }
                 else
                     MessageBox.Show("CNP Invalid");
-                    
+
 
 
                 break;
@@ -155,6 +164,142 @@ namespace Rent_a_Car
         }
 
         private void label12_Click(object sender, EventArgs e)
+        {
+
+        }
+        
+        
+
+
+        private void cautareuser()
+        {
+
+            SqlConnection scn = new SqlConnection();
+            scn.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Xavier\Desktop\Proiect_II_Rent_a_car\Proiect_II\Rent_a_Car\Rent_a_Car\database.mdf;Integrated Security=True;Connect Timeout=30";
+            string cautare_dupa = "select count (*) as cnt from users where username=@usr";
+            SqlCommand scmd = new SqlCommand(cautare_dupa, scn);
+            scmd.Parameters.Clear();
+            scmd.Parameters.AddWithValue("@usr", numeutilizator.Text);
+            scn.Open();
+            var res = scmd.ExecuteScalar().ToString();
+            if (res == "1")
+            {
+                scn.Close();
+                numeutilizator.BackColor = Color.Red;
+                if ((atempt == 1) && (res == "1"))
+                {
+                    MessageBox.Show("Client Inregistrat");
+                }
+            }
+
+            else
+            {
+                
+                numeutilizator.BackColor = Color.White;
+
+                string Username = numeutilizator.Text;
+                string Password = parola.Text;
+                string Nume = nume.Text;
+                string Prenume = prenume.Text;
+                string CNP = cnp.Text;
+                string Sex = sex.Text;
+                string Varsta = varsta.Text;
+                string Adresa = adresa.Text;
+                string Telefon = telefon.Text;
+                if (this.atempt == 0)
+                {
+                    try
+
+                    {
+
+                        //  String connString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Xavier\Desktop\Proiect_II_Rent_a_car\Proiect_II\Rent_a_Car\Rent_a_Car\database.mdf;Integrated Security=True;Connect Timeout=30";
+
+
+                        String inserare = "Insert into users(username,password,nume,prenume,CNP,sex,varsta,adresa,telefon) " +
+                        "values('" + Username + "','" + Password + "','" + Nume + "','" + Prenume + "','" + CNP + "','" + Sex + "','"
+                        + Varsta + "','" + Adresa + "','" + Telefon + "')";
+
+                        /* SqlConnection mySqlConnection = new SqlConnection(connString);
+
+                         mySqlConnection.Open();*/
+                        var cmd = new SqlCommand(inserare, scn);
+                        int row = cmd.ExecuteNonQuery();        
+                        scn.Close();
+                        atempt = 1;
+                        ;
+
+                    }
+
+                    catch (Exception es)
+
+                    { MessageBox.Show(es.Message); }
+                }
+
+
+
+
+            }
+
+
+        }
+
+
+
+
+
+
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            cautareuser();
+        }
+
+        private void sex_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void prenume_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void nume_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label13_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void numeutilizator_TextChanged(object sender, EventArgs e)
         {
 
         }
