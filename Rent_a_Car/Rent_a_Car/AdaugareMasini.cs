@@ -44,6 +44,8 @@ namespace Rent_a_Car
                 SqlCommand cmd = new SqlCommand(inserare, con);
                 int row = cmd.ExecuteNonQuery();
                 con.Close();
+                MessageBox.Show("Date inserate cu succes!");
+                this.Close();
             }
 
             catch (Exception es)

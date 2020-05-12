@@ -26,7 +26,7 @@ namespace Rent_a_Car {
         
         private usersDataTable tableusers;
         
-        private rezervariDataTable tablerezervari;
+        private masiniDataTable tablemasini;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -59,8 +59,8 @@ namespace Rent_a_Car {
                 if ((ds.Tables["users"] != null)) {
                     base.Tables.Add(new usersDataTable(ds.Tables["users"]));
                 }
-                if ((ds.Tables["rezervari"] != null)) {
-                    base.Tables.Add(new rezervariDataTable(ds.Tables["rezervari"]));
+                if ((ds.Tables["masini"] != null)) {
+                    base.Tables.Add(new masiniDataTable(ds.Tables["masini"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -94,9 +94,9 @@ namespace Rent_a_Car {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public rezervariDataTable rezervari {
+        public masiniDataTable masini {
             get {
-                return this.tablerezervari;
+                return this.tablemasini;
             }
         }
         
@@ -170,8 +170,8 @@ namespace Rent_a_Car {
                 if ((ds.Tables["users"] != null)) {
                     base.Tables.Add(new usersDataTable(ds.Tables["users"]));
                 }
-                if ((ds.Tables["rezervari"] != null)) {
-                    base.Tables.Add(new rezervariDataTable(ds.Tables["rezervari"]));
+                if ((ds.Tables["masini"] != null)) {
+                    base.Tables.Add(new masiniDataTable(ds.Tables["masini"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -212,10 +212,10 @@ namespace Rent_a_Car {
                     this.tableusers.InitVars();
                 }
             }
-            this.tablerezervari = ((rezervariDataTable)(base.Tables["rezervari"]));
+            this.tablemasini = ((masiniDataTable)(base.Tables["masini"]));
             if ((initTable == true)) {
-                if ((this.tablerezervari != null)) {
-                    this.tablerezervari.InitVars();
+                if ((this.tablemasini != null)) {
+                    this.tablemasini.InitVars();
                 }
             }
         }
@@ -230,8 +230,8 @@ namespace Rent_a_Car {
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
             this.tableusers = new usersDataTable();
             base.Tables.Add(this.tableusers);
-            this.tablerezervari = new rezervariDataTable();
-            base.Tables.Add(this.tablerezervari);
+            this.tablemasini = new masiniDataTable();
+            base.Tables.Add(this.tablemasini);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -242,7 +242,7 @@ namespace Rent_a_Car {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private bool ShouldSerializerezervari() {
+        private bool ShouldSerializemasini() {
             return false;
         }
         
@@ -305,7 +305,7 @@ namespace Rent_a_Car {
         public delegate void usersRowChangeEventHandler(object sender, usersRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public delegate void rezervariRowChangeEventHandler(object sender, rezervariRowChangeEvent e);
+        public delegate void masiniRowChangeEventHandler(object sender, masiniRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -728,22 +728,26 @@ namespace Rent_a_Car {
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class rezervariDataTable : global::System.Data.TypedTableBase<rezervariRow> {
+        public partial class masiniDataTable : global::System.Data.TypedTableBase<masiniRow> {
             
-            private global::System.Data.DataColumn columnId;
+            private global::System.Data.DataColumn columnIdmasini;
             
-            private global::System.Data.DataColumn columnclientid;
+            private global::System.Data.DataColumn columnMarca;
             
-            private global::System.Data.DataColumn columncarid;
+            private global::System.Data.DataColumn columnModel;
+            
+            private global::System.Data.DataColumn columnMotorizare;
             
             private global::System.Data.DataColumn columnrezervare;
             
             private global::System.Data.DataColumn columnpredare;
             
+            private global::System.Data.DataColumn columnclientid;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public rezervariDataTable() {
-                this.TableName = "rezervari";
+            public masiniDataTable() {
+                this.TableName = "masini";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -751,7 +755,7 @@ namespace Rent_a_Car {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal rezervariDataTable(global::System.Data.DataTable table) {
+            internal masiniDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -768,32 +772,40 @@ namespace Rent_a_Car {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected rezervariDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected masiniDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn IdColumn {
+            public global::System.Data.DataColumn IdmasiniColumn {
                 get {
-                    return this.columnId;
+                    return this.columnIdmasini;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn clientidColumn {
+            public global::System.Data.DataColumn MarcaColumn {
                 get {
-                    return this.columnclientid;
+                    return this.columnMarca;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn caridColumn {
+            public global::System.Data.DataColumn ModelColumn {
                 get {
-                    return this.columncarid;
+                    return this.columnModel;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn MotorizareColumn {
+                get {
+                    return this.columnMotorizare;
                 }
             }
             
@@ -815,6 +827,14 @@ namespace Rent_a_Car {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn clientidColumn {
+                get {
+                    return this.columnclientid;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -824,56 +844,58 @@ namespace Rent_a_Car {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public rezervariRow this[int index] {
+            public masiniRow this[int index] {
                 get {
-                    return ((rezervariRow)(this.Rows[index]));
+                    return ((masiniRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event rezervariRowChangeEventHandler rezervariRowChanging;
+            public event masiniRowChangeEventHandler masiniRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event rezervariRowChangeEventHandler rezervariRowChanged;
+            public event masiniRowChangeEventHandler masiniRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event rezervariRowChangeEventHandler rezervariRowDeleting;
+            public event masiniRowChangeEventHandler masiniRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event rezervariRowChangeEventHandler rezervariRowDeleted;
+            public event masiniRowChangeEventHandler masiniRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void AddrezervariRow(rezervariRow row) {
+            public void AddmasiniRow(masiniRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public rezervariRow AddrezervariRow(int Id, int clientid, int carid, System.DateTime rezervare, System.DateTime predare) {
-                rezervariRow rowrezervariRow = ((rezervariRow)(this.NewRow()));
+            public masiniRow AddmasiniRow(string Marca, string Model, string Motorizare, System.DateTime rezervare, System.DateTime predare, int clientid) {
+                masiniRow rowmasiniRow = ((masiniRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        Id,
-                        clientid,
-                        carid,
+                        null,
+                        Marca,
+                        Model,
+                        Motorizare,
                         rezervare,
-                        predare};
-                rowrezervariRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowrezervariRow);
-                return rowrezervariRow;
+                        predare,
+                        clientid};
+                rowmasiniRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowmasiniRow);
+                return rowmasiniRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public rezervariRow FindById(int Id) {
-                return ((rezervariRow)(this.Rows.Find(new object[] {
-                            Id})));
+            public masiniRow FindByIdmasini(int Idmasini) {
+                return ((masiniRow)(this.Rows.Find(new object[] {
+                            Idmasini})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                rezervariDataTable cln = ((rezervariDataTable)(base.Clone()));
+                masiniDataTable cln = ((masiniDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -881,66 +903,78 @@ namespace Rent_a_Car {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new rezervariDataTable();
+                return new masiniDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             internal void InitVars() {
-                this.columnId = base.Columns["Id"];
-                this.columnclientid = base.Columns["clientid"];
-                this.columncarid = base.Columns["carid"];
+                this.columnIdmasini = base.Columns["Idmasini"];
+                this.columnMarca = base.Columns["Marca"];
+                this.columnModel = base.Columns["Model"];
+                this.columnMotorizare = base.Columns["Motorizare"];
                 this.columnrezervare = base.Columns["rezervare"];
                 this.columnpredare = base.Columns["predare"];
+                this.columnclientid = base.Columns["clientid"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             private void InitClass() {
-                this.columnId = new global::System.Data.DataColumn("Id", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnId);
-                this.columnclientid = new global::System.Data.DataColumn("clientid", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnclientid);
-                this.columncarid = new global::System.Data.DataColumn("carid", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columncarid);
+                this.columnIdmasini = new global::System.Data.DataColumn("Idmasini", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnIdmasini);
+                this.columnMarca = new global::System.Data.DataColumn("Marca", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMarca);
+                this.columnModel = new global::System.Data.DataColumn("Model", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnModel);
+                this.columnMotorizare = new global::System.Data.DataColumn("Motorizare", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMotorizare);
                 this.columnrezervare = new global::System.Data.DataColumn("rezervare", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnrezervare);
                 this.columnpredare = new global::System.Data.DataColumn("predare", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnpredare);
+                this.columnclientid = new global::System.Data.DataColumn("clientid", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnclientid);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnId}, true));
-                this.columnId.AllowDBNull = false;
-                this.columnId.Unique = true;
-                this.columnclientid.AllowDBNull = false;
-                this.columncarid.AllowDBNull = false;
-                this.columnrezervare.AllowDBNull = false;
-                this.columnpredare.AllowDBNull = false;
+                                this.columnIdmasini}, true));
+                this.columnIdmasini.AutoIncrement = true;
+                this.columnIdmasini.AutoIncrementSeed = -1;
+                this.columnIdmasini.AutoIncrementStep = -1;
+                this.columnIdmasini.AllowDBNull = false;
+                this.columnIdmasini.ReadOnly = true;
+                this.columnIdmasini.Unique = true;
+                this.columnMarca.AllowDBNull = false;
+                this.columnMarca.MaxLength = 250;
+                this.columnModel.AllowDBNull = false;
+                this.columnModel.MaxLength = 250;
+                this.columnMotorizare.AllowDBNull = false;
+                this.columnMotorizare.MaxLength = 100;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public rezervariRow NewrezervariRow() {
-                return ((rezervariRow)(this.NewRow()));
+            public masiniRow NewmasiniRow() {
+                return ((masiniRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new rezervariRow(builder);
+                return new masiniRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(rezervariRow);
+                return typeof(masiniRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.rezervariRowChanged != null)) {
-                    this.rezervariRowChanged(this, new rezervariRowChangeEvent(((rezervariRow)(e.Row)), e.Action));
+                if ((this.masiniRowChanged != null)) {
+                    this.masiniRowChanged(this, new masiniRowChangeEvent(((masiniRow)(e.Row)), e.Action));
                 }
             }
             
@@ -948,8 +982,8 @@ namespace Rent_a_Car {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.rezervariRowChanging != null)) {
-                    this.rezervariRowChanging(this, new rezervariRowChangeEvent(((rezervariRow)(e.Row)), e.Action));
+                if ((this.masiniRowChanging != null)) {
+                    this.masiniRowChanging(this, new masiniRowChangeEvent(((masiniRow)(e.Row)), e.Action));
                 }
             }
             
@@ -957,8 +991,8 @@ namespace Rent_a_Car {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.rezervariRowDeleted != null)) {
-                    this.rezervariRowDeleted(this, new rezervariRowChangeEvent(((rezervariRow)(e.Row)), e.Action));
+                if ((this.masiniRowDeleted != null)) {
+                    this.masiniRowDeleted(this, new masiniRowChangeEvent(((masiniRow)(e.Row)), e.Action));
                 }
             }
             
@@ -966,14 +1000,14 @@ namespace Rent_a_Car {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.rezervariRowDeleting != null)) {
-                    this.rezervariRowDeleting(this, new rezervariRowChangeEvent(((rezervariRow)(e.Row)), e.Action));
+                if ((this.masiniRowDeleting != null)) {
+                    this.masiniRowDeleting(this, new masiniRowChangeEvent(((masiniRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void RemoverezervariRow(rezervariRow row) {
+            public void RemovemasiniRow(masiniRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -1000,7 +1034,7 @@ namespace Rent_a_Car {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "rezervariDataTable";
+                attribute2.FixedValue = "masiniDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -1180,47 +1214,58 @@ namespace Rent_a_Car {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class rezervariRow : global::System.Data.DataRow {
+        public partial class masiniRow : global::System.Data.DataRow {
             
-            private rezervariDataTable tablerezervari;
+            private masiniDataTable tablemasini;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal rezervariRow(global::System.Data.DataRowBuilder rb) : 
+            internal masiniRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tablerezervari = ((rezervariDataTable)(this.Table));
+                this.tablemasini = ((masiniDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int Id {
+            public int Idmasini {
                 get {
-                    return ((int)(this[this.tablerezervari.IdColumn]));
+                    return ((int)(this[this.tablemasini.IdmasiniColumn]));
                 }
                 set {
-                    this[this.tablerezervari.IdColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int clientid {
-                get {
-                    return ((int)(this[this.tablerezervari.clientidColumn]));
-                }
-                set {
-                    this[this.tablerezervari.clientidColumn] = value;
+                    this[this.tablemasini.IdmasiniColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int carid {
+            public string Marca {
                 get {
-                    return ((int)(this[this.tablerezervari.caridColumn]));
+                    return ((string)(this[this.tablemasini.MarcaColumn]));
                 }
                 set {
-                    this[this.tablerezervari.caridColumn] = value;
+                    this[this.tablemasini.MarcaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Model {
+                get {
+                    return ((string)(this[this.tablemasini.ModelColumn]));
+                }
+                set {
+                    this[this.tablemasini.ModelColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Motorizare {
+                get {
+                    return ((string)(this[this.tablemasini.MotorizareColumn]));
+                }
+                set {
+                    this[this.tablemasini.MotorizareColumn] = value;
                 }
             }
             
@@ -1228,10 +1273,15 @@ namespace Rent_a_Car {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public System.DateTime rezervare {
                 get {
-                    return ((global::System.DateTime)(this[this.tablerezervari.rezervareColumn]));
+                    try {
+                        return ((global::System.DateTime)(this[this.tablemasini.rezervareColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'rezervare\' in table \'masini\' is DBNull.", e);
+                    }
                 }
                 set {
-                    this[this.tablerezervari.rezervareColumn] = value;
+                    this[this.tablemasini.rezervareColumn] = value;
                 }
             }
             
@@ -1239,11 +1289,68 @@ namespace Rent_a_Car {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public System.DateTime predare {
                 get {
-                    return ((global::System.DateTime)(this[this.tablerezervari.predareColumn]));
+                    try {
+                        return ((global::System.DateTime)(this[this.tablemasini.predareColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'predare\' in table \'masini\' is DBNull.", e);
+                    }
                 }
                 set {
-                    this[this.tablerezervari.predareColumn] = value;
+                    this[this.tablemasini.predareColumn] = value;
                 }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int clientid {
+                get {
+                    try {
+                        return ((int)(this[this.tablemasini.clientidColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'clientid\' in table \'masini\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablemasini.clientidColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsrezervareNull() {
+                return this.IsNull(this.tablemasini.rezervareColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetrezervareNull() {
+                this[this.tablemasini.rezervareColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IspredareNull() {
+                return this.IsNull(this.tablemasini.predareColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetpredareNull() {
+                this[this.tablemasini.predareColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsclientidNull() {
+                return this.IsNull(this.tablemasini.clientidColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetclientidNull() {
+                this[this.tablemasini.clientidColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -1285,22 +1392,22 @@ namespace Rent_a_Car {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public class rezervariRowChangeEvent : global::System.EventArgs {
+        public class masiniRowChangeEvent : global::System.EventArgs {
             
-            private rezervariRow eventRow;
+            private masiniRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public rezervariRowChangeEvent(rezervariRow row, global::System.Data.DataRowAction action) {
+            public masiniRowChangeEvent(masiniRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public rezervariRow Row {
+            public masiniRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -1911,7 +2018,7 @@ SELECT Id, username, password, nume, prenume, CNP, sex, varsta, adresa, telefon,
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class rezervariTableAdapter : global::System.ComponentModel.Component {
+    public partial class masiniTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -1925,7 +2032,7 @@ SELECT Id, username, password, nume, prenume, CNP, sex, varsta, adresa, telefon,
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public rezervariTableAdapter() {
+        public masiniTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -2022,50 +2129,62 @@ SELECT Id, username, password, nume, prenume, CNP, sex, varsta, adresa, telefon,
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "rezervari";
-            tableMapping.ColumnMappings.Add("Id", "Id");
-            tableMapping.ColumnMappings.Add("clientid", "clientid");
-            tableMapping.ColumnMappings.Add("carid", "carid");
+            tableMapping.DataSetTable = "masini";
+            tableMapping.ColumnMappings.Add("Idmasini", "Idmasini");
+            tableMapping.ColumnMappings.Add("Marca", "Marca");
+            tableMapping.ColumnMappings.Add("Model", "Model");
+            tableMapping.ColumnMappings.Add("Motorizare", "Motorizare");
             tableMapping.ColumnMappings.Add("rezervare", "rezervare");
             tableMapping.ColumnMappings.Add("predare", "predare");
+            tableMapping.ColumnMappings.Add("clientid", "clientid");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[rezervari] WHERE (([Id] = @Original_Id) AND ([clientid] = @Ori" +
-                "ginal_clientid) AND ([carid] = @Original_carid) AND ([rezervare] = @Original_rez" +
-                "ervare) AND ([predare] = @Original_predare))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[masini] WHERE (([Idmasini] = @Original_Idmasini) AND ([Marca] = @Original_Marca) AND ([Model] = @Original_Model) AND ([Motorizare] = @Original_Motorizare) AND ((@IsNull_rezervare = 1 AND [rezervare] IS NULL) OR ([rezervare] = @Original_rezervare)) AND ((@IsNull_predare = 1 AND [predare] IS NULL) OR ([predare] = @Original_predare)) AND ((@IsNull_clientid = 1 AND [clientid] IS NULL) OR ([clientid] = @Original_clientid)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Idmasini", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Idmasini", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Marca", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Marca", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Model", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Model", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Motorizare", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Motorizare", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_rezervare", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "rezervare", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_rezervare", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "rezervare", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_predare", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "predare", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_predare", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "predare", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_clientid", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "clientid", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_clientid", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "clientid", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_carid", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "carid", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_rezervare", global::System.Data.SqlDbType.DateTime2, 0, global::System.Data.ParameterDirection.Input, 0, 0, "rezervare", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_predare", global::System.Data.SqlDbType.DateTime2, 0, global::System.Data.ParameterDirection.Input, 0, 0, "predare", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[rezervari] ([Id], [clientid], [carid], [rezervare], [predare])" +
-                " VALUES (@Id, @clientid, @carid, @rezervare, @predare);\r\nSELECT Id, clientid, ca" +
-                "rid, rezervare, predare FROM rezervari WHERE (Id = @Id)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[masini] ([Marca], [Model], [Motorizare], [rezervare], [predare], [clientid]) VALUES (@Marca, @Model, @Motorizare, @rezervare, @predare, @clientid);
+SELECT Idmasini, Marca, Model, Motorizare, rezervare, predare, clientid FROM masini WHERE (Idmasini = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Marca", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Marca", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Model", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Model", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Motorizare", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Motorizare", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@rezervare", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "rezervare", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@predare", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "predare", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@clientid", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "clientid", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@carid", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "carid", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@rezervare", global::System.Data.SqlDbType.DateTime2, 0, global::System.Data.ParameterDirection.Input, 0, 0, "rezervare", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@predare", global::System.Data.SqlDbType.DateTime2, 0, global::System.Data.ParameterDirection.Input, 0, 0, "predare", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[rezervari] SET [Id] = @Id, [clientid] = @clientid, [carid] = @carid, [rezervare] = @rezervare, [predare] = @predare WHERE (([Id] = @Original_Id) AND ([clientid] = @Original_clientid) AND ([carid] = @Original_carid) AND ([rezervare] = @Original_rezervare) AND ([predare] = @Original_predare));
-SELECT Id, clientid, carid, rezervare, predare FROM rezervari WHERE (Id = @Id)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[masini] SET [Marca] = @Marca, [Model] = @Model, [Motorizare] = @Motorizare, [rezervare] = @rezervare, [predare] = @predare, [clientid] = @clientid WHERE (([Idmasini] = @Original_Idmasini) AND ([Marca] = @Original_Marca) AND ([Model] = @Original_Model) AND ([Motorizare] = @Original_Motorizare) AND ((@IsNull_rezervare = 1 AND [rezervare] IS NULL) OR ([rezervare] = @Original_rezervare)) AND ((@IsNull_predare = 1 AND [predare] IS NULL) OR ([predare] = @Original_predare)) AND ((@IsNull_clientid = 1 AND [clientid] IS NULL) OR ([clientid] = @Original_clientid)));
+SELECT Idmasini, Marca, Model, Motorizare, rezervare, predare, clientid FROM masini WHERE (Idmasini = @Idmasini)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Marca", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Marca", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Model", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Model", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Motorizare", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Motorizare", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@rezervare", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "rezervare", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@predare", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "predare", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@clientid", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "clientid", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@carid", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "carid", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@rezervare", global::System.Data.SqlDbType.DateTime2, 0, global::System.Data.ParameterDirection.Input, 0, 0, "rezervare", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@predare", global::System.Data.SqlDbType.DateTime2, 0, global::System.Data.ParameterDirection.Input, 0, 0, "predare", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Idmasini", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Idmasini", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Marca", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Marca", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Model", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Model", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Motorizare", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Motorizare", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_rezervare", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "rezervare", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_rezervare", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "rezervare", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_predare", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "predare", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_predare", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "predare", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_clientid", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "clientid", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_clientid", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "clientid", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_carid", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "carid", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_rezervare", global::System.Data.SqlDbType.DateTime2, 0, global::System.Data.ParameterDirection.Input, 0, 0, "rezervare", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_predare", global::System.Data.SqlDbType.DateTime2, 0, global::System.Data.ParameterDirection.Input, 0, 0, "predare", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Idmasini", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Idmasini", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2078,18 +2197,24 @@ SELECT Id, clientid, carid, rezervare, predare FROM rezervari WHERE (Id = @Id)";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Id, clientid, carid, rezervare, predare FROM dbo.rezervari";
+            this._commandCollection[0].CommandText = "SELECT Idmasini, Marca, Model, Motorizare, rezervare, predare, clientid FROM dbo." +
+                "masini";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT Idmasini, Marca, Model, Motorizare, rezervare, predare, clientid FROM dbo." +
+                "masini";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(databaseDataSet.rezervariDataTable dataTable) {
+        public virtual int Fill(databaseDataSet.masiniDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -2102,9 +2227,9 @@ SELECT Id, clientid, carid, rezervare, predare FROM rezervari WHERE (Id = @Id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual databaseDataSet.rezervariDataTable GetData() {
+        public virtual databaseDataSet.masiniDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            databaseDataSet.rezervariDataTable dataTable = new databaseDataSet.rezervariDataTable();
+            databaseDataSet.masiniDataTable dataTable = new databaseDataSet.masiniDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -2112,7 +2237,20 @@ SELECT Id, clientid, carid, rezervare, predare FROM rezervari WHERE (Id = @Id)";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(databaseDataSet.rezervariDataTable dataTable) {
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillBy(databaseDataSet.masiniDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(databaseDataSet.masiniDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
@@ -2120,7 +2258,7 @@ SELECT Id, clientid, carid, rezervare, predare FROM rezervari WHERE (Id = @Id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual int Update(databaseDataSet dataSet) {
-            return this.Adapter.Update(dataSet, "rezervari");
+            return this.Adapter.Update(dataSet, "masini");
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2142,12 +2280,50 @@ SELECT Id, clientid, carid, rezervare, predare FROM rezervari WHERE (Id = @Id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_Id, int Original_clientid, int Original_carid, System.DateTime Original_rezervare, System.DateTime Original_predare) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_Id));
-            this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(Original_clientid));
-            this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(Original_carid));
-            this.Adapter.DeleteCommand.Parameters[3].Value = ((System.DateTime)(Original_rezervare));
-            this.Adapter.DeleteCommand.Parameters[4].Value = ((System.DateTime)(Original_predare));
+        public virtual int Delete(int Original_Idmasini, string Original_Marca, string Original_Model, string Original_Motorizare, global::System.Nullable<global::System.DateTime> Original_rezervare, global::System.Nullable<global::System.DateTime> Original_predare, global::System.Nullable<int> Original_clientid) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_Idmasini));
+            if ((Original_Marca == null)) {
+                throw new global::System.ArgumentNullException("Original_Marca");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(Original_Marca));
+            }
+            if ((Original_Model == null)) {
+                throw new global::System.ArgumentNullException("Original_Model");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_Model));
+            }
+            if ((Original_Motorizare == null)) {
+                throw new global::System.ArgumentNullException("Original_Motorizare");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((string)(Original_Motorizare));
+            }
+            if ((Original_rezervare.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((System.DateTime)(Original_rezervare.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            if ((Original_predare.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((System.DateTime)(Original_predare.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            if ((Original_clientid.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[9].Value = ((int)(Original_clientid.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[9].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -2168,12 +2344,43 @@ SELECT Id, clientid, carid, rezervare, predare FROM rezervari WHERE (Id = @Id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int Id, int clientid, int carid, System.DateTime rezervare, System.DateTime predare) {
-            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(Id));
-            this.Adapter.InsertCommand.Parameters[1].Value = ((int)(clientid));
-            this.Adapter.InsertCommand.Parameters[2].Value = ((int)(carid));
-            this.Adapter.InsertCommand.Parameters[3].Value = ((System.DateTime)(rezervare));
-            this.Adapter.InsertCommand.Parameters[4].Value = ((System.DateTime)(predare));
+        public virtual int Insert(string Marca, string Model, string Motorizare, global::System.Nullable<global::System.DateTime> rezervare, global::System.Nullable<global::System.DateTime> predare, global::System.Nullable<int> clientid) {
+            if ((Marca == null)) {
+                throw new global::System.ArgumentNullException("Marca");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(Marca));
+            }
+            if ((Model == null)) {
+                throw new global::System.ArgumentNullException("Model");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(Model));
+            }
+            if ((Motorizare == null)) {
+                throw new global::System.ArgumentNullException("Motorizare");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(Motorizare));
+            }
+            if ((rezervare.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((System.DateTime)(rezervare.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            if ((predare.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[4].Value = ((System.DateTime)(predare.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            if ((clientid.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[5].Value = ((int)(clientid.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -2194,17 +2401,87 @@ SELECT Id, clientid, carid, rezervare, predare FROM rezervari WHERE (Id = @Id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int Id, int clientid, int carid, System.DateTime rezervare, System.DateTime predare, int Original_Id, int Original_clientid, int Original_carid, System.DateTime Original_rezervare, System.DateTime Original_predare) {
-            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(Id));
-            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(clientid));
-            this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(carid));
-            this.Adapter.UpdateCommand.Parameters[3].Value = ((System.DateTime)(rezervare));
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((System.DateTime)(predare));
-            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Original_Id));
-            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_clientid));
-            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Original_carid));
-            this.Adapter.UpdateCommand.Parameters[8].Value = ((System.DateTime)(Original_rezervare));
-            this.Adapter.UpdateCommand.Parameters[9].Value = ((System.DateTime)(Original_predare));
+        public virtual int Update(string Marca, string Model, string Motorizare, global::System.Nullable<global::System.DateTime> rezervare, global::System.Nullable<global::System.DateTime> predare, global::System.Nullable<int> clientid, int Original_Idmasini, string Original_Marca, string Original_Model, string Original_Motorizare, global::System.Nullable<global::System.DateTime> Original_rezervare, global::System.Nullable<global::System.DateTime> Original_predare, global::System.Nullable<int> Original_clientid, int Idmasini) {
+            if ((Marca == null)) {
+                throw new global::System.ArgumentNullException("Marca");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(Marca));
+            }
+            if ((Model == null)) {
+                throw new global::System.ArgumentNullException("Model");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(Model));
+            }
+            if ((Motorizare == null)) {
+                throw new global::System.ArgumentNullException("Motorizare");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(Motorizare));
+            }
+            if ((rezervare.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((System.DateTime)(rezervare.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            if ((predare.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((System.DateTime)(predare.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            if ((clientid.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(clientid.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_Idmasini));
+            if ((Original_Marca == null)) {
+                throw new global::System.ArgumentNullException("Original_Marca");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Original_Marca));
+            }
+            if ((Original_Model == null)) {
+                throw new global::System.ArgumentNullException("Original_Model");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Original_Model));
+            }
+            if ((Original_Motorizare == null)) {
+                throw new global::System.ArgumentNullException("Original_Motorizare");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(Original_Motorizare));
+            }
+            if ((Original_rezervare.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((System.DateTime)(Original_rezervare.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
+            }
+            if ((Original_predare.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((System.DateTime)(Original_predare.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
+            }
+            if ((Original_clientid.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((int)(Original_clientid.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[16].Value = ((int)(Idmasini));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -2225,8 +2502,8 @@ SELECT Id, clientid, carid, rezervare, predare FROM rezervari WHERE (Id = @Id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int clientid, int carid, System.DateTime rezervare, System.DateTime predare, int Original_Id, int Original_clientid, int Original_carid, System.DateTime Original_rezervare, System.DateTime Original_predare) {
-            return this.Update(Original_Id, clientid, carid, rezervare, predare, Original_Id, Original_clientid, Original_carid, Original_rezervare, Original_predare);
+        public virtual int Update(string Marca, string Model, string Motorizare, global::System.Nullable<global::System.DateTime> rezervare, global::System.Nullable<global::System.DateTime> predare, global::System.Nullable<int> clientid, int Original_Idmasini, string Original_Marca, string Original_Model, string Original_Motorizare, global::System.Nullable<global::System.DateTime> Original_rezervare, global::System.Nullable<global::System.DateTime> Original_predare, global::System.Nullable<int> Original_clientid) {
+            return this.Update(Marca, Model, Motorizare, rezervare, predare, clientid, Original_Idmasini, Original_Marca, Original_Model, Original_Motorizare, Original_rezervare, Original_predare, Original_clientid, Original_Idmasini);
         }
     }
     
@@ -2244,7 +2521,7 @@ SELECT Id, clientid, carid, rezervare, predare FROM rezervari WHERE (Id = @Id)";
         
         private usersTableAdapter _usersTableAdapter;
         
-        private rezervariTableAdapter _rezervariTableAdapter;
+        private masiniTableAdapter _masiniTableAdapter;
         
         private bool _backupDataSetBeforeUpdate;
         
@@ -2280,12 +2557,12 @@ SELECT Id, clientid, carid, rezervare, predare FROM rezervari WHERE (Id = @Id)";
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
-        public rezervariTableAdapter rezervariTableAdapter {
+        public masiniTableAdapter masiniTableAdapter {
             get {
-                return this._rezervariTableAdapter;
+                return this._masiniTableAdapter;
             }
             set {
-                this._rezervariTableAdapter = value;
+                this._masiniTableAdapter = value;
             }
         }
         
@@ -2312,9 +2589,9 @@ SELECT Id, clientid, carid, rezervare, predare FROM rezervari WHERE (Id = @Id)";
                             && (this._usersTableAdapter.Connection != null))) {
                     return this._usersTableAdapter.Connection;
                 }
-                if (((this._rezervariTableAdapter != null) 
-                            && (this._rezervariTableAdapter.Connection != null))) {
-                    return this._rezervariTableAdapter.Connection;
+                if (((this._masiniTableAdapter != null) 
+                            && (this._masiniTableAdapter.Connection != null))) {
+                    return this._masiniTableAdapter.Connection;
                 }
                 return null;
             }
@@ -2332,7 +2609,7 @@ SELECT Id, clientid, carid, rezervare, predare FROM rezervari WHERE (Id = @Id)";
                 if ((this._usersTableAdapter != null)) {
                     count = (count + 1);
                 }
-                if ((this._rezervariTableAdapter != null)) {
+                if ((this._masiniTableAdapter != null)) {
                     count = (count + 1);
                 }
                 return count;
@@ -2355,12 +2632,12 @@ SELECT Id, clientid, carid, rezervare, predare FROM rezervari WHERE (Id = @Id)";
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._rezervariTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.rezervari.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._masiniTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.masini.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._rezervariTableAdapter.Update(updatedRows));
+                    result = (result + this._masiniTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -2382,11 +2659,11 @@ SELECT Id, clientid, carid, rezervare, predare FROM rezervari WHERE (Id = @Id)";
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._rezervariTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.rezervari.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._masiniTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.masini.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._rezervariTableAdapter.Update(addedRows));
+                    result = (result + this._masiniTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -2400,11 +2677,11 @@ SELECT Id, clientid, carid, rezervare, predare FROM rezervari WHERE (Id = @Id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private int UpdateDeletedRows(databaseDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
-            if ((this._rezervariTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.rezervari.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._masiniTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.masini.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._rezervariTableAdapter.Update(deletedRows));
+                    result = (result + this._masiniTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -2460,8 +2737,8 @@ SELECT Id, clientid, carid, rezervare, predare FROM rezervari WHERE (Id = @Id)";
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
-            if (((this._rezervariTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._rezervariTableAdapter.Connection) == false))) {
+            if (((this._masiniTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._masiniTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
@@ -2506,13 +2783,13 @@ SELECT Id, clientid, carid, rezervare, predare FROM rezervari WHERE (Id = @Id)";
                         adaptersWithAcceptChangesDuringUpdate.Add(this._usersTableAdapter.Adapter);
                     }
                 }
-                if ((this._rezervariTableAdapter != null)) {
-                    revertConnections.Add(this._rezervariTableAdapter, this._rezervariTableAdapter.Connection);
-                    this._rezervariTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this._rezervariTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this._rezervariTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._rezervariTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._rezervariTableAdapter.Adapter);
+                if ((this._masiniTableAdapter != null)) {
+                    revertConnections.Add(this._masiniTableAdapter, this._masiniTableAdapter.Connection);
+                    this._masiniTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._masiniTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._masiniTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._masiniTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._masiniTableAdapter.Adapter);
                     }
                 }
                 // 
@@ -2577,9 +2854,9 @@ SELECT Id, clientid, carid, rezervare, predare FROM rezervari WHERE (Id = @Id)";
                     this._usersTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._usersTableAdapter]));
                     this._usersTableAdapter.Transaction = null;
                 }
-                if ((this._rezervariTableAdapter != null)) {
-                    this._rezervariTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._rezervariTableAdapter]));
-                    this._rezervariTableAdapter.Transaction = null;
+                if ((this._masiniTableAdapter != null)) {
+                    this._masiniTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._masiniTableAdapter]));
+                    this._masiniTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];

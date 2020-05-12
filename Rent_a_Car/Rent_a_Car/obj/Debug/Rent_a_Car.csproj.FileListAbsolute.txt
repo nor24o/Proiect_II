@@ -72,3 +72,4 @@ C:\Users\Xavier\Desktop\cip\Proiect_II\Rent_a_Car\Rent_a_Car\bin\Debug\Rent_a_Ca
 C:\Users\Xavier\Desktop\cip\Proiect_II\Rent_a_Car\Rent_a_Car\bin\Debug\Rent_a_Car.pdb
 C:\Users\Xavier\Desktop\cip\Proiect_II\Rent_a_Car\Rent_a_Car\obj\Debug\Rent_a_Car.AdaugareMasini.resources
 E:\AN3-S2\Info. Indust\Proiect II\Rent_a_Car\Rent_a_Car\obj\Debug\Rent_a_Car.AdaugareMasini.resources
+E:\AN3-S2\Info. Indust\Proiect II\Rent_a_Car\Rent_a_Car\obj\Debug\Rent_a_Car.Form1.resources

@@ -128,12 +128,14 @@
             this.calendar_returnare.Location = new System.Drawing.Point(42, 304);
             this.calendar_returnare.Name = "calendar_returnare";
             this.calendar_returnare.TabIndex = 1;
+            this.calendar_returnare.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.calendar_returnare_DateChanged);
             // 
             // calendar_ridicare
             // 
             this.calendar_ridicare.Location = new System.Drawing.Point(42, 53);
             this.calendar_ridicare.Name = "calendar_ridicare";
             this.calendar_ridicare.TabIndex = 0;
+            this.calendar_ridicare.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.calendar_ridicare_DateChanged);
             // 
             // panel2
             // 
@@ -511,7 +513,7 @@
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Client";
-            this.Text = "Form3";
+            this.Text = "6";
             this.Load += new System.EventHandler(this.Client_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

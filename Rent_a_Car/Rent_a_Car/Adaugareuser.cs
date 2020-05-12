@@ -142,7 +142,7 @@ namespace Rent_a_Car
                         scn.Close();
                         atempt = 1;
                         ;
-
+                        MessageBox.Show("Utilizator inserat cu succes!");
                     }
 
                     catch (Exception es)
@@ -161,9 +161,35 @@ namespace Rent_a_Car
         private void button1_Click(object sender, EventArgs e)
         {
             cautareuser();
+            this.Close();
         }
 
-        
-      
+        private void masiniBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.masiniBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.databaseDataSet);
+
+        }
+
+        private void Adaugareuser_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'databaseDataSet.masini' table. You can move, or remove it, as needed.
+            this.masiniTableAdapter.Fill(this.databaseDataSet.masini);
+
+        }
+
+        private void fillByToolStripButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.masiniTableAdapter.FillBy(this.databaseDataSet.masini);
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+
+        }
     }
 }

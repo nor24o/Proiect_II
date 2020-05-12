@@ -44,7 +44,6 @@
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.databaseDataSet = new Rent_a_Car.databaseDataSet();
             this.rezervariBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.rezervariTableAdapter = new Rent_a_Car.databaseDataSetTableAdapters.rezervariTableAdapter();
             this.tableAdapterManager = new Rent_a_Car.databaseDataSetTableAdapters.TableAdapterManager();
             this.rezervariBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
@@ -231,12 +230,10 @@
             // 
             // rezervariTableAdapter
             // 
-            this.rezervariTableAdapter.ClearBeforeFill = true;
             // 
             // tableAdapterManager
             // 
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.rezervariTableAdapter = this.rezervariTableAdapter;
             this.tableAdapterManager.UpdateOrder = Rent_a_Car.databaseDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.usersTableAdapter = null;
             // 
@@ -483,7 +480,6 @@
         private System.Windows.Forms.TextBox textBox5;
         private databaseDataSet databaseDataSet;
         private System.Windows.Forms.BindingSource rezervariBindingSource;
-        private databaseDataSetTableAdapters.rezervariTableAdapter rezervariTableAdapter;
         private databaseDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.BindingNavigator rezervariBindingNavigator;
         private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;

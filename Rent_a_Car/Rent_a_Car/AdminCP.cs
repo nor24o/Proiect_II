@@ -125,6 +125,8 @@ namespace Rent_a_Car
 
                 dataGridView2.DataSource = fun.afisaredb("users");
 
+                MessageBox.Show("Ati eliminat cu succes datele!");
+
             }
         
         }
@@ -160,6 +162,8 @@ namespace Rent_a_Car
 
                 dataGridView1.DataSource = fun.afisaredb("masini");
 
+                MessageBox.Show("Ati eliminat cu succes datele!");
+
             }
         }
 
@@ -186,6 +190,11 @@ namespace Rent_a_Car
             AdaugareMasini newcar = new AdaugareMasini();
             newcar.Location = this.Location;
             newcar.Show();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

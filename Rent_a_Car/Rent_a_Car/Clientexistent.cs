@@ -52,7 +52,6 @@ namespace Rent_a_Car
         private void Form1_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'databaseDataSet.rezervari' table. You can move, or remove it, as needed.
-            this.rezervariTableAdapter.Fill(this.databaseDataSet.rezervari);
 
         }
         //interogheaza utilizatorul daca doreste sa inchida aplicatia 

@@ -1,0 +1,1 @@
+﻿SELECT marca, model, motorizare FROM masini

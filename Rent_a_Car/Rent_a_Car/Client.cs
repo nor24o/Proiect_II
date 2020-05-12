@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using System.Data.SqlClient;
 using System.IO;
+using System.Security.Cryptography.X509Certificates;
+using System.Globalization;
 
 namespace Rent_a_Car
 {
@@ -34,6 +36,8 @@ namespace Rent_a_Car
             InitializeComponent();
             this.Text = "Rent A Car";
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
+
+            
         }
         int atempt = 0;
 
@@ -307,6 +311,16 @@ namespace Rent_a_Car
         private void numeutilizator_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void calendar_ridicare_DateChanged(object sender, DateRangeEventArgs e)
+        {
+            Console.WriteLine(calendar_ridicare.SelectionRange.Start.ToShortDateString());
+        }
+
+        private void calendar_returnare_DateChanged(object sender, DateRangeEventArgs e)
+        {
+            Console.WriteLine(calendar_returnare.SelectionRange.Start.ToShortDateString());
         }
     }
 }
