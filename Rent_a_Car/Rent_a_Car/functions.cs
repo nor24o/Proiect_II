@@ -121,7 +121,7 @@ namespace Rent_a_Car
         public String rezervariUser(String username)
         {
             SqlConnection conn = new SqlConnection(argdb);
-            SqlCommand command = new SqlCommand("select count (*) from rezervari where clientid = '" + getIDUser(username) + "'");
+            SqlCommand command = new SqlCommand("select count (*) from masini where clientid = '" + getIDUser(username) + "'");
             command.Connection = conn;
             conn.Open();
             string value = (string)command.ExecuteScalar().ToString();

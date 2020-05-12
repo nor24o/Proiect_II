@@ -454,7 +454,7 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.databaseDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rezervariBindingSource)).EndInit();
+
             ((System.ComponentModel.ISupportInitialize)(this.rezervariBindingNavigator)).EndInit();
             this.rezervariBindingNavigator.ResumeLayout(false);
             this.rezervariBindingNavigator.PerformLayout();

@@ -66,6 +66,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.usersTableAdapter = new Rent_a_Car.databaseDataSetTableAdapters.usersTableAdapter();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -170,6 +171,7 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.Transparent;
+            this.panel4.Controls.Add(this.checkBox1);
             this.panel4.Controls.Add(this.parola);
             this.panel4.Controls.Add(this.numeutilizator);
             this.panel4.Controls.Add(this.label14);
@@ -262,7 +264,7 @@
             // 
             this.telefon.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.telefon.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.telefon.Location = new System.Drawing.Point(164, 464);
+            this.telefon.Location = new System.Drawing.Point(162, 436);
             this.telefon.MaxLength = 10;
             this.telefon.Name = "telefon";
             this.telefon.Size = new System.Drawing.Size(216, 29);
@@ -307,7 +309,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.SystemColors.Control;
-            this.label6.Location = new System.Drawing.Point(5, 468);
+            this.label6.Location = new System.Drawing.Point(3, 440);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(112, 25);
             this.label6.TabIndex = 8;
@@ -494,6 +496,17 @@
             // 
             this.usersTableAdapter.ClearBeforeFill = true;
             // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.checkBox1.Location = new System.Drawing.Point(185, 486);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(224, 17);
+            this.checkBox1.TabIndex = 105;
+            this.checkBox1.Text = "Sunt de acord cu termenii si conditiile dvs.";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
             // Client
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -566,5 +579,6 @@
         private System.Windows.Forms.TextBox parola;
         private System.Windows.Forms.TextBox numeutilizator;
         private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }

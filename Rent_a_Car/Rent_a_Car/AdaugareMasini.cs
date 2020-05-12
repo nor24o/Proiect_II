@@ -28,15 +28,17 @@ namespace Rent_a_Car
 
             string marca = text_marca.Text;
             string model = text_model.Text;
-            string disponibilitate = text_dispo.Text;
             string motorizare = text_motorizare.Text;
+            string rezervare = monthCalendar1.SelectionRange.Start.ToShortDateString();
+            string predare = monthCalendar2.SelectionRange.Start.ToShortDateString();
+            string clientid = textBox1.Text;
 
 
             try
 
             {
                 con.Open();
-                String inserare = "Insert into masini(Marca,Model,Disponibilitate,Motorizare) " +"values('" + marca + "','" + model + "','" + disponibilitate + "','" + motorizare + "')";
+                String inserare = "Insert into masini(Marca,Model,Motorizare,rezervare,predare,clientid) " +"values('" + marca + "','" + model + "','" + motorizare + "','" + rezervare + "','" + predare + "','" + clientid + "')";
                  Console.WriteLine(inserare);
                 // SqlConnection mySqlConnection = new SqlConnection(connString);
 
@@ -52,6 +54,20 @@ namespace Rent_a_Car
 
             { MessageBox.Show(es.Message); }
 
+
+        }
+
+        private void usersBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.usersBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.databaseDataSet);
+
+        }
+
+        private void AdaugareMasini_Load(object sender, EventArgs e)
+        {
+           
 
         }
     }
