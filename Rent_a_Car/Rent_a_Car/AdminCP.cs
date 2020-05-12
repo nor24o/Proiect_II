@@ -180,5 +180,12 @@ namespace Rent_a_Car
 
                         };
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            AdaugareMasini newcar = new AdaugareMasini();
+            newcar.Location = this.Location;
+            newcar.Show();
+        }
     }
 }

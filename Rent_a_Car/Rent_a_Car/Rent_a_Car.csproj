@@ -84,6 +84,12 @@
     <Compile Include="AboutBox1.Designer.cs">
       <DependentUpon>AboutBox1.cs</DependentUpon>
     </Compile>
+    <Compile Include="AdaugareMasini.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdaugareMasini.Designer.cs">
+      <DependentUpon>AdaugareMasini.cs</DependentUpon>
+    </Compile>
     <Compile Include="Adaugareuser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -130,6 +136,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AboutBox1.resx">
       <DependentUpon>AboutBox1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdaugareMasini.resx">
+      <DependentUpon>AdaugareMasini.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Adaugareuser.resx">
       <DependentUpon>Adaugareuser.cs</DependentUpon>

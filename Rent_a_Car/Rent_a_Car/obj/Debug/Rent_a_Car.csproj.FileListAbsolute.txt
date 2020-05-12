@@ -34,3 +34,40 @@ E:\AN3-S2\Info. Indust\Proiect II\Rent_a_Car\Rent_a_Car\obj\Debug\Rent_a_Car.csp
 E:\AN3-S2\Info. Indust\Proiect II\Rent_a_Car\Rent_a_Car\obj\Debug\Rent_a_Car.csproj.CoreCompileInputs.cache
 E:\AN3-S2\Info. Indust\Proiect II\Rent_a_Car\Rent_a_Car\obj\Debug\Rent_a_Car.exe
 E:\AN3-S2\Info. Indust\Proiect II\Rent_a_Car\Rent_a_Car\obj\Debug\Rent_a_Car.pdb
+C:\Users\Xavier\Desktop\Microsoft MS-DOS 6.2 (6.20.1011) (1993-08-11) (beta) (3.5-1.44mb)\Proiect_II\Rent_a_Car\Rent_a_Car\bin\Debug\database.mdf
+C:\Users\Xavier\Desktop\Microsoft MS-DOS 6.2 (6.20.1011) (1993-08-11) (beta) (3.5-1.44mb)\Proiect_II\Rent_a_Car\Rent_a_Car\bin\Debug\database_log.ldf
+C:\Users\Xavier\Desktop\Microsoft MS-DOS 6.2 (6.20.1011) (1993-08-11) (beta) (3.5-1.44mb)\Proiect_II\Rent_a_Car\Rent_a_Car\bin\Debug\Rent_a_Car.exe.config
+C:\Users\Xavier\Desktop\Microsoft MS-DOS 6.2 (6.20.1011) (1993-08-11) (beta) (3.5-1.44mb)\Proiect_II\Rent_a_Car\Rent_a_Car\bin\Debug\Rent_a_Car.exe
+C:\Users\Xavier\Desktop\Microsoft MS-DOS 6.2 (6.20.1011) (1993-08-11) (beta) (3.5-1.44mb)\Proiect_II\Rent_a_Car\Rent_a_Car\bin\Debug\Rent_a_Car.pdb
+C:\Users\Xavier\Desktop\Microsoft MS-DOS 6.2 (6.20.1011) (1993-08-11) (beta) (3.5-1.44mb)\Proiect_II\Rent_a_Car\Rent_a_Car\obj\Debug\Rent_a_Car.csprojAssemblyReference.cache
+C:\Users\Xavier\Desktop\Microsoft MS-DOS 6.2 (6.20.1011) (1993-08-11) (beta) (3.5-1.44mb)\Proiect_II\Rent_a_Car\Rent_a_Car\obj\Debug\Rent_a_Car.AboutBox1.resources
+C:\Users\Xavier\Desktop\Microsoft MS-DOS 6.2 (6.20.1011) (1993-08-11) (beta) (3.5-1.44mb)\Proiect_II\Rent_a_Car\Rent_a_Car\obj\Debug\Rent_a_Car.Adaugareuser.resources
+C:\Users\Xavier\Desktop\Microsoft MS-DOS 6.2 (6.20.1011) (1993-08-11) (beta) (3.5-1.44mb)\Proiect_II\Rent_a_Car\Rent_a_Car\obj\Debug\Rent_a_Car.Client.resources
+C:\Users\Xavier\Desktop\Microsoft MS-DOS 6.2 (6.20.1011) (1993-08-11) (beta) (3.5-1.44mb)\Proiect_II\Rent_a_Car\Rent_a_Car\obj\Debug\Rent_a_Car.Clientexistent.resources
+C:\Users\Xavier\Desktop\Microsoft MS-DOS 6.2 (6.20.1011) (1993-08-11) (beta) (3.5-1.44mb)\Proiect_II\Rent_a_Car\Rent_a_Car\obj\Debug\Rent_a_Car.LoginAdmin.resources
+C:\Users\Xavier\Desktop\Microsoft MS-DOS 6.2 (6.20.1011) (1993-08-11) (beta) (3.5-1.44mb)\Proiect_II\Rent_a_Car\Rent_a_Car\obj\Debug\Rent_a_Car.LoginForm.resources
+C:\Users\Xavier\Desktop\Microsoft MS-DOS 6.2 (6.20.1011) (1993-08-11) (beta) (3.5-1.44mb)\Proiect_II\Rent_a_Car\Rent_a_Car\obj\Debug\Rent_a_Car.AdminCP.resources
+C:\Users\Xavier\Desktop\Microsoft MS-DOS 6.2 (6.20.1011) (1993-08-11) (beta) (3.5-1.44mb)\Proiect_II\Rent_a_Car\Rent_a_Car\obj\Debug\Rent_a_Car.Properties.Resources.resources
+C:\Users\Xavier\Desktop\Microsoft MS-DOS 6.2 (6.20.1011) (1993-08-11) (beta) (3.5-1.44mb)\Proiect_II\Rent_a_Car\Rent_a_Car\obj\Debug\Rent_a_Car.csproj.GenerateResource.cache
+C:\Users\Xavier\Desktop\Microsoft MS-DOS 6.2 (6.20.1011) (1993-08-11) (beta) (3.5-1.44mb)\Proiect_II\Rent_a_Car\Rent_a_Car\obj\Debug\Rent_a_Car.csproj.CoreCompileInputs.cache
+C:\Users\Xavier\Desktop\Microsoft MS-DOS 6.2 (6.20.1011) (1993-08-11) (beta) (3.5-1.44mb)\Proiect_II\Rent_a_Car\Rent_a_Car\obj\Debug\Rent_a_Car.exe
+C:\Users\Xavier\Desktop\Microsoft MS-DOS 6.2 (6.20.1011) (1993-08-11) (beta) (3.5-1.44mb)\Proiect_II\Rent_a_Car\Rent_a_Car\obj\Debug\Rent_a_Car.pdb
+C:\Users\Xavier\Desktop\cip\Proiect_II\Rent_a_Car\Rent_a_Car\obj\Debug\Rent_a_Car.csprojAssemblyReference.cache
+C:\Users\Xavier\Desktop\cip\Proiect_II\Rent_a_Car\Rent_a_Car\obj\Debug\Rent_a_Car.AboutBox1.resources
+C:\Users\Xavier\Desktop\cip\Proiect_II\Rent_a_Car\Rent_a_Car\obj\Debug\Rent_a_Car.Adaugareuser.resources
+C:\Users\Xavier\Desktop\cip\Proiect_II\Rent_a_Car\Rent_a_Car\obj\Debug\Rent_a_Car.Client.resources
+C:\Users\Xavier\Desktop\cip\Proiect_II\Rent_a_Car\Rent_a_Car\obj\Debug\Rent_a_Car.Clientexistent.resources
+C:\Users\Xavier\Desktop\cip\Proiect_II\Rent_a_Car\Rent_a_Car\obj\Debug\Rent_a_Car.LoginAdmin.resources
+C:\Users\Xavier\Desktop\cip\Proiect_II\Rent_a_Car\Rent_a_Car\obj\Debug\Rent_a_Car.LoginForm.resources
+C:\Users\Xavier\Desktop\cip\Proiect_II\Rent_a_Car\Rent_a_Car\obj\Debug\Rent_a_Car.AdminCP.resources
+C:\Users\Xavier\Desktop\cip\Proiect_II\Rent_a_Car\Rent_a_Car\obj\Debug\Rent_a_Car.Properties.Resources.resources
+C:\Users\Xavier\Desktop\cip\Proiect_II\Rent_a_Car\Rent_a_Car\obj\Debug\Rent_a_Car.csproj.GenerateResource.cache
+C:\Users\Xavier\Desktop\cip\Proiect_II\Rent_a_Car\Rent_a_Car\obj\Debug\Rent_a_Car.csproj.CoreCompileInputs.cache
+C:\Users\Xavier\Desktop\cip\Proiect_II\Rent_a_Car\Rent_a_Car\obj\Debug\Rent_a_Car.exe
+C:\Users\Xavier\Desktop\cip\Proiect_II\Rent_a_Car\Rent_a_Car\obj\Debug\Rent_a_Car.pdb
+C:\Users\Xavier\Desktop\cip\Proiect_II\Rent_a_Car\Rent_a_Car\bin\Debug\database.mdf
+C:\Users\Xavier\Desktop\cip\Proiect_II\Rent_a_Car\Rent_a_Car\bin\Debug\database_log.ldf
+C:\Users\Xavier\Desktop\cip\Proiect_II\Rent_a_Car\Rent_a_Car\bin\Debug\Rent_a_Car.exe.config
+C:\Users\Xavier\Desktop\cip\Proiect_II\Rent_a_Car\Rent_a_Car\bin\Debug\Rent_a_Car.exe
+C:\Users\Xavier\Desktop\cip\Proiect_II\Rent_a_Car\Rent_a_Car\bin\Debug\Rent_a_Car.pdb
+C:\Users\Xavier\Desktop\cip\Proiect_II\Rent_a_Car\Rent_a_Car\obj\Debug\Rent_a_Car.AdaugareMasini.resources

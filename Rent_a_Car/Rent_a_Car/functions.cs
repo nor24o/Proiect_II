@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 namespace Rent_a_Car
 {
    public class functions
-    {
+    {                        
         public static string argdb = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\database.mdf;Integrated Security=True;Connect Timeout=30";
         public DataTable afisaredb(string identificator)
         {

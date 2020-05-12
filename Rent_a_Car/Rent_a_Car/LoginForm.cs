@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using System.Data.SqlClient;
+using System.IO;
 
 namespace Rent_a_Car
 {
@@ -150,7 +151,8 @@ namespace Rent_a_Car
 
         private void LoginForm_Load(object sender, EventArgs e)
         {
-
+             AppDomain.CurrentDomain.SetData("DataDirectory", Directory.GetCurrentDirectory());
+         //   Console.WriteLine(System.IO.Path.GetDirectoryName(Application.ExecutablePath));
         }
 
         private void button5_Click(object sender, EventArgs e)
