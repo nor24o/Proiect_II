@@ -96,11 +96,11 @@
     <Compile Include="Adaugareuser.Designer.cs">
       <DependentUpon>Adaugareuser.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="modifuser.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="modifuser.Designer.cs">
+      <DependentUpon>modifuser.cs</DependentUpon>
     </Compile>
     <Compile Include="functions.cs" />
     <Compile Include="Clientexistent.cs">
@@ -155,8 +155,8 @@
     <EmbeddedResource Include="Clientexistent.resx">
       <DependentUpon>Clientexistent.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="modifuser.resx">
+      <DependentUpon>modifuser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginAdmin.resx">
       <DependentUpon>LoginAdmin.cs</DependentUpon>
@@ -169,14 +169,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <None Include="databaseDataSet.xsc">
       <DependentUpon>databaseDataSet.xsd</DependentUpon>
     </None>
@@ -192,6 +187,11 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -220,11 +220,9 @@
     </Content>
     <Content Include="icons8_car_rental.ico" />
     <None Include="Resources\32394.png" />
-    <None Include="Resources\3294.jpg" />
     <None Include="Resources\qIlKE1.jpg" />
     <None Include="Resources\5e487c8509d8586866427ea4d165e5f8.jpg" />
     <None Include="Resources\original.jpg" />
-    <None Include="Resources\1009.jpg" />
     <None Include="Resources\blurred-traffic-light-trails-road_1359-1009.jpg" />
     <None Include="Resources\detail-one-led-headlights-modern-car-black-background_67340-221.jpg" />
     <None Include="Resources\n1hm8ralgeh2txi4h5hf78vuoghjjebm9psbdshg8fixiwivqipn9d4d0tkpmckp-.jpg" />
