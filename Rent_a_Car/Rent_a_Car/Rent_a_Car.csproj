@@ -201,6 +201,21 @@
       <DependentUpon>database.mdf</DependentUpon>
     </Content>
     <Content Include="icons8_car_rental.ico" />
+    <None Include="Resources\32394.png" />
+    <None Include="Resources\3294.jpg" />
+    <None Include="Resources\qIlKE1.jpg" />
+    <None Include="Resources\5e487c8509d8586866427ea4d165e5f8.jpg" />
+    <None Include="Resources\original.jpg" />
+    <None Include="Resources\1009.jpg" />
+    <None Include="Resources\blurred-traffic-light-trails-road_1359-1009.jpg" />
+    <None Include="Resources\detail-one-led-headlights-modern-car-black-background_67340-221.jpg" />
+    <None Include="Resources\n1hm8ralgeh2txi4h5hf78vuoghjjebm9psbdshg8fixiwivqipn9d4d0tkpmckp-.jpg" />
+    <None Include="Resources\0dxVte.jpg" />
+    <None Include="Resources\red-modern-car-headlights-black-background_67340-169.jpg" />
+    <None Include="Resources\food.png" />
+    <None Include="Resources\computer %282%29.png" />
+    <None Include="Resources\computer %281%29.png" />
+    <None Include="Resources\computer.png" />
     <None Include="Resources\bg-login.jpg" />
     <None Include="Resources\icons8_car_rental.ico" />
   </ItemGroup>

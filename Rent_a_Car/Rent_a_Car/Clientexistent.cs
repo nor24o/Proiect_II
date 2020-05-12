@@ -13,7 +13,7 @@ namespace Rent_a_Car
 {
     public partial class Clientexistent : Form
     {
-
+   
         #region
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
@@ -34,10 +34,25 @@ namespace Rent_a_Car
             this.Text = "Rent A Car";
             this.FormBorderStyle = FormBorderStyle.None;
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
+
+            // afisare detalii utilizator in text field
+            System.Windows.Forms.Form f = System.Windows.Forms.Application.OpenForms["LoginForm"];
+            String id = ((LoginForm)f).username.Text;
+
+            functions fun = new functions();
+            textBox1.Text = fun.numeUser(id);
+            textBox3.Text = fun.prenumeUser(id);
+            textBox4.Text = fun.adresaUser(id);
+            textBox5.Text = fun.rezervariUser(id);
+
+
+
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'databaseDataSet.rezervari' table. You can move, or remove it, as needed.
+            this.rezervariTableAdapter.Fill(this.databaseDataSet.rezervari);
 
         }
         //interogheaza utilizatorul daca doreste sa inchida aplicatia 
@@ -86,6 +101,24 @@ namespace Rent_a_Car
         private void button2_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+ 
         }
+
+        private void rezervariBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.rezervariBindingSource.EndEdit();
+            
+            functions fun = new functions();
+            DataSet n = this.databaseDataSet;
+            DataTable tb = n.Tables["rezervari"];
+            System.Windows.Forms.Form f = System.Windows.Forms.Application.OpenForms["LoginForm"];
+            String id = ((LoginForm)f).username.Text;
+            DataRow[] found = tb.Select("clientid = " + fun.getIDUser(id));
+
+            this.tableAdapterManager.UpdateAll(this.databaseDataSet);
+
+        }
+
     }
 }

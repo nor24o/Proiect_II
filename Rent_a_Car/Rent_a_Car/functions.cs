@@ -12,11 +12,10 @@ namespace Rent_a_Car
 {
    public class functions
     {
+        public static string argdb = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\database.mdf;Integrated Security=True;Connect Timeout=30";
         public DataTable afisaredb(string identificator)
         {
-
-            
-            SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Xavier\Desktop\Proiect_II_Rent_a_car\Proiect_II\Rent_a_Car\Rent_a_Car\database.mdf;Integrated Security=True;Connect Timeout=30");
+            SqlConnection con = new SqlConnection(argdb);
            
             SqlCommand cmd = new SqlCommand("select * from "+identificator+"", con);
             con.Open();
@@ -32,7 +31,7 @@ namespace Rent_a_Car
         {
 
 
-            string connString = (@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Xavier\Desktop\Proiect_II_Rent_a_car\Proiect_II\Rent_a_Car\Rent_a_Car\database.mdf;Integrated Security=True;Connect Timeout=30");
+            string connString = (argdb);
             SqlConnection mySqlConnection = new SqlConnection(connString);
             mySqlConnection.Open();
 
@@ -50,7 +49,7 @@ namespace Rent_a_Car
         public void UpdateRegistrationTable(string id,string username,string password, string nume, string prenume, string CNP, string sex, string varsta, string adresa, string telefon, string ridicat, string returnat)
         {
 
-            SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Xavier\Desktop\Proiect_II_Rent_a_car\Proiect_II\Rent_a_Car\Rent_a_Car\database.mdf;Integrated Security=True;Connect Timeout=30");
+            SqlConnection con = new SqlConnection(argdb);
             con.Open();
             SqlCommand cmd = new SqlCommand("update users set username=@UserName,password=@Password,nume=@nume, prenume=@prenume, CNP=@cnp, sex=@sex" +
                 ", varsta=@varsta, adresa=@adresa, telefon=@telefon, ridicat=@ridicat, returnat=@returnat where Id=@ID", con);
@@ -72,13 +71,73 @@ namespace Rent_a_Car
 
         public bool stergeutilizator(int id,string numedb,string db_id)
         {
-            SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Xavier\Desktop\Proiect_II_Rent_a_car\Proiect_II\Rent_a_Car\Rent_a_Car\database.mdf;Integrated Security=True;Connect Timeout=30");
+            SqlConnection con = new SqlConnection(argdb);
             con.Open();
             SqlCommand cmd = new SqlCommand("delete from " + numedb + " where "+db_id+"=@id", con);
             cmd.Parameters.AddWithValue("@id", id);
             cmd.ExecuteNonQuery();
             con.Close();
             return true;
+        }
+
+        public String numeUser(String username)
+        {
+            SqlConnection conn = new SqlConnection(argdb);
+            SqlCommand command = new SqlCommand("select nume from users where username = '"+username+"'");
+            command.Connection = conn;
+            conn.Open();
+            string value = (string)command.ExecuteScalar();
+            conn.Close();
+            Console.WriteLine(value);
+            return value;
+        }
+
+        public String prenumeUser(String username)
+        {
+            SqlConnection conn = new SqlConnection(argdb);
+            SqlCommand command = new SqlCommand("select prenume from users where username = '" + username + "'");
+            command.Connection = conn;
+            conn.Open();
+            string value = (string)command.ExecuteScalar();
+            conn.Close();
+            Console.WriteLine(value);
+            return value;
+        }
+
+        public String adresaUser(String username)
+        {
+            SqlConnection conn = new SqlConnection(argdb);
+            SqlCommand command = new SqlCommand("select adresa from users where username = '" + username + "'");
+            command.Connection = conn;
+            conn.Open();
+            string value = (string)command.ExecuteScalar();
+            conn.Close();
+            Console.WriteLine(value);
+            return value;
+        }
+
+        public String rezervariUser(String username)
+        {
+            SqlConnection conn = new SqlConnection(argdb);
+            SqlCommand command = new SqlCommand("select count (*) from rezervari where clientid = '" + getIDUser(username) + "'");
+            command.Connection = conn;
+            conn.Open();
+            string value = (string)command.ExecuteScalar().ToString();
+            conn.Close();
+            Console.WriteLine(value);
+            return value;
+        }
+
+        public String getIDUser(String username)
+        {
+            SqlConnection conn = new SqlConnection(argdb);
+            SqlCommand command = new SqlCommand("select id from users where username = '" + username + "'");
+            command.Connection = conn;
+            conn.Open();
+            string value = (string)command.ExecuteScalar().ToString();
+            conn.Close();
+            Console.WriteLine(value);
+            return value;
         }
 
 

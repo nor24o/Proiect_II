@@ -54,7 +54,7 @@ namespace Rent_a_Car
             if ((username != null) && (username.TextLength > 0) && ((password != null) && (password.TextLength > 0)))
             {
                 SqlConnection scn = new SqlConnection();
-                scn.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Xavier\Desktop\Proiect_II_Rent_a_car\Proiect_II\Rent_a_Car\Rent_a_Car\database.mdf;Integrated Security=True;Connect Timeout=30";
+                scn.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\database.mdf;Integrated Security=True;Connect Timeout=30";
                 string cautare_dupa = "select count (*) as cnt from admins where nume=@usr and parola=@pass ";
                 SqlCommand scmd = new SqlCommand(cautare_dupa, scn);
                 scmd.Parameters.Clear();

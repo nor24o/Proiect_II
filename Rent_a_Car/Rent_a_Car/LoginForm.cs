@@ -35,7 +35,12 @@ namespace Rent_a_Car
             this.Text = "Rent A Car";
             this.FormBorderStyle = FormBorderStyle.None;
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
+
+
+     
         }
+
+
 
 
         //interogheaza utilizatorul daca doreste sa inchida aplicatia 
@@ -82,7 +87,7 @@ namespace Rent_a_Car
             if ((username != null)&&(username.TextLength > 0) && ((password != null) && (username.TextLength > 0)))
             {
                 SqlConnection scn = new SqlConnection();
-                scn.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Xavier\Desktop\Proiect_II_Rent_a_car\Proiect_II\Rent_a_Car\Rent_a_Car\database.mdf;Integrated Security=True;Connect Timeout=30";
+                scn.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\database.mdf;Integrated Security=True;Connect Timeout=30";
                 string cautare_dupa = "select count (*) as cnt from users where username=@usr and password=@pass ";
                 SqlCommand scmd = new SqlCommand(cautare_dupa, scn);
                 scmd.Parameters.Clear();
@@ -97,8 +102,6 @@ namespace Rent_a_Car
                     clientexistent.Location = this.Location;
                     Hide();
                     clientexistent.Show();
-
-
                 }
 
                 else

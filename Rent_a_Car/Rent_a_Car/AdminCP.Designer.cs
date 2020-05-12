@@ -303,7 +303,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DimGray;
             this.BackgroundImage = global::Rent_a_Car.Properties.Resources.bg_login;
-            this.ClientSize = new System.Drawing.Size(1202, 571);
+            this.ClientSize = new System.Drawing.Size(1202, 469);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.panel3);
