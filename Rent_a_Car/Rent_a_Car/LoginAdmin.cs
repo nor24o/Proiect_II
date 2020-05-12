@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using System.Data.SqlClient;
+using System.IO;
 
 namespace Rent_a_Car
 {
@@ -53,8 +54,9 @@ namespace Rent_a_Car
         {
             if ((username != null) && (username.TextLength > 0) && ((password != null) && (password.TextLength > 0)))
             {
+                String cale = Directory.GetParent(Environment.CurrentDirectory).Parent.FullName;
                 SqlConnection scn = new SqlConnection();
-                scn.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\database.mdf;Integrated Security=True;Connect Timeout=30";
+                scn.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + cale + "\\database.mdf;Integrated Security=True;Connect Timeout=30";
                 string cautare_dupa = "select count (*) as cnt from admins where nume=@usr and parola=@pass ";
                 SqlCommand scmd = new SqlCommand(cautare_dupa, scn);
                 scmd.Parameters.Clear();

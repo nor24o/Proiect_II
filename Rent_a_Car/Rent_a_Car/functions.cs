@@ -3,6 +3,7 @@ using System.CodeDom;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.IO;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
@@ -11,8 +12,9 @@ using System.Threading.Tasks;
 namespace Rent_a_Car
 {
    public class functions
-    {                        
-        public static string argdb = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\database.mdf;Integrated Security=True;Connect Timeout=30";
+    {
+        public static String cale = Directory.GetParent(Environment.CurrentDirectory).Parent.FullName;
+        public static string argdb = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + cale + "\\database.mdf;Integrated Security=True;Connect Timeout=30";
         public DataTable afisaredb(string identificator)
         {
             SqlConnection con = new SqlConnection(argdb);

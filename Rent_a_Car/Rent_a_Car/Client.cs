@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using System.Data.SqlClient;
+using System.IO;
 
 namespace Rent_a_Car
 {
@@ -177,8 +178,9 @@ namespace Rent_a_Car
         private void cautareuser()
         {
 
+            String cale = Directory.GetParent(Environment.CurrentDirectory).Parent.FullName;
             SqlConnection scn = new SqlConnection();
-            scn.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\database.mdf;Integrated Security=True;Connect Timeout=30";
+            scn.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + cale + "\\database.mdf;Integrated Security=True;Connect Timeout=30";
             string cautare_dupa = "select count (*) as cnt from users where username=@usr";
             SqlCommand scmd = new SqlCommand(cautare_dupa, scn);
             scmd.Parameters.Clear();

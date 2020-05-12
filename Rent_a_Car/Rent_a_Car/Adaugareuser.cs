@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -90,8 +91,9 @@ namespace Rent_a_Car
         private void cautareuser()
         {
 
+            String cale = Directory.GetParent(Environment.CurrentDirectory).Parent.FullName;
             SqlConnection scn = new SqlConnection();
-            scn.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\database.mdf;Integrated Security=True;Connect Timeout=30";
+            scn.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + cale + "\\database.mdf;Integrated Security=True;Connect Timeout=30";
             string cautare_dupa = "select count (*) as cnt from users where username=@usr";
             SqlCommand scmd = new SqlCommand(cautare_dupa, scn);
             scmd.Parameters.Clear();

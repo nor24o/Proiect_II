@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,7 +21,8 @@ namespace Rent_a_Car
 
         private void btn_salvare_masina_Click(object sender, EventArgs e)
         {
-            string argdb = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\database.mdf;Integrated Security=True;Connect Timeout=30";
+            String cale = Directory.GetParent(Environment.CurrentDirectory).Parent.FullName;
+            string argdb = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename="+ cale + "\\database.mdf;Integrated Security=True;Connect Timeout=30";
             SqlConnection con = new SqlConnection(argdb);
 
 
