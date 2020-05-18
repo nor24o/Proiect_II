@@ -8,12 +8,10 @@
 6 update functie cnp,\
 7 update interfata ,\
 8 confirmare iesire din aplicatie,\
-pentru teste,\
-usernames = { "user" };,\
-passwords = { "pass" };,\
-adminuser = { "admin" };,\
-adminpass = { "adminn" };,\
+functionaliate Panou control,\
 
+usernames = { "user" };,\
+passwords = { "parola" };,\
 
 admin user:norbi    :)_)
 password :1234
