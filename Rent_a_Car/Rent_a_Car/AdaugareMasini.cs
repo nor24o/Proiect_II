@@ -36,8 +36,13 @@ namespace Rent_a_Car
         private void btn_salvare_masina_Click(object sender, EventArgs e)
         {
             String cale = Directory.GetParent(Environment.CurrentDirectory).Parent.FullName;
-            string argdb = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename="+ cale + "\\database.mdf;Integrated Security=True;Connect Timeout=30";
+            string argdb = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + cale + "\\database.mdf;Integrated Security=True;Connect Timeout=30";
             SqlConnection con = new SqlConnection(argdb);
+
+    
+
+
+
 
 
             string marca = text_marca.Text;
@@ -96,7 +101,18 @@ namespace Rent_a_Car
            
 
         }
-
-        
+        string imageLocation ="";
+        private void button1_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog dialog = new OpenFileDialog();
+            dialog.Filter = "png files(*.png)|*.png|jpg files(*.jpg)|*.jpg|All files(*.*)|*.*";
+            if (dialog.ShowDialog()==DialogResult.OK)
+            { 
+                imageLocation = dialog.FileName.ToString();
+                pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
+                pictureBox1.ImageLocation = imageLocation;
+                
+            }
+        }
     }
 }

@@ -53,7 +53,7 @@ namespace Rent_a_Car
         #endregion
 
 
-
+        functions fun = new functions();
         private void button4_Click(object sender, EventArgs e)
         {
 
@@ -83,7 +83,7 @@ namespace Rent_a_Car
         {
 
 
-            functions fun = new functions();
+          
             dataGridView1.DataSource = fun.afisaredb("masini");
             dataGridView2.DataSource = fun.afisaredb("users");
         }
@@ -95,13 +95,13 @@ namespace Rent_a_Car
 
         private void button1_Click(object sender, EventArgs e)
         {
-            functions fun = new functions();
+           
             dataGridView1.DataSource = fun.afisaredb("masini");
         }
 
         private void button9_Click(object sender, EventArgs e)
         {
-            functions fun = new functions();
+            
             dataGridView2.DataSource = fun.afisaredb("users");
         }
 
@@ -110,6 +110,7 @@ namespace Rent_a_Car
             Adaugareuser newusers = new Adaugareuser();
             newusers.Location = this.Location;
             newusers.Show();
+            dataGridView2.DataSource = fun.afisaredb("users");
         }
 
 
@@ -193,6 +194,7 @@ namespace Rent_a_Car
             AdaugareMasini newcar = new AdaugareMasini();
             newcar.Location = this.Location;
             newcar.Show();
+            dataGridView1.DataSource = fun.afisaredb("masini");
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -203,6 +205,7 @@ namespace Rent_a_Car
                 modificamasina modcar = new modificamasina(Int32.Parse(label3.Text));
                 modcar.Location = this.Location;
                 modcar.Show();
+                dataGridView1.DataSource = fun.afisaredb("masini");
 
             }
         }
@@ -215,6 +218,7 @@ namespace Rent_a_Car
                 modifuser moduser = new modifuser(Int32.Parse(label2.Text));
                 moduser.Location = this.Location;
                 moduser.Show();
+                dataGridView2.DataSource = fun.afisaredb("users");
 
             }
 

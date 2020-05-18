@@ -231,6 +231,7 @@
       <DependentUpon>database.mdf</DependentUpon>
     </Content>
     <Content Include="icons8_car_rental.ico" />
+    <None Include="Resources\volkswagen.png" />
     <None Include="Resources\32394.png" />
     <None Include="Resources\qIlKE1.jpg" />
     <None Include="Resources\5e487c8509d8586866427ea4d165e5f8.jpg" />

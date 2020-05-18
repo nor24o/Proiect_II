@@ -60,10 +60,13 @@
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.usersBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.databaseDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingNavigator)).BeginInit();
             this.usersBindingNavigator.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // text_model
@@ -71,7 +74,7 @@
             this.text_model.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.text_model.BackColor = System.Drawing.SystemColors.Window;
             this.text_model.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.text_model.Location = new System.Drawing.Point(259, 118);
+            this.text_model.Location = new System.Drawing.Point(258, 70);
             this.text_model.MaxLength = 30;
             this.text_model.Name = "text_model";
             this.text_model.Size = new System.Drawing.Size(363, 29);
@@ -82,7 +85,7 @@
             this.text_marca.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.text_marca.BackColor = System.Drawing.SystemColors.Window;
             this.text_marca.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.text_marca.Location = new System.Drawing.Point(258, 46);
+            this.text_marca.Location = new System.Drawing.Point(258, 26);
             this.text_marca.MaxLength = 30;
             this.text_marca.Name = "text_marca";
             this.text_marca.Size = new System.Drawing.Size(363, 29);
@@ -91,9 +94,10 @@
             // label8
             // 
             this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label8.Location = new System.Drawing.Point(99, 119);
+            this.label8.Location = new System.Drawing.Point(99, 70);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(71, 25);
             this.label8.TabIndex = 139;
@@ -102,8 +106,9 @@
             // label9
             // 
             this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(98, 48);
+            this.label9.Location = new System.Drawing.Point(99, 28);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(72, 25);
             this.label9.TabIndex = 138;
@@ -116,10 +121,10 @@
             this.btn_salvare_masina.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_salvare_masina.Font = new System.Drawing.Font("Times New Roman", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_salvare_masina.ForeColor = System.Drawing.Color.Black;
-            this.btn_salvare_masina.Location = new System.Drawing.Point(169, 564);
+            this.btn_salvare_masina.Location = new System.Drawing.Point(367, 543);
             this.btn_salvare_masina.Margin = new System.Windows.Forms.Padding(2);
             this.btn_salvare_masina.Name = "btn_salvare_masina";
-            this.btn_salvare_masina.Size = new System.Drawing.Size(365, 47);
+            this.btn_salvare_masina.Size = new System.Drawing.Size(276, 47);
             this.btn_salvare_masina.TabIndex = 137;
             this.btn_salvare_masina.Text = "Salvati";
             this.btn_salvare_masina.UseVisualStyleBackColor = false;
@@ -129,7 +134,7 @@
             // 
             this.text_motorizare.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.text_motorizare.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.text_motorizare.Location = new System.Drawing.Point(258, 187);
+            this.text_motorizare.Location = new System.Drawing.Point(258, 111);
             this.text_motorizare.MaxLength = 30;
             this.text_motorizare.Name = "text_motorizare";
             this.text_motorizare.Size = new System.Drawing.Size(363, 29);
@@ -138,8 +143,9 @@
             // label10
             // 
             this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.Color.Transparent;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(98, 186);
+            this.label10.Location = new System.Drawing.Point(99, 111);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(114, 25);
             this.label10.TabIndex = 134;
@@ -148,8 +154,9 @@
             // label11
             // 
             this.label11.AutoSize = true;
+            this.label11.BackColor = System.Drawing.Color.Transparent;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(98, 347);
+            this.label11.Location = new System.Drawing.Point(99, 185);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(111, 25);
             this.label11.TabIndex = 133;
@@ -158,8 +165,9 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(487, 347);
+            this.label1.Location = new System.Drawing.Point(99, 394);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(88, 25);
             this.label1.TabIndex = 142;
@@ -167,14 +175,14 @@
             // 
             // monthCalendar1
             // 
-            this.monthCalendar1.Location = new System.Drawing.Point(43, 381);
+            this.monthCalendar1.Location = new System.Drawing.Point(99, 219);
             this.monthCalendar1.Name = "monthCalendar1";
             this.monthCalendar1.TabIndex = 143;
             this.monthCalendar1.DateSelected += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar1_DateChanged);
             // 
             // monthCalendar2
             // 
-            this.monthCalendar2.Location = new System.Drawing.Point(417, 381);
+            this.monthCalendar2.Location = new System.Drawing.Point(99, 428);
             this.monthCalendar2.Name = "monthCalendar2";
             this.monthCalendar2.TabIndex = 144;
             this.monthCalendar2.DateSelected += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar2_DateChanged);
@@ -182,8 +190,9 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(99, 257);
+            this.label2.Location = new System.Drawing.Point(99, 148);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(67, 25);
             this.label2.TabIndex = 145;
@@ -338,10 +347,30 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(258, 257);
+            this.textBox1.Location = new System.Drawing.Point(258, 154);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(170, 20);
             this.textBox1.TabIndex = 147;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(367, 219);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(254, 162);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 148;
+            this.pictureBox1.TabStop = false;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(418, 394);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(133, 23);
+            this.button1.TabIndex = 149;
+            this.button1.Text = "incarca imagine";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // AdaugareMasini
             // 
@@ -349,6 +378,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Rent_a_Car.Properties.Resources.bg_login;
             this.ClientSize = new System.Drawing.Size(719, 656);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.usersBindingNavigator);
             this.Controls.Add(this.label2);
@@ -363,6 +394,7 @@
             this.Controls.Add(this.text_motorizare);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label11);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "AdaugareMasini";
             this.Text = "AdaugareMasini";
             this.Load += new System.EventHandler(this.AdaugareMasini_Load);
@@ -371,6 +403,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingNavigator)).EndInit();
             this.usersBindingNavigator.ResumeLayout(false);
             this.usersBindingNavigator.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -408,5 +441,7 @@
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.ToolStripButton usersBindingNavigatorSaveItem;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button button1;
     }
 }

@@ -139,7 +139,7 @@
             this.btn_salvare_masina.Name = "btn_salvare_masina";
             this.btn_salvare_masina.Size = new System.Drawing.Size(365, 47);
             this.btn_salvare_masina.TabIndex = 151;
-            this.btn_salvare_masina.Text = "Actualizari";
+            this.btn_salvare_masina.Text = "Actualizare";
             this.btn_salvare_masina.UseVisualStyleBackColor = false;
             this.btn_salvare_masina.Click += new System.EventHandler(this.btn_salvare_masina_Click);
             // 
@@ -192,6 +192,7 @@
             this.Controls.Add(this.text_motorizare);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label11);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "modificamasina";
             this.Text = "modificamasina";
             this.ResumeLayout(false);

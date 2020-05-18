@@ -189,21 +189,21 @@
             // 
             this.textBox2.Location = new System.Drawing.Point(104, 62);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(431, 20);
+            this.textBox2.Size = new System.Drawing.Size(457, 20);
             this.textBox2.TabIndex = 11;
             // 
             // textBox3
             // 
             this.textBox3.Location = new System.Drawing.Point(104, 93);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(468, 20);
+            this.textBox3.Size = new System.Drawing.Size(457, 20);
             this.textBox3.TabIndex = 12;
             // 
             // textBox4
             // 
             this.textBox4.Location = new System.Drawing.Point(104, 125);
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
+            this.textBox4.Size = new System.Drawing.Size(89, 20);
             this.textBox4.TabIndex = 13;
             // 
             // textBox5
@@ -222,7 +222,7 @@
             // 
             // textBox7
             // 
-            this.textBox7.Location = new System.Drawing.Point(104, 284);
+            this.textBox7.Location = new System.Drawing.Point(114, 284);
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(268, 20);
             this.textBox7.TabIndex = 16;
@@ -231,7 +231,7 @@
             // 
             this.textBox8.Location = new System.Drawing.Point(114, 315);
             this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(232, 20);
+            this.textBox8.Size = new System.Drawing.Size(268, 20);
             this.textBox8.TabIndex = 17;
             // 
             // textBox9
@@ -280,6 +280,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "modifuser";
             this.Text = "Modificare user";
             this.Load += new System.EventHandler(this.modifuser_Load);

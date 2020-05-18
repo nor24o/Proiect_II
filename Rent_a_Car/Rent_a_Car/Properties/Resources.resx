@@ -124,11 +124,11 @@
   <data name="5e487c8509d8586866427ea4d165e5f8" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\5e487c8509d8586866427ea4d165e5f8.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="turn_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\turn_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="close_window_24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\close_window_24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="0dxVte" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\0dxVte.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="original" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\original.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="n1hm8ralgeh2txi4h5hf78vuoghjjebm9psbdshg8fixiwivqipn9d4d0tkpmckp-" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\n1hm8ralgeh2txi4h5hf78vuoghjjebm9psbdshg8fixiwivqipn9d4d0tkpmckp-.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -139,20 +139,23 @@
   <data name="food" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\food.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="32394" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\32394.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="computer" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\computer.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="close_window_24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\close_window_24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="0dxVte" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\0dxVte.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="computer (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\computer (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="original" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\original.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="qIlKE1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\qIlKE1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="bg-login" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bg-login.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="turn_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\turn_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="red-modern-car-headlights-black-background_67340-169" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\red-modern-car-headlights-black-background_67340-169.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -160,8 +163,8 @@
   <data name="blurred-traffic-light-trails-road_1359-1009" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\blurred-traffic-light-trails-road_1359-1009.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="qIlKE1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\qIlKE1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="computer (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\computer (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="computer (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\computer (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -169,7 +172,7 @@
   <data name="rencar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8_car_rental.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="32394" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\32394.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="volkswagen" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\volkswagen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
