@@ -102,7 +102,7 @@
             this.labelVersion.Name = "labelVersion";
             this.labelVersion.Size = new System.Drawing.Size(312, 17);
             this.labelVersion.TabIndex = 0;
-            this.labelVersion.Text = "Version:0.3";
+            this.labelVersion.Text = "Version:0.7";
             this.labelVersion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // labelCopyright
@@ -146,9 +146,9 @@
             this.textBoxDescription.Size = new System.Drawing.Size(312, 173);
             this.textBoxDescription.TabIndex = 23;
             this.textBoxDescription.TabStop = false;
-            this.textBoxDescription.Text = "Dezvoltatorii acestei aplicatii sunt \r\nManager Proiect_:Albu Ciprian Valentin\r\n\r\n" +
-    "Programator:Horvat Norbert\r\n\r\nProiectant B.D.:Aioanei Alexandru\r\n\r\nTester1:Csaki" +
-    " Lajios\r\n\r\nTester2:Kato Kristoffer";
+            this.textBoxDescription.Text = "Dezvoltatorii acestei aplicatii sunt:\r\n \r\nManager Proiect:Albu Ciprian Valentin\r\n" +
+    "\r\nProgramator:Horvat Norbert\r\n\r\nProiectant B.D.:Aioanei Alexandru\r\n\r\nTester1:Csa" +
+    "ki Lajios\r\n\r\nTester2:Kato Kristoffer";
             this.textBoxDescription.TextChanged += new System.EventHandler(this.textBoxDescription_TextChanged);
             // 
             // okButton

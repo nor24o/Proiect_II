@@ -191,5 +191,15 @@ namespace Rent_a_Car
             }
 
         }
+
+        private void masiniDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void masiniBindingSource_CurrentChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

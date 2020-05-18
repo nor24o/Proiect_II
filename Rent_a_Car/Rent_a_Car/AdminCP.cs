@@ -35,7 +35,7 @@ namespace Rent_a_Car
             InitializeComponent();
             this.Text = "Rent A Car";
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
-            
+
 
         }
         #region windows moving function 
@@ -112,7 +112,27 @@ namespace Rent_a_Car
             newusers.Show();
         }
 
-        
+
+
+
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        public void dataGridView2_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = dataGridView2.Rows[e.RowIndex];
+                label2.Text = row.Cells[0].Value.ToString();
+
+            };
+
+
+        }
+
         private void button7_Click(object sender, EventArgs e)
         {
             if (label2.Text != "")
@@ -128,24 +148,6 @@ namespace Rent_a_Car
                 MessageBox.Show("Ati eliminat cu succes datele!");
 
             }
-        
-        }
-
-        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            
-        }
-
-        public void dataGridView2_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-            if (e.RowIndex >= 0)
-            {
-                DataGridViewRow row = dataGridView2.Rows[e.RowIndex];
-                label2.Text = row.Cells[0].Value.ToString();
-                
-            };
-
 
         }
 
@@ -153,7 +155,7 @@ namespace Rent_a_Car
         {
             if (label3.Text != "")
             {
-                
+
                 functions fun = new functions();
 
                 Console.WriteLine(label3.Text);
@@ -168,21 +170,22 @@ namespace Rent_a_Car
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {       }
+        { }
 
         private void DataGridView2_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-           
+
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-             if (e.RowIndex >= 0)
-                        {
-                            DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
-                            label3.Text = row.Cells[0].Value.ToString();
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
+                label3.Text = row.Cells[0].Value.ToString();
 
-                        };
+
+            };
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -194,6 +197,29 @@ namespace Rent_a_Car
 
         private void button5_Click(object sender, EventArgs e)
         {
+            if (label3.Text != "" && label3.Text.Length > 0)
+            {
+
+                modificamasina modcar = new modificamasina(Int32.Parse(label3.Text));
+                modcar.Location = this.Location;
+                modcar.Show();
+
+            }
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            if (label2.Text != "" && label2.Text.Length > 0)
+            {
+
+                modifuser moduser = new modifuser(Int32.Parse(label2.Text));
+                moduser.Location = this.Location;
+                moduser.Show();
+
+            }
+
+
+
 
         }
     }

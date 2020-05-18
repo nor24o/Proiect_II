@@ -27,23 +27,24 @@ namespace Rent_a_Car
         );
         #endregion
 
-        public Clientexistent()
+        public Clientexistent(string id)
         {
             this.Icon = Properties.Resources.rencar;
             InitializeComponent();
             this.Text = "Rent A Car";
             this.FormBorderStyle = FormBorderStyle.None;
-            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
+            Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
 
-            // afisare detalii utilizator in text field
-            System.Windows.Forms.Form f = System.Windows.Forms.Application.OpenForms["LoginForm"];
+            /* afisare detalii utilizator in text field
+            Form f = Application.OpenForms["LoginForm"];
             String id = ((LoginForm)f).username.Text;
-
+*/          Console.WriteLine(id);
             functions fun = new functions();
             textBox1.Text = fun.numeUser(id);
             textBox3.Text = fun.prenumeUser(id);
             textBox4.Text = fun.adresaUser(id);
             textBox5.Text = fun.rezervariUser(id);
+            
 
 
 

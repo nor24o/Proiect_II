@@ -101,7 +101,7 @@ namespace Rent_a_Car
                 if (res == "1")
                 {
                     scn.Close();
-                    Clientexistent clientexistent = new Clientexistent();
+                    Clientexistent clientexistent = new Clientexistent(username.Text);
                     clientexistent.Location = this.Location;
                     Hide();
                     clientexistent.Show();

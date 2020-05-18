@@ -170,12 +170,14 @@
             this.monthCalendar1.Location = new System.Drawing.Point(43, 381);
             this.monthCalendar1.Name = "monthCalendar1";
             this.monthCalendar1.TabIndex = 143;
+            this.monthCalendar1.DateSelected += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar1_DateChanged);
             // 
             // monthCalendar2
             // 
             this.monthCalendar2.Location = new System.Drawing.Point(417, 381);
             this.monthCalendar2.Name = "monthCalendar2";
             this.monthCalendar2.TabIndex = 144;
+            this.monthCalendar2.DateSelected += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar2_DateChanged);
             // 
             // label2
             // 

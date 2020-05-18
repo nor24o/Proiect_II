@@ -11,15 +11,15 @@ using System.Threading.Tasks;
 
 namespace Rent_a_Car
 {
-   public class functions
+    public class functions
     {
         public static String cale = Directory.GetParent(Environment.CurrentDirectory).Parent.FullName;
         public static string argdb = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + cale + "\\database.mdf;Integrated Security=True;Connect Timeout=30";
         public DataTable afisaredb(string identificator)
         {
             SqlConnection con = new SqlConnection(argdb);
-           
-            SqlCommand cmd = new SqlCommand("select * from "+identificator+"", con);
+
+            SqlCommand cmd = new SqlCommand("select * from " + identificator + "", con);
             con.Open();
             SqlDataAdapter sda = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
@@ -29,7 +29,7 @@ namespace Rent_a_Car
             return dt;
         }
 
-           public int insertRecord(string username,string password, string nume, string prenume, string CNP, string sex, string varsta, string adresa, string telefon, string ridicat, string returnat)
+        public int insertRecord(string username, string password, string nume, string prenume, string CNP, string sex, string varsta, string adresa, string telefon, string ridicat, string returnat)
         {
 
 
@@ -48,13 +48,13 @@ namespace Rent_a_Car
 
         }
 
-        public void UpdateRegistrationTable(string id,string username,string password, string nume, string prenume, string CNP, string sex, string varsta, string adresa, string telefon, string ridicat, string returnat)
+        public void UpdateRegistrationTable(int id, string username, string password, string nume, string prenume, string CNP, string sex, string varsta, string adresa, string telefon)
         {
 
             SqlConnection con = new SqlConnection(argdb);
             con.Open();
-            SqlCommand cmd = new SqlCommand("update users set username=@UserName,password=@Password,nume=@nume, prenume=@prenume, CNP=@cnp, sex=@sex" +
-                ", varsta=@varsta, adresa=@adresa, telefon=@telefon, ridicat=@ridicat, returnat=@returnat where Id=@ID", con);
+            SqlCommand cmd = new SqlCommand("update users set username=@UserName,password=@Password,nume=@nume, prenume=@prenume, CNP=@cnp, sex=@sex, varsta=@varsta, adresa=@adresa, telefon=@telefon where Id=@ID", con);
+            Console.WriteLine(id + " " + username + " " + password + " " + " " + nume + " " + prenume + " " + CNP + " " + sex + " " + varsta + " " + adresa + " " + telefon); ;
             cmd.Parameters.AddWithValue("@ID", id);
             cmd.Parameters.AddWithValue("@UserName", username);
             cmd.Parameters.AddWithValue("@Password", password);
@@ -65,17 +65,32 @@ namespace Rent_a_Car
             cmd.Parameters.AddWithValue("@varsta", varsta);
             cmd.Parameters.AddWithValue("@adresa", adresa);
             cmd.Parameters.AddWithValue("@telefon", telefon);
-            cmd.Parameters.AddWithValue("@ridicat", ridicat);
-            cmd.Parameters.AddWithValue("@returnat", returnat);
+            cmd.ExecuteNonQuery();
+            con.Close();
+        }
+        public void UpdateCarRegistrationTable(int id, string marca, string model, string motorizare, string rezervare, string predare, string clientid)
+        {
+
+            SqlConnection con = new SqlConnection(argdb);
+            con.Open();
+            SqlCommand cmd = new SqlCommand("update masini set Marca=@marca,Model=@model,Motorizare=@motorizare, rezervare=@rezervare, predare=@predare, clientid=@clientid where idmasini=@ID", con);
+         //   Console.WriteLine(id + " " + username + " " + password + " " + " " + nume + " " + prenume + " " + CNP + " " + sex + " " + varsta + " " + adresa + " " + telefon); ;
+            cmd.Parameters.AddWithValue("@ID", id);
+            cmd.Parameters.AddWithValue("@marca", marca);
+            cmd.Parameters.AddWithValue("@model", model);
+            cmd.Parameters.AddWithValue("@motorizare", motorizare);
+            cmd.Parameters.AddWithValue("@rezervare", rezervare);
+            cmd.Parameters.AddWithValue("@predare", predare);
+            cmd.Parameters.AddWithValue("@clientid", clientid);
             cmd.ExecuteNonQuery();
             con.Close();
         }
 
-        public bool stergeutilizator(int id,string numedb,string db_id)
+        public bool stergeutilizator(int id, string numedb, string db_id)
         {
             SqlConnection con = new SqlConnection(argdb);
             con.Open();
-            SqlCommand cmd = new SqlCommand("delete from " + numedb + " where "+db_id+"=@id", con);
+            SqlCommand cmd = new SqlCommand("delete from " + numedb + " where " + db_id + "=@id", con);
             cmd.Parameters.AddWithValue("@id", id);
             cmd.ExecuteNonQuery();
             con.Close();
@@ -85,7 +100,7 @@ namespace Rent_a_Car
         public String numeUser(String username)
         {
             SqlConnection conn = new SqlConnection(argdb);
-            SqlCommand command = new SqlCommand("select nume from users where username = '"+username+"'");
+            SqlCommand command = new SqlCommand("select nume from users where username = '" + username + "'");
             command.Connection = conn;
             conn.Open();
             string value = (string)command.ExecuteScalar();
@@ -142,6 +157,100 @@ namespace Rent_a_Car
             return value;
         }
 
+        //nefolosit
+        public String numetest3(String username)
+        {
+            SqlConnection conn = new SqlConnection(argdb);
+            SqlCommand command = new SqlCommand("select nume,prenume,sex,adresa from users where username = '" + username + "'");
+            command.Connection = conn;
+            conn.Open();
+            // string value = command.ExecuteScalar();
+            /*conn.Close();
+            Console.WriteLine(value);
+            
+*/
+            SqlDataReader reader = command.ExecuteReader();
+
+            if (reader.HasRows)
+            {
+                while (reader.Read())
+                {
+                    Console.WriteLine("{0}\t{1}\t{3}", reader.GetString(0), reader.GetString(1), reader.GetString(2), reader.GetString(3));
+                }
+            }
+            else
+            {
+                Console.WriteLine("No rows found.");
+            }
+            reader.Close();
+
+            return "unu";
+        }
+
+        //este folosit pentru autentificare 
+        public List<string> GetData()
+        {
+            List<string> lst = new List<string>();
+            SqlConnection conn = new SqlConnection(argdb);
+            SqlCommand command = new SqlCommand("select username from users ");
+            command.Connection = conn;
+            conn.Open();
+            using (IDataReader dataReader = command.ExecuteReader())
+            {
+                while (dataReader.Read())
+                {
+                    lst.Add(Convert.ToString(dataReader["username"]));
+                }
+            }
+            return lst;
+
+        }
+        //afisare informatii utilizator pentru modificare 
+        public DataTable GetuserData(int id)
+        {
+
+            SqlConnection conn = new SqlConnection(argdb);
+            SqlCommand command = new SqlCommand("select * from users where Id='" + id + "'");
+            command.Connection = conn;
+            conn.Open();
+            SqlDataAdapter sda = new SqlDataAdapter(command);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+            conn.Close();
+            //dataGridView1.DataSource = dt;
+            return dt;
+
+        }
+        public DataTable GetcarData(int id)
+        {
+
+            SqlConnection conn = new SqlConnection(argdb);
+            SqlCommand command = new SqlCommand("select * from masini where idmasini='" + id + "'");
+            command.Connection = conn;
+            conn.Open();
+            SqlDataAdapter sda = new SqlDataAdapter(command);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+            conn.Close();
+            //dataGridView1.DataSource = dt;
+            return dt;
+
+        }
+        //afisare masini libere pentru inchiriere 
+        public DataTable getfreecars()
+        {
+            SqlConnection conn = new SqlConnection(argdb);
+            SqlCommand command = new SqlCommand("select Marca,Model,Motorizare,rezervare from masini where clientid = '" + 0 + "'");
+            command.Connection = conn;
+            conn.Open();
+            SqlDataAdapter sda = new SqlDataAdapter(command);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+            conn.Close();
+            //dataGridView1.DataSource = dt;
+            return dt;
+
+        }
 
 
     }

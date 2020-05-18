@@ -96,6 +96,15 @@
     <Compile Include="Adaugareuser.Designer.cs">
       <DependentUpon>Adaugareuser.cs</DependentUpon>
     </Compile>
+    <Compile Include="databaseDataSet.cs">
+      <DependentUpon>databaseDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="modificamasina.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="modificamasina.Designer.cs">
+      <DependentUpon>modificamasina.cs</DependentUpon>
+    </Compile>
     <Compile Include="modifuser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -154,6 +163,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Clientexistent.resx">
       <DependentUpon>Clientexistent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="modificamasina.resx">
+      <DependentUpon>modificamasina.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="modifuser.resx">
       <DependentUpon>modifuser.cs</DependentUpon>

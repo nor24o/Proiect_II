@@ -12,6 +12,7 @@ using System.Data.SqlClient;
 using System.IO;
 using System.Security.Cryptography.X509Certificates;
 using System.Globalization;
+using System.Threading;
 
 namespace Rent_a_Car
 {
@@ -36,10 +37,18 @@ namespace Rent_a_Car
             InitializeComponent();
             this.Text = "Rent A Car";
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
+            calendar_returnare.MinDate = DateTime.Now;
+            calendar_ridicare.MinDate = DateTime.Now;
 
-            
         }
+        int r = (new Random()).Next(100, 1000);
+        bool aceptEULA = false;
         int atempt = 0;
+        bool res = false;
+        int idmasina;
+        bool masinaselectata = false;
+        string pred = "";
+        string rez = "";
 
         //interogheaza utilizatorul daca doreste sa inchida aplicatia 
         private void opresteaplicatia()
@@ -79,10 +88,19 @@ namespace Rent_a_Car
         private const int HT_CAPTION = 0x2;
         #endregion
 
+        List<string> lst = new List<string>();
+
         private void Client_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'databaseDataSet.users' table. You can move, or remove it, as needed.
-            
+            functions fun = new functions();
+
+            foreach (var list in fun.GetData())
+            {
+
+                this.lst.Add(Convert.ToString(list));
+
+            }
+
 
         }
 
@@ -127,12 +145,12 @@ namespace Rent_a_Car
                     {
                         case 1:
                         case 5:
-                            sex.Text = "Masculin";
+                            sex.Text = "M";
                             sex.BackColor = Color.Green;
                             break;
                         case 2:
                         case 6:
-                            sex.Text = "Feminin";
+                            sex.Text = "F";
                             sex.BackColor = Color.Green;
                             break;
                         default:
@@ -175,11 +193,11 @@ namespace Rent_a_Car
         {
 
         }
-        
-        
 
 
-        private void cautareuser()
+
+
+        private void cautareuser_vechi()
         {
 
             String cale = Directory.GetParent(Environment.CurrentDirectory).Parent.FullName;
@@ -203,7 +221,7 @@ namespace Rent_a_Car
 
             else
             {
-                
+
                 numeutilizator.BackColor = Color.White;
 
                 string Username = numeutilizator.Text;
@@ -232,7 +250,7 @@ namespace Rent_a_Car
 
                          mySqlConnection.Open();*/
                         var cmd = new SqlCommand(inserare, scn);
-                        int row = cmd.ExecuteNonQuery();        
+                        int row = cmd.ExecuteNonQuery();
                         scn.Close();
                         atempt = 1;
                         ;
@@ -252,15 +270,121 @@ namespace Rent_a_Car
 
         }
 
+        private void cautareuser()
+        {
+            String cale = Directory.GetParent(Environment.CurrentDirectory).Parent.FullName;
+            SqlConnection scn = new SqlConnection();
+            scn.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + cale + "\\database.mdf;Integrated Security=True;Connect Timeout=30";
+            if (res == true)
+            {
+
+                numeutilizator.BackColor = Color.Red;
+                MessageBox.Show("Client Inregistrat");
+                if ((atempt == 1) && (res == true))
+                {
+
+                }
+            }
+
+            else
+            {
+
+                string Username = numeutilizator.Text;
+                string Password = parola.Text;
+                string Nume = nume.Text;
+                string Prenume = prenume.Text;
+                string CNP = cnp.Text;
+                string Sex = sex.Text;
+                string Varsta = varsta.Text;
+                string Adresa = adresa.Text;
+                string Telefon = telefon.Text;
+                if (this.atempt == 0)
+                {
+                    try
+
+                    {
+
+                        //  String connString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Xavier\Desktop\Proiect_II_Rent_a_car\Proiect_II\Rent_a_Car\Rent_a_Car\database.mdf;Integrated Security=True;Connect Timeout=30";
+
+
+                        // scn.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + cale + "\\database.mdf;Integrated Security=True;Connect Timeout=30";
+                        String inserare = "Insert into users(username,password,nume,prenume,CNP,sex,varsta,adresa,telefon) " +
+                        "values('" + Username + "','" + Password + "','" + Nume + "','" + Prenume + "','" + CNP + "','" + Sex + "','"
+                        + Varsta + "','" + Adresa + "','" + Telefon + "')";
+                        scn.Open();
+                        /* SqlConnection mySqlConnection = new SqlConnection(connString);
+                        
+                         mySqlConnection.Open();*/
 
 
 
+
+                        /*
+                        string updatemasina = "UPDATE masini SET clientid = '" + r + "',rezervare = '" + rez + "',predare = '" + pred + "' WHERE idmasini = '" + this.idmasina + "'; ";
+                        Console.WriteLine(updatemasina);
+                        var cmd2 = new SqlCommand(updatemasina, scn);
+                        int row2= cmd2.ExecuteNonQuery();*/
+
+                        var cmd = new SqlCommand(inserare, scn);
+
+                        int row = cmd.ExecuteNonQuery();
+
+                        scn.Close();
+                        atempt = 1;
+                        Thread.Sleep(50);
+                        updatemasina();
+
+
+
+                    }
+
+                    catch (Exception es)
+
+                    { MessageBox.Show(es.Message); }
+                }
+
+
+
+
+            }
+
+
+        }
+
+
+        private void updatemasina()
+        {
+            
+
+            String cale = Directory.GetParent(Environment.CurrentDirectory).Parent.FullName;
+            string argdb = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + cale + "\\database.mdf;Integrated Security=True;Connect Timeout=30";
+            SqlConnection con = new SqlConnection(argdb);
+            con.Open();
+            SqlCommand cmd = new SqlCommand("update masini set clientid = @r, rezervare = @rez, predare = @pred where idmasini = @idmasina", con);
+            Console.WriteLine("aproape  " + "cID:" + r + " r:" + rez + " pred: " + pred + " id:" + idmasina);
+
+            cmd.Parameters.AddWithValue("@idmasina", idmasina);
+            cmd.Parameters.AddWithValue("@r", r);
+            cmd.Parameters.AddWithValue("@rez", rez);
+            cmd.Parameters.AddWithValue("@pred", pred);
+            cmd.ExecuteNonQuery();
+            MessageBox.Show("Record Updated Successfully");
+            con.Close();
+        }
 
 
 
         private void button1_Click(object sender, EventArgs e)
         {
-            cautareuser();
+            Console.WriteLine(idmasina);
+            if (aceptEULA && masinaselectata)
+            {
+                cautareuser();
+            }
+            else
+            {
+                MessageBox.Show("Nu ati acceptat termenii si conditiile");
+            }
         }
 
         private void sex_TextChanged(object sender, EventArgs e)
@@ -305,22 +429,83 @@ namespace Rent_a_Car
 
         private void button3_Click(object sender, EventArgs e)
         {
+            functions fun = new functions();
+            dataGridView1.BackgroundColor = Color.White;
+            dataGridView1.RowHeadersVisible = false;
+
+            dataGridView1.DataSource = fun.getfreecars();
 
         }
 
         private void numeutilizator_TextChanged(object sender, EventArgs e)
         {
+            //  Console.WriteLine("test auto" + numeutilizator.Text);
+
+
+            foreach (var list in lst)
+            {
+                if (list == numeutilizator.Text)
+                {
+                    // numeutilizator.BackColor = Color.Red;
+                    //Console.WriteLine(list + "  " + numeutilizator.Text);
+                    this.res = true;
+                    break;
+                }
+                else
+                {
+                    this.res = false;
+                }
+
+
+            }
+            Console.WriteLine(res);
+            if (res && numeutilizator.BackColor == Color.White)
+            {
+                numeutilizator.BackColor = Color.Red;
+            }
+            else
+            {
+                numeutilizator.BackColor = Color.White;
+            }
 
         }
 
         private void calendar_ridicare_DateChanged(object sender, DateRangeEventArgs e)
         {
+            this.rez = calendar_ridicare.SelectionRange.Start.ToShortDateString();
             Console.WriteLine(calendar_ridicare.SelectionRange.Start.ToShortDateString());
+            label15.Text = calendar_ridicare.SelectionRange.Start.ToShortDateString();
         }
 
         private void calendar_returnare_DateChanged(object sender, DateRangeEventArgs e)
         {
+            calendar_returnare.MinDate = calendar_ridicare.SelectionRange.Start;
+            this.pred = calendar_returnare.SelectionRange.Start.ToShortDateString();
             Console.WriteLine(calendar_returnare.SelectionRange.Start.ToShortDateString());
+            label16.Text = calendar_returnare.SelectionRange.Start.ToShortDateString();
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            this.aceptEULA = true;
+        }
+
+        private void panel1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            this.idmasina = dataGridView1.CurrentCell.RowIndex;
+            this.masinaselectata = true;
+            Console.WriteLine("idmasina" + idmasina);
+
+        }
+
+        private void label16_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
