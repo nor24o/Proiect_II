@@ -34,9 +34,9 @@ namespace Rent_a_Car
                 text_model.Text = (array[2].ToString());
                 text_motorizare.Text = (array[3].ToString());
                 DateTime example = Convert.ToDateTime(array[4]);
-                monthCalendar1.SetDate(example);
+               // monthCalendar1.SetDate(example);
                DateTime example2 = Convert.ToDateTime(array[5]);
-                monthCalendar2.SetDate(example2);
+               // monthCalendar2.SetDate(example2);
                 
                 textBox1.Text = (array[6].ToString());
                 

@@ -41,14 +41,18 @@ namespace Rent_a_Car
             calendar_ridicare.MinDate = DateTime.Now;
 
         }
-        int r = (new Random()).Next(100, 1000);
+        String cale = Directory.GetParent(Environment.CurrentDirectory).Parent.FullName;
+        
+        functions fun = new functions();
+        // int numaraleator = (new Random()).Next(100, 1000);
+        int iduser = 0;
         bool aceptEULA = false;
         int atempt = 0;
-        bool res = false;
+        bool exista_utilizator = false;
         int idmasina;
         bool masinaselectata = false;
-        string pred = "";
-        string rez = "";
+        string data_predare = "";
+        string data_rezervare = "";
 
         //interogheaza utilizatorul daca doreste sa inchida aplicatia 
         private void opresteaplicatia()
@@ -272,17 +276,17 @@ namespace Rent_a_Car
 
         private void cautareuser()
         {
-            String cale = Directory.GetParent(Environment.CurrentDirectory).Parent.FullName;
             SqlConnection scn = new SqlConnection();
             scn.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + cale + "\\database.mdf;Integrated Security=True;Connect Timeout=30";
-            if (res == true)
+
+            if (exista_utilizator == true)
             {
 
                 numeutilizator.BackColor = Color.Red;
                 MessageBox.Show("Client Inregistrat");
-                if ((atempt == 1) && (res == true))
+                if ((atempt == 1) && (exista_utilizator == true))
                 {
-
+                MessageBox.Show("Client Inregistrat");
                 }
             }
 
@@ -298,6 +302,7 @@ namespace Rent_a_Car
                 string Varsta = varsta.Text;
                 string Adresa = adresa.Text;
                 string Telefon = telefon.Text;
+
                 if (this.atempt == 0)
                 {
                     try
@@ -316,9 +321,6 @@ namespace Rent_a_Car
                         
                          mySqlConnection.Open();*/
 
-
-
-
                         /*
                         string updatemasina = "UPDATE masini SET clientid = '" + r + "',rezervare = '" + rez + "',predare = '" + pred + "' WHERE idmasini = '" + this.idmasina + "'; ";
                         Console.WriteLine(updatemasina);
@@ -330,16 +332,13 @@ namespace Rent_a_Car
                         int row = cmd.ExecuteNonQuery();
 
                         scn.Close();
-                        atempt = 1;
-                        Thread.Sleep(50);
+                        
                         updatemasina();
-
-
-
+                        
+                        atempt = 1;
                     }
 
                     catch (Exception es)
-
                     { MessageBox.Show(es.Message); }
                 }
 
@@ -350,23 +349,33 @@ namespace Rent_a_Car
 
 
         }
-
-
         private void updatemasina()
         {
-            
+            SqlConnection scn = new SqlConnection();
+            scn.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + cale + "\\database.mdf;Integrated Security=True;Connect Timeout=30";
+            iduser = Int32.Parse(fun.getIDUser(numeutilizator.Text));
+            String updatemasina = "update masini set clientid='" + iduser + "',rezervare='" + data_rezervare + "',predare='" + data_predare + "' where idmasini='" + idmasina + "' ";
+            scn.Open();
+            var cmd = new SqlCommand(updatemasina, scn);
+            int row = cmd.ExecuteNonQuery();
+            MessageBox.Show("Record Updated Successfully");
+            scn.Close();
+        }
 
+        private void updatemasina_neutilizat()
+        {
+            iduser =Int32.Parse( fun.getIDUser(numeutilizator.Text));
             String cale = Directory.GetParent(Environment.CurrentDirectory).Parent.FullName;
             string argdb = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + cale + "\\database.mdf;Integrated Security=True;Connect Timeout=30";
             SqlConnection con = new SqlConnection(argdb);
             con.Open();
             SqlCommand cmd = new SqlCommand("update masini set clientid = @r, rezervare = @rez, predare = @pred where idmasini = @idmasina", con);
-            Console.WriteLine("aproape  " + "cID:" + r + " r:" + rez + " pred: " + pred + " id:" + idmasina);
+            Console.WriteLine("aproape  " + "clientID:" + iduser + " data-rez:" + data_rezervare + " data-pred: " + data_predare + " id masina:" + idmasina);
 
             cmd.Parameters.AddWithValue("@idmasina", idmasina);
-            cmd.Parameters.AddWithValue("@r", r);
-            cmd.Parameters.AddWithValue("@rez", rez);
-            cmd.Parameters.AddWithValue("@pred", pred);
+            cmd.Parameters.AddWithValue("@r", iduser);
+            cmd.Parameters.AddWithValue("@rez", data_rezervare);
+            cmd.Parameters.AddWithValue("@pred", data_predare);
             cmd.ExecuteNonQuery();
             MessageBox.Show("Record Updated Successfully");
             con.Close();
@@ -446,20 +455,16 @@ namespace Rent_a_Car
             {
                 if (list == numeutilizator.Text)
                 {
-                    // numeutilizator.BackColor = Color.Red;
-                    //Console.WriteLine(list + "  " + numeutilizator.Text);
-                    this.res = true;
+                    this.exista_utilizator = true;
                     break;
                 }
                 else
                 {
-                    this.res = false;
+                    this.exista_utilizator = false;
                 }
-
-
             }
-            Console.WriteLine(res);
-            if (res && numeutilizator.BackColor == Color.White)
+            Console.WriteLine(exista_utilizator);
+            if (exista_utilizator && numeutilizator.BackColor == Color.White)
             {
                 numeutilizator.BackColor = Color.Red;
             }
@@ -472,7 +477,7 @@ namespace Rent_a_Car
 
         private void calendar_ridicare_DateChanged(object sender, DateRangeEventArgs e)
         {
-            this.rez = calendar_ridicare.SelectionRange.Start.ToShortDateString();
+            this.data_rezervare = calendar_ridicare.SelectionRange.Start.ToShortDateString();
             Console.WriteLine(calendar_ridicare.SelectionRange.Start.ToShortDateString());
             label15.Text = calendar_ridicare.SelectionRange.Start.ToShortDateString();
         }
@@ -480,14 +485,15 @@ namespace Rent_a_Car
         private void calendar_returnare_DateChanged(object sender, DateRangeEventArgs e)
         {
             calendar_returnare.MinDate = calendar_ridicare.SelectionRange.Start;
-            this.pred = calendar_returnare.SelectionRange.Start.ToShortDateString();
+            this.data_predare = calendar_returnare.SelectionRange.Start.ToShortDateString();
             Console.WriteLine(calendar_returnare.SelectionRange.Start.ToShortDateString());
             label16.Text = calendar_returnare.SelectionRange.Start.ToShortDateString();
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
-            this.aceptEULA = true;
+
+
         }
 
         private void panel1_Click(object sender, EventArgs e)
@@ -506,6 +512,38 @@ namespace Rent_a_Car
         private void label16_Click(object sender, EventArgs e)
         {
 
+        }
+        //Buton accteptare termeni si conditi
+        private void checkBox1_Click(object sender, EventArgs e)
+        {
+            if (this.aceptEULA == false)
+            {
+
+                string path = @"" + cale + "\\EULA.txt";
+
+                string message = File.ReadAllText(path);
+                string title = "EULA";
+                MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+                DialogResult result = MessageBox.Show(message, title, buttons);
+                if (result == DialogResult.Yes)
+                {
+                    checkBox1.BackColor = Color.Green;
+                    this.aceptEULA = true;
+                }
+                else if (result == DialogResult.No)
+                {
+                    checkBox1.Checked = false;
+                    checkBox1.BackColor = Color.Transparent;
+                    this.aceptEULA = false;
+                }
+
+            }
+            else if (this.aceptEULA == true)
+            {
+                checkBox1.Checked = false;
+                checkBox1.BackColor = Color.Transparent;
+                this.aceptEULA = false;
+            }
         }
     }
 }
