@@ -170,9 +170,9 @@
             // button1
             // 
             this.button1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button1.Location = new System.Drawing.Point(277, 396);
+            this.button1.Location = new System.Drawing.Point(203, 386);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(98, 33);
+            this.button1.Size = new System.Drawing.Size(136, 37);
             this.button1.TabIndex = 9;
             this.button1.Text = "Modifica";
             this.button1.UseVisualStyleBackColor = false;
@@ -183,63 +183,71 @@
             this.textBox1.Location = new System.Drawing.Point(104, 31);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(457, 20);
-            this.textBox1.TabIndex = 10;
+            this.textBox1.TabIndex = 1;
             // 
             // textBox2
             // 
             this.textBox2.Location = new System.Drawing.Point(104, 62);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(457, 20);
-            this.textBox2.TabIndex = 11;
+            this.textBox2.TabIndex = 2;
             // 
             // textBox3
             // 
             this.textBox3.Location = new System.Drawing.Point(104, 93);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(457, 20);
-            this.textBox3.TabIndex = 12;
+            this.textBox3.TabIndex = 3;
+            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // textBox4
             // 
             this.textBox4.Location = new System.Drawing.Point(104, 125);
+            this.textBox4.MaxLength = 2;
             this.textBox4.Name = "textBox4";
+            this.textBox4.ReadOnly = true;
             this.textBox4.Size = new System.Drawing.Size(89, 20);
             this.textBox4.TabIndex = 13;
+            this.textBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox5
             // 
             this.textBox5.Location = new System.Drawing.Point(104, 155);
+            this.textBox5.MaxLength = 2;
             this.textBox5.Name = "textBox5";
+            this.textBox5.ReadOnly = true;
             this.textBox5.Size = new System.Drawing.Size(89, 20);
             this.textBox5.TabIndex = 14;
+            this.textBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox6
             // 
             this.textBox6.Location = new System.Drawing.Point(104, 185);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(457, 20);
-            this.textBox6.TabIndex = 15;
+            this.textBox6.TabIndex = 4;
             // 
             // textBox7
             // 
             this.textBox7.Location = new System.Drawing.Point(114, 284);
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(268, 20);
-            this.textBox7.TabIndex = 16;
+            this.textBox7.TabIndex = 6;
             // 
             // textBox8
             // 
             this.textBox8.Location = new System.Drawing.Point(114, 315);
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(268, 20);
-            this.textBox8.TabIndex = 17;
+            this.textBox8.TabIndex = 7;
             // 
             // textBox9
             // 
             this.textBox9.Location = new System.Drawing.Point(104, 210);
+            this.textBox9.MaxLength = 10;
             this.textBox9.Name = "textBox9";
             this.textBox9.Size = new System.Drawing.Size(457, 20);
-            this.textBox9.TabIndex = 19;
+            this.textBox9.TabIndex = 5;
             // 
             // label10
             // 
@@ -259,7 +267,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Rent_a_Car.Properties.Resources.bg_login;
-            this.ClientSize = new System.Drawing.Size(684, 471);
+            this.ClientSize = new System.Drawing.Size(579, 471);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox9);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.textBox8);
@@ -270,7 +279,6 @@
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);

@@ -12,6 +12,7 @@ using System.Collections;
 using System.Threading;
 using System.Runtime.CompilerServices;
 
+
 namespace Rent_a_Car
 {
     public partial class AdminCP : Form
@@ -146,14 +147,16 @@ namespace Rent_a_Car
 
                 dataGridView2.DataSource = fun.afisaredb("users");
 
-                MessageBox.Show("Ati eliminat cu succes datele!");
-
+             //   MessageBox.Show("Ati eliminat cu succes datele!");
+                label5.Text = "Utilizatorul cu id "+ label2.Text + " a fost sters!";
             }
 
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
+
+
             if (label3.Text != "")
             {
 
@@ -165,8 +168,9 @@ namespace Rent_a_Car
 
                 dataGridView1.DataSource = fun.afisaredb("masini");
 
-                MessageBox.Show("Ati eliminat cu succes datele!");
-
+                //  MessageBox.Show("Ati eliminat cu succes datele!");
+                
+                label4.Text = "Masina cu id "+ label3.Text + " a fost sters!";
             }
         }
 

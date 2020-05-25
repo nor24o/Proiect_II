@@ -184,6 +184,7 @@
             // 
             // pictureBox2
             // 
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox2.Location = new System.Drawing.Point(0, 0);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(494, 399);
@@ -204,6 +205,7 @@
             this.dataGridView1.Size = new System.Drawing.Size(490, 150);
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            this.dataGridView1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dataGridView1_MouseClick);
             // 
             // pictureBox1
             // 
@@ -250,7 +252,6 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(536, 567);
             this.panel4.TabIndex = 1;
-            this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
             // 
             // checkBox1
             // 
@@ -310,7 +311,6 @@
             this.label13.Size = new System.Drawing.Size(155, 25);
             this.label13.TabIndex = 101;
             this.label13.Text = "Nume utilizator";
-            this.label13.Click += new System.EventHandler(this.label13_Click);
             // 
             // button1
             // 
@@ -348,7 +348,6 @@
             this.sex.Size = new System.Drawing.Size(45, 29);
             this.sex.TabIndex = 11;
             this.sex.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.sex.TextChanged += new System.EventHandler(this.sex_TextChanged);
             // 
             // adresa
             // 
@@ -393,7 +392,6 @@
             this.label5.Size = new System.Drawing.Size(54, 29);
             this.label5.TabIndex = 7;
             this.label5.Text = "Sex";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // varsta
             // 
@@ -427,7 +425,6 @@
             this.prenume.Name = "prenume";
             this.prenume.Size = new System.Drawing.Size(363, 29);
             this.prenume.TabIndex = 4;
-            this.prenume.TextChanged += new System.EventHandler(this.prenume_TextChanged);
             // 
             // nume
             // 
@@ -462,7 +459,6 @@
             this.label3.Size = new System.Drawing.Size(56, 25);
             this.label3.TabIndex = 2;
             this.label3.Text = "CNP";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label2
             // 
@@ -474,7 +470,6 @@
             this.label2.Size = new System.Drawing.Size(98, 25);
             this.label2.TabIndex = 1;
             this.label2.Text = "Prenume";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label1
             // 
@@ -486,7 +481,6 @@
             this.label1.Size = new System.Drawing.Size(68, 25);
             this.label1.TabIndex = 0;
             this.label1.Text = "Nume";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // button2
             // 

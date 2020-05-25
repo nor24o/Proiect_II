@@ -36,14 +36,8 @@ namespace Rent_a_Car
             InitializeComponent();
             this.Text = "Rent A Car";
             this.FormBorderStyle = FormBorderStyle.None;
-            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
-
-
-     
+            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));    
         }
-
-
-
 
         //interogheaza utilizatorul daca doreste sa inchida aplicatia 
         public void opresteaprilcatia()
@@ -54,14 +48,12 @@ namespace Rent_a_Car
             DialogResult result;
 
             // Afiseaza Mesagebox 
-
             result = MessageBox.Show(this, message, caption, buttons);
 
             if (result == DialogResult.Yes)
             {
 
                 // Inchide aplicatia 
-
                 Environment.Exit(0);
             }
         }
@@ -81,8 +73,6 @@ namespace Rent_a_Car
         private const int HT_CLIENT = 0x1;
         private const int HT_CAPTION = 0x2;
         #endregion
-
-
 
         public void autentificare()
         {
@@ -106,14 +96,10 @@ namespace Rent_a_Car
                     Hide();
                     clientexistent.Show();
                 }
-
                 else
                 {
                     scn.Close();
                     MessageBox.Show("username sau passwrod gresit");
-
-
-
                 }
             }
             else
@@ -170,17 +156,13 @@ namespace Rent_a_Car
         }
 
         private void button6_Click(object sender, EventArgs e)
-        {
-            
+        {     
             AboutBox1 aboutWindow = new AboutBox1();
             aboutWindow.StartPosition = FormStartPosition.Manual;
             aboutWindow.Left = this.Location.X+50;
             aboutWindow.Top = this.Location.Y+80;
             // aboutWindow.SetDesktopLocation(500, 500);
             aboutWindow.ShowDialog();
-
-            
-
         }
 
         private void LoginForm_Enter(object sender, EventArgs e)

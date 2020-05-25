@@ -26,7 +26,7 @@ namespace Rent_a_Car
             int nHeightEllipse // height of ellipse
         );
         #endregion
-
+        functions fun = new functions();
         public Clientexistent(string id)
         {
             this.Icon = Properties.Resources.rencar;
@@ -36,15 +36,16 @@ namespace Rent_a_Car
             Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
 
             /* afisare detalii utilizator in text field
-            Form f = Application.OpenForms["LoginForm"];
-            String id = ((LoginForm)f).username.Text;
 */          Console.WriteLine(id);
-            functions fun = new functions();
+            
             textBox1.Text = fun.numeUser(id);
             textBox3.Text = fun.prenumeUser(id);
             textBox4.Text = fun.adresaUser(id);
             textBox5.Text = fun.rezervariUser(id);
-            
+            int  id_user = Int32.Parse(fun.getIDUser(id));
+            rezervariDataGridView.DataSource = fun.getfreecars(id_user);
+
+          //  rezervariDataGridView.DataSource = fun.getfreecars(Int32.Parse(id));
 
 
 
@@ -75,7 +76,6 @@ namespace Rent_a_Car
                 loginForm.Location = this.Location;
                 Hide();
                 loginForm.ShowDialog();
-                //this.Close();
             }
         }
 
@@ -104,21 +104,7 @@ namespace Rent_a_Car
  
         }
 
-        private void rezervariBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.rezervariBindingSource.EndEdit();
-            
-            functions fun = new functions();
-            DataSet n = this.databaseDataSet;
-            DataTable tb = n.Tables["rezervari"];
-            System.Windows.Forms.Form f = System.Windows.Forms.Application.OpenForms["LoginForm"];
-            String id = ((LoginForm)f).username.Text;
-            DataRow[] found = tb.Select("clientid = " + fun.getIDUser(id));
 
-            this.tableAdapterManager.UpdateAll(this.databaseDataSet);
-
-        }
 
     }
 }

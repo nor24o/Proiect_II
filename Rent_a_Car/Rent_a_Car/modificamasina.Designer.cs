@@ -41,20 +41,23 @@
             this.text_motorizare = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.label3 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(274, 257);
+            this.textBox1.Location = new System.Drawing.Point(114, 307);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(170, 20);
+            this.textBox1.Size = new System.Drawing.Size(106, 20);
             this.textBox1.TabIndex = 160;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(115, 257);
+            this.label2.Location = new System.Drawing.Point(114, 204);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(67, 25);
             this.label2.TabIndex = 159;
@@ -89,10 +92,10 @@
             this.text_model.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.text_model.BackColor = System.Drawing.SystemColors.Window;
             this.text_model.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.text_model.Location = new System.Drawing.Point(275, 118);
+            this.text_model.Location = new System.Drawing.Point(239, 98);
             this.text_model.MaxLength = 30;
             this.text_model.Name = "text_model";
-            this.text_model.Size = new System.Drawing.Size(363, 29);
+            this.text_model.Size = new System.Drawing.Size(407, 29);
             this.text_model.TabIndex = 155;
             // 
             // text_marca
@@ -100,10 +103,10 @@
             this.text_marca.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.text_marca.BackColor = System.Drawing.SystemColors.Window;
             this.text_marca.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.text_marca.Location = new System.Drawing.Point(274, 46);
+            this.text_marca.Location = new System.Drawing.Point(239, 46);
             this.text_marca.MaxLength = 30;
             this.text_marca.Name = "text_marca";
-            this.text_marca.Size = new System.Drawing.Size(363, 29);
+            this.text_marca.Size = new System.Drawing.Size(407, 29);
             this.text_marca.TabIndex = 154;
             // 
             // label8
@@ -111,7 +114,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label8.Location = new System.Drawing.Point(115, 119);
+            this.label8.Location = new System.Drawing.Point(114, 99);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(71, 25);
             this.label8.TabIndex = 153;
@@ -147,17 +150,17 @@
             // 
             this.text_motorizare.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.text_motorizare.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.text_motorizare.Location = new System.Drawing.Point(274, 187);
+            this.text_motorizare.Location = new System.Drawing.Point(239, 152);
             this.text_motorizare.MaxLength = 30;
             this.text_motorizare.Name = "text_motorizare";
-            this.text_motorizare.Size = new System.Drawing.Size(363, 29);
+            this.text_motorizare.Size = new System.Drawing.Size(407, 29);
             this.text_motorizare.TabIndex = 150;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(114, 186);
+            this.label10.Location = new System.Drawing.Point(114, 151);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(114, 25);
             this.label10.TabIndex = 149;
@@ -173,12 +176,38 @@
             this.label11.TabIndex = 148;
             this.label11.Text = "Rezervare";
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AllowUserToResizeColumns = false;
+            this.dataGridView1.AllowUserToResizeRows = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(239, 204);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.Size = new System.Drawing.Size(407, 123);
+            this.dataGridView1.TabIndex = 161;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(114, 259);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(106, 25);
+            this.label3.TabIndex = 162;
+            this.label3.Text = "Current id";
+            // 
             // modificamasina
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Rent_a_Car.Properties.Resources.original;
             this.ClientSize = new System.Drawing.Size(719, 656);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.monthCalendar2);
@@ -195,6 +224,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "modificamasina";
             this.Text = "modificamasina";
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -215,5 +245,7 @@
         private System.Windows.Forms.TextBox text_motorizare;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Label label3;
     }
 }

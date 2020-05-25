@@ -14,18 +14,34 @@ namespace Rent_a_Car
 {
     public partial class Adaugareuser : Form
     {
+        functions fun = new functions();
+        string idmasina = "";
+        int atempt = 0;
+        bool exista_utilizator = false;
+        bool masinaselectata = false;
+        string data_predare = "";
+        string data_rezervare = "";
+        List<string> lst = new List<string>();
+        String cale = Directory.GetParent(Environment.CurrentDirectory).Parent.FullName;
+
         public Adaugareuser()
         {
             InitializeComponent();
+            //Preluam numele de utilizator pentru comparare intro lista
+            foreach (var list in fun.GetData())
+            {
+                this.lst.Add(Convert.ToString(list));
+            }
+            //
+            dataGridView1.BackgroundColor = Color.White;
+            dataGridView1.RowHeadersVisible = false;
+            dataGridView1.DataSource = fun.getfreecars(0);
+
+            monthCalendar1.MinDate = DateTime.Now;
+            monthCalendar2.MinDate = DateTime.Now;
         }
 
-        private void monthCalendar1_DateSelected(object sender, DateRangeEventArgs e)
-        {
-           var time= monthCalendar1.SelectionRange.Start.ToShortDateString();
-            Console.WriteLine(time);
 
-        }
-        int atempt = 0;
         private void cnp_TextChanged(object sender, EventArgs e)
         {
             // Autocompletare varsta,sex , verifica conditi baza corectitudine cnp
@@ -49,7 +65,7 @@ namespace Rent_a_Car
                         case 2:
                         case 6:
                             sex.Text = "F";
-                            
+
                             sex.BackColor = Color.Green;
                             break;
                         default:
@@ -91,7 +107,6 @@ namespace Rent_a_Car
         private void cautareuser()
         {
 
-            String cale = Directory.GetParent(Environment.CurrentDirectory).Parent.FullName;
             SqlConnection scn = new SqlConnection();
             scn.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + cale + "\\database.mdf;Integrated Security=True;Connect Timeout=30";
             string cautare_dupa = "select count (*) as cnt from users where username=@usr";
@@ -133,22 +148,20 @@ namespace Rent_a_Car
                         String inserare = "Insert into users(username,password,nume,prenume,CNP,sex,varsta,adresa,telefon) " +
                         "values('" + Username + "','" + Password + "','" + Nume + "','" + Prenume + "','" + CNP + "','" + Sex + "','"
                         + Varsta + "','" + Adresa + "','" + Telefon + "')";
-
-                        /* SqlConnection mySqlConnection = new SqlConnection(connString);
-
-                         mySqlConnection.Open();*/
                         var cmd = new SqlCommand(inserare, scn);
                         int row = cmd.ExecuteNonQuery();
                         scn.Close();
                         atempt = 1;
-                        ;
                         MessageBox.Show("Utilizator inserat cu succes!");
                     }
-
                     catch (Exception es)
 
                     { MessageBox.Show(es.Message); }
+
+                    string id = fun.getIDUser(numeutilizator.Text);
+                    fun.UpdateCarOnregistration(Int32.Parse(idmasina), data_rezervare, data_predare, id);
                 }
+
 
 
 
@@ -160,46 +173,71 @@ namespace Rent_a_Car
 
         private void button1_Click(object sender, EventArgs e)
         {
-            cautareuser();
-            this.Close();
+            if (masinaselectata)
+            {
+                cautareuser();
+            }
+            else
+            {
+                MessageBox.Show("Nu ati selectat o masina/Nu avem masini libere ");
+            }
         }
 
-        private void masiniBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.masiniBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.databaseDataSet);
 
-        }
 
         private void Adaugareuser_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'databaseDataSet.masini' table. You can move, or remove it, as needed.
-            this.masiniTableAdapter.Fill(this.databaseDataSet.masini);
-
         }
 
-        private void fillByToolStripButton_Click(object sender, EventArgs e)
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            try
+            if (e.RowIndex >= 0)
             {
-                this.masiniTableAdapter.FillBy(this.databaseDataSet.masini);
-            }
-            catch (System.Exception ex)
+                this.masinaselectata = true;
+                DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
+                idmasina = row.Cells[0].Value.ToString();
+
+
+            };
+        }
+
+        private void monthCalendar2_DateChanged(object sender, DateRangeEventArgs e)
+        {
+            monthCalendar2.MinDate = monthCalendar1.SelectionRange.Start;
+            this.data_predare = monthCalendar2.SelectionRange.Start.ToShortDateString();
+        }
+
+        private void monthCalendar1_DateChanged(object sender, DateRangeEventArgs e)
+        {
+            this.data_rezervare = monthCalendar1.SelectionRange.Start.ToShortDateString();
+
+        }
+
+        private void numeutilizator_TextChanged(object sender, EventArgs e)
+        {
+            foreach (var list in lst)
             {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
+                if (list == numeutilizator.Text)
+                {
+                    this.exista_utilizator = true;
+                    break;
+                }
+                else
+                {
+                    this.exista_utilizator = false;
+                }
             }
-
-        }
-
-        private void masiniDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void masiniBindingSource_CurrentChanged(object sender, EventArgs e)
-        {
-
+            Console.WriteLine(exista_utilizator);
+            if (exista_utilizator && numeutilizator.BackColor == Color.White)
+            {
+                numeutilizator.BackColor = Color.Red;
+            }
+            else
+            {
+                numeutilizator.BackColor = Color.White;
+            }
         }
     }
 }

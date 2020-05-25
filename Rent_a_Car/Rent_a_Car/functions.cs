@@ -15,11 +15,26 @@ namespace Rent_a_Car
     {
         public static String cale = Directory.GetParent(Environment.CurrentDirectory).Parent.FullName;
         public static string argdb = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + cale + "\\database.mdf;Integrated Security=True;Connect Timeout=30";
+        //Afisare genreala Detalii client
         public DataTable afisaredb(string identificator)
         {
             SqlConnection con = new SqlConnection(argdb);
 
             SqlCommand cmd = new SqlCommand("select * from " + identificator + "", con);
+            con.Open();
+            SqlDataAdapter sda = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+            con.Close();
+            //dataGridView1.DataSource = dt;
+            return dt;
+        }
+        //
+        public DataTable afisaredb_client()
+        {
+            SqlConnection con = new SqlConnection(argdb);
+
+            SqlCommand cmd = new SqlCommand("select Id,nume,prenume,telefon from users", con);
             con.Open();
             SqlDataAdapter sda = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
@@ -85,6 +100,20 @@ namespace Rent_a_Car
             cmd.ExecuteNonQuery();
             con.Close();
         }
+        public void UpdateCarOnregistration(int id, string rezervare, string predare, string clientid)
+        {
+
+            SqlConnection con = new SqlConnection(argdb);
+            con.Open();
+            SqlCommand cmd = new SqlCommand("update masini set rezervare=@rezervare, predare=@predare, clientid=@clientid where idmasini=@ID", con);
+            //   Console.WriteLine(id + " " + username + " " + password + " " + " " + nume + " " + prenume + " " + CNP + " " + sex + " " + varsta + " " + adresa + " " + telefon); ;
+            cmd.Parameters.AddWithValue("@ID", id);
+            cmd.Parameters.AddWithValue("@rezervare", rezervare);
+            cmd.Parameters.AddWithValue("@predare", predare);
+            cmd.Parameters.AddWithValue("@clientid", clientid);
+            cmd.ExecuteNonQuery();
+            con.Close();
+        }
 
         public bool stergeutilizator(int id, string numedb, string db_id)
         {
@@ -105,7 +134,7 @@ namespace Rent_a_Car
             conn.Open();
             string value = (string)command.ExecuteScalar();
             conn.Close();
-            Console.WriteLine(value);
+         //   Console.WriteLine(value);
             return value;
         }
 
@@ -117,7 +146,7 @@ namespace Rent_a_Car
             conn.Open();
             string value = (string)command.ExecuteScalar();
             conn.Close();
-            Console.WriteLine(value);
+         //   Console.WriteLine(value);
             return value;
         }
 
@@ -129,7 +158,7 @@ namespace Rent_a_Car
             conn.Open();
             string value = (string)command.ExecuteScalar();
             conn.Close();
-            Console.WriteLine(value);
+          //  Console.WriteLine(value);
             return value;
         }
 
@@ -141,7 +170,7 @@ namespace Rent_a_Car
             conn.Open();
             string value = (string)command.ExecuteScalar().ToString();
             conn.Close();
-            Console.WriteLine(value);
+           // Console.WriteLine(value);
             return value;
         }
 
@@ -153,7 +182,7 @@ namespace Rent_a_Car
             conn.Open();
             string value = (string)command.ExecuteScalar().ToString();
             conn.Close();
-            Console.WriteLine(value);
+           // Console.WriteLine(value);
             return value;
         }
 
@@ -237,10 +266,10 @@ namespace Rent_a_Car
 
         }
         //afisare masini libere pentru inchiriere 
-        public DataTable getfreecars()
+        public DataTable getfreecars(int n)
         {
             SqlConnection conn = new SqlConnection(argdb);
-            SqlCommand command = new SqlCommand("select Marca,Model,Motorizare,rezervare from masini where clientid = '" + 0 + "'");
+            SqlCommand command = new SqlCommand("select idmasini,Marca,Model,Motorizare,rezervare from masini where clientid = '" + n + "'");
             command.Connection = conn;
             conn.Open();
             SqlDataAdapter sda = new SqlDataAdapter(command);

@@ -41,6 +41,7 @@ namespace Rent_a_Car
 
         }
 
+
         private void modifuser_Load(object sender, EventArgs e)
         {
 
@@ -50,6 +51,63 @@ namespace Rent_a_Car
         {
             Console.WriteLine(ids);
             fun.UpdateRegistrationTable(ids, textBox7.Text, textBox8.Text, textBox1.Text, textBox2.Text, textBox3.Text, textBox4.Text, textBox5.Text, textBox6.Text, textBox9.Text);
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+            while ((textBox3.Text != null) && (textBox3.Text.Length == 13))
+            {
+                string cnp = this.textBox3.Text;
+                var cnp_luna = Int32.Parse(cnp.Substring(3, 2));
+                var cnp_zi = Int32.Parse(cnp.Substring(5, 2));
+                if (((cnp_luna >= 1) && (cnp_luna <= 12)) && ((cnp_zi >= 1) && (cnp_zi <= 31)))
+                {
+                    var cnp_sex = Int32.Parse(cnp.Substring(0, 1));
+
+                    switch (cnp_sex)
+                    {
+                        case 1:
+                        case 5:
+                            textBox4.Text = "M";
+                            textBox4.BackColor = Color.Green;
+                            break;
+                        case 2:
+                        case 6:
+                            textBox4.Text = "F";
+                            textBox4.BackColor = Color.Green;
+                            break;
+                        default:
+
+                            break;
+
+                    }
+
+                    var currentDate = DateTime.Today;
+                    var cnp_age = Int32.Parse(cnp.Substring(1, 2));
+
+                    if ((cnp_sex == 1) || (cnp_sex == 2))
+                    {
+                        cnp_age += 1900;
+                    }
+                    else if ((cnp_sex == 5) || (cnp_sex == 6))
+                    {
+                        cnp_age += 2000;
+
+                    }
+                    var newage = currentDate.Year - cnp_age;
+
+                    textBox5.Text = newage.ToString();
+                    textBox5.BackColor = Color.Green;
+                }
+                else
+                    MessageBox.Show("CNP Invalid");
+
+
+
+                break;
+
+
+            }
         }
     }
 }

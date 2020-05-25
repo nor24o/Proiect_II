@@ -42,17 +42,19 @@ namespace Rent_a_Car
 
         }
         String cale = Directory.GetParent(Environment.CurrentDirectory).Parent.FullName;
-        
         functions fun = new functions();
+        
         // int numaraleator = (new Random()).Next(100, 1000);
         int iduser = 0;
         bool aceptEULA = false;
         int atempt = 0;
         bool exista_utilizator = false;
-        int idmasina;
+        string idmasina;
         bool masinaselectata = false;
         string data_predare = "";
         string data_rezervare = "";
+
+
 
         //interogheaza utilizatorul daca doreste sa inchida aplicatia 
         private void opresteaplicatia()
@@ -100,18 +102,12 @@ namespace Rent_a_Car
 
             foreach (var list in fun.GetData())
             {
-
                 this.lst.Add(Convert.ToString(list));
-
             }
 
 
         }
 
-        private void panel4_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
 
         private void button4_Click(object sender, EventArgs e)
         {
@@ -281,7 +277,7 @@ namespace Rent_a_Car
 
             if (exista_utilizator == true)
             {
-
+                scn.Close();
                 numeutilizator.BackColor = Color.Red;
                 MessageBox.Show("Client Inregistrat");
                 if ((atempt == 1) && (exista_utilizator == true))
@@ -306,54 +302,34 @@ namespace Rent_a_Car
                 if (this.atempt == 0)
                 {
                     try
-
                     {
-
-                        //  String connString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Xavier\Desktop\Proiect_II_Rent_a_car\Proiect_II\Rent_a_Car\Rent_a_Car\database.mdf;Integrated Security=True;Connect Timeout=30";
-
-
-                        // scn.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + cale + "\\database.mdf;Integrated Security=True;Connect Timeout=30";
                         String inserare = "Insert into users(username,password,nume,prenume,CNP,sex,varsta,adresa,telefon) " +
                         "values('" + Username + "','" + Password + "','" + Nume + "','" + Prenume + "','" + CNP + "','" + Sex + "','"
                         + Varsta + "','" + Adresa + "','" + Telefon + "')";
                         scn.Open();
-                        /* SqlConnection mySqlConnection = new SqlConnection(connString);
-                        
-                         mySqlConnection.Open();*/
-
-                        /*
-                        string updatemasina = "UPDATE masini SET clientid = '" + r + "',rezervare = '" + rez + "',predare = '" + pred + "' WHERE idmasini = '" + this.idmasina + "'; ";
-                        Console.WriteLine(updatemasina);
-                        var cmd2 = new SqlCommand(updatemasina, scn);
-                        int row2= cmd2.ExecuteNonQuery();*/
 
                         var cmd = new SqlCommand(inserare, scn);
 
                         int row = cmd.ExecuteNonQuery();
 
                         scn.Close();
-                        
-                        updatemasina();
-                        
+                       
                         atempt = 1;
                     }
 
                     catch (Exception es)
                     { MessageBox.Show(es.Message); }
+                    string id = fun.getIDUser(numeutilizator.Text);
+                    fun.UpdateCarOnregistration(Int32.Parse(idmasina), data_rezervare, data_predare,id);
+                    Console.WriteLine("Test"+" "+idmasina.ToString()+" "+ data_rezervare+" "+ data_predare+" "+ id );
                 }
-
-
-
-
             }
-
-
         }
         private void updatemasina()
         {
             SqlConnection scn = new SqlConnection();
             scn.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + cale + "\\database.mdf;Integrated Security=True;Connect Timeout=30";
-            iduser = Int32.Parse(fun.getIDUser(numeutilizator.Text));
+            
             String updatemasina = "update masini set clientid='" + iduser + "',rezervare='" + data_rezervare + "',predare='" + data_predare + "' where idmasini='" + idmasina + "' ";
             scn.Open();
             var cmd = new SqlCommand(updatemasina, scn);
@@ -390,59 +366,32 @@ namespace Rent_a_Car
             {
                 cautareuser();
             }
+            else if(aceptEULA && !masinaselectata)
+            {
+                MessageBox.Show("Nu ati selectat o masina/Nu avem masini libere ");
+            }
             else
             {
                 MessageBox.Show("Nu ati acceptat termenii si conditiile");
             }
-        }
-
-        private void sex_TextChanged(object sender, EventArgs e)
-        {
 
         }
 
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void prenume_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+       
 
         private void nume_TextChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label13_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            functions fun = new functions();
+         
             dataGridView1.BackgroundColor = Color.White;
             dataGridView1.RowHeadersVisible = false;
 
-            dataGridView1.DataSource = fun.getfreecars();
+            dataGridView1.DataSource = fun.getfreecars(0);
 
         }
 
@@ -503,9 +452,33 @@ namespace Rent_a_Car
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            this.idmasina = dataGridView1.CurrentCell.RowIndex;
-            this.masinaselectata = true;
-            Console.WriteLine("idmasina" + idmasina);
+           // this.idmasina = dataGridView1.CurrentCell.RowIndex;
+            
+            if (e.RowIndex >= 0)
+            {
+                this.masinaselectata = true;
+                DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
+                this.idmasina = row.Cells[0].Value.ToString();
+                if (row.Cells[1].Value.ToString() != "")
+                {
+                    try
+                    {
+                        pictureBox2.Image = Image.FromFile(@""+cale+"\\Resources\\cars\\"+ row.Cells[1].Value.ToString() + ".jpeg");
+                        pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
+                    }
+                    catch
+                    {
+
+                    }
+                    
+                }
+                else if(row.Cells[1].Value.ToString() != ""){
+                    pictureBox2.Image = Image.FromFile(@"" + cale + "\\Resources\\cars\\Default.jpeg");
+                    pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
+                }
+
+            }
+            
 
         }
 
@@ -544,6 +517,13 @@ namespace Rent_a_Car
                 checkBox1.BackColor = Color.Transparent;
                 this.aceptEULA = false;
             }
+        }
+
+
+
+        private void dataGridView1_MouseClick(object sender, MouseEventArgs e)
+        {
+
         }
     }
 }
