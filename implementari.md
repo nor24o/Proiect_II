@@ -1,6 +1,6 @@
 # AdminCP => Vehicule
-+ [ ] Adaugare
-     - implementare clientid tabel 
++ [ ] Adaugare 
+     - implementare clientid tabel //fiecare masina nou adaugata se va initializa cu clientid=0 
      - scos imagine
      - scos calendar predare/preluare 
            
