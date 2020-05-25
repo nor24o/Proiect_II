@@ -17,5 +17,5 @@
 + [ ] Ajustare tabel => afisare doar rezervarile clientului
 
 # Rezervare masina
-+ [ ] Adaugare form pentru ToS
++ [x] Adaugare form pentru ToS
 + [ ] Dupa finalizare, clientid automat
