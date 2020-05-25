@@ -8,9 +8,9 @@
      - ajustare functie modifica
 
 # AdminCP => Client
-+ [ ] Adaugare
++ [x] Adaugare
      - implementat in lista doar masini disponibile (clientid == 0)
-+ [ ] Modifica
++ [x] Modifica
      - ajustare functie modifica
 
 # UserCP
