@@ -1,10 +1,10 @@
 # AdminCP => Vehicule
-+ [ ] Adaugare 
++ [X] Adaugare 
      - implementare clientid tabel //fiecare masina nou adaugata se va initializa cu clientid=0 
      - scos imagine
      - scos calendar predare/preluare 
            
-+ [ ] Modifica
++ [X] Modifica
      - ajustare functie modifica
 
 # AdminCP => Client
@@ -18,4 +18,4 @@
 
 # Rezervare masina
 + [x] Adaugare form pentru ToS
-+ [ ] Dupa finalizare, clientid automat
++ [X] Dupa finalizare, clientid automat
