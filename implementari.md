@@ -14,7 +14,7 @@
      - ajustare functie modifica
 
 # UserCP
-+ [ ] Ajustare tabel => afisare doar rezervarile clientului
++ [x] Ajustare tabel => afisare doar rezervarile clientului
 
 # Rezervare masina
 + [x] Adaugare form pentru ToS
