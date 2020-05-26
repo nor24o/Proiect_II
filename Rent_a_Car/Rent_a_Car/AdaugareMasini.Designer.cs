@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdaugareMasini));
             this.text_model = new System.Windows.Forms.TextBox();
-            this.text_marca = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.btn_salvare_masina = new System.Windows.Forms.Button();
@@ -54,10 +53,18 @@
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.usersBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
+            this.text_marca = new System.Windows.Forms.ComboBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.pathimg = new System.Windows.Forms.TextBox();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.label1 = new System.Windows.Forms.Label();
+            this.textBox105 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.databaseDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingNavigator)).BeginInit();
             this.usersBindingNavigator.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // text_model
@@ -65,22 +72,11 @@
             this.text_model.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.text_model.BackColor = System.Drawing.SystemColors.Window;
             this.text_model.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.text_model.Location = new System.Drawing.Point(258, 70);
+            this.text_model.Location = new System.Drawing.Point(279, 70);
             this.text_model.MaxLength = 30;
             this.text_model.Name = "text_model";
             this.text_model.Size = new System.Drawing.Size(363, 29);
             this.text_model.TabIndex = 141;
-            // 
-            // text_marca
-            // 
-            this.text_marca.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.text_marca.BackColor = System.Drawing.SystemColors.Window;
-            this.text_marca.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.text_marca.Location = new System.Drawing.Point(258, 26);
-            this.text_marca.MaxLength = 30;
-            this.text_marca.Name = "text_marca";
-            this.text_marca.Size = new System.Drawing.Size(363, 29);
-            this.text_marca.TabIndex = 140;
             // 
             // label8
             // 
@@ -112,7 +108,7 @@
             this.btn_salvare_masina.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_salvare_masina.Font = new System.Drawing.Font("Times New Roman", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_salvare_masina.ForeColor = System.Drawing.Color.Black;
-            this.btn_salvare_masina.Location = new System.Drawing.Point(345, 164);
+            this.btn_salvare_masina.Location = new System.Drawing.Point(422, 317);
             this.btn_salvare_masina.Margin = new System.Windows.Forms.Padding(2);
             this.btn_salvare_masina.Name = "btn_salvare_masina";
             this.btn_salvare_masina.Size = new System.Drawing.Size(276, 47);
@@ -125,7 +121,7 @@
             // 
             this.text_motorizare.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.text_motorizare.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.text_motorizare.Location = new System.Drawing.Point(258, 111);
+            this.text_motorizare.Location = new System.Drawing.Point(279, 111);
             this.text_motorizare.MaxLength = 30;
             this.text_motorizare.Name = "text_motorizare";
             this.text_motorizare.Size = new System.Drawing.Size(363, 29);
@@ -289,20 +285,131 @@
             this.usersBindingNavigatorSaveItem.Text = "Save Data";
             this.usersBindingNavigatorSaveItem.Click += new System.EventHandler(this.usersBindingNavigatorSaveItem_Click);
             // 
+            // text_marca
+            // 
+            this.text_marca.FormattingEnabled = true;
+            this.text_marca.Items.AddRange(new object[] {
+            "Acura",
+            "Alfa Romeo",
+            "Audi",
+            "BMW",
+            "Bentley",
+            "Buick",
+            "Cadillac",
+            "Chevrolet",
+            "Chrysler",
+            "Dodge",
+            "Fiat",
+            "Ford",
+            "GMC",
+            "Genesis",
+            "Honda",
+            "Hyundai",
+            "Infiniti",
+            "Jaguar",
+            "Jeep",
+            "Kia",
+            "Land Rover",
+            "Lexus",
+            "Lincoln",
+            "Lotus",
+            "Maserati",
+            "Mazda",
+            "Mercedes-Benz",
+            "Mercury",
+            "Mini",
+            "Mitsubishi",
+            "Nissan",
+            "Polestar",
+            "Pontiac",
+            "Porsche",
+            "Ram",
+            "Rivian",
+            "Rolls-Royce",
+            "Saab",
+            "Saturn",
+            "Scion",
+            "Smart",
+            "Subaru",
+            "Suzuki",
+            "Tesla",
+            "Toyota",
+            "Volkswagen",
+            "Volvo"});
+            this.text_marca.Location = new System.Drawing.Point(279, 32);
+            this.text_marca.Name = "text_marca";
+            this.text_marca.Size = new System.Drawing.Size(363, 21);
+            this.text_marca.TabIndex = 147;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(50, 164);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(275, 160);
+            this.pictureBox1.TabIndex = 148;
+            this.pictureBox1.TabStop = false;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(127, 339);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(103, 25);
+            this.button1.TabIndex = 149;
+            this.button1.Text = "Incarca imagine";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // pathimg
+            // 
+            this.pathimg.Location = new System.Drawing.Point(257, 344);
+            this.pathimg.Name = "pathimg";
+            this.pathimg.Size = new System.Drawing.Size(100, 20);
+            this.pathimg.TabIndex = 150;
+            this.pathimg.Visible = false;
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(527, 145);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(69, 16);
+            this.label1.TabIndex = 153;
+            this.label1.Text = "Observatii";
+            // 
+            // textBox105
+            // 
+            this.textBox105.Location = new System.Drawing.Point(422, 164);
+            this.textBox105.Multiline = true;
+            this.textBox105.Name = "textBox105";
+            this.textBox105.Size = new System.Drawing.Size(276, 124);
+            this.textBox105.TabIndex = 154;
+            // 
             // AdaugareMasini
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Rent_a_Car.Properties.Resources.bg_login;
-            this.ClientSize = new System.Drawing.Size(719, 249);
-            this.Controls.Add(this.usersBindingNavigator);
-            this.Controls.Add(this.text_model);
+            this.ClientSize = new System.Drawing.Size(740, 390);
+            this.Controls.Add(this.textBox105);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.pathimg);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.text_marca);
+            this.Controls.Add(this.text_model);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.btn_salvare_masina);
             this.Controls.Add(this.text_motorizare);
             this.Controls.Add(this.label10);
+            this.Controls.Add(this.usersBindingNavigator);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "AdaugareMasini";
             this.Text = "AdaugareMasini";
@@ -312,6 +419,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingNavigator)).EndInit();
             this.usersBindingNavigator.ResumeLayout(false);
             this.usersBindingNavigator.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -320,7 +428,6 @@
         #endregion
 
         private System.Windows.Forms.TextBox text_model;
-        private System.Windows.Forms.TextBox text_marca;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button btn_salvare_masina;
@@ -343,5 +450,12 @@
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.ToolStripButton usersBindingNavigatorSaveItem;
+        private System.Windows.Forms.ComboBox text_marca;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox pathimg;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox textBox105;
     }
 }

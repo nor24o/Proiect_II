@@ -136,3 +136,5 @@ C:\Users\Xavier\Desktop\Proiect II\v0.71\Proiect_II\Rent_a_Car\Rent_a_Car\obj\De
 C:\Users\Xavier\Desktop\Proiect II\v0.71\Proiect_II\Rent_a_Car\Rent_a_Car\obj\Debug\Rent_a_Car.csproj.CoreCompileInputs.cache
 C:\Users\Xavier\Desktop\Proiect II\v0.71\Proiect_II\Rent_a_Car\Rent_a_Car\obj\Debug\Rent_a_Car.exe
 C:\Users\Xavier\Desktop\Proiect II\v0.71\Proiect_II\Rent_a_Car\Rent_a_Car\obj\Debug\Rent_a_Car.pdb
+E:\AN3-S2\Info. Indust\Proiect II\Rent_a_Car\Rent_a_Car\obj\Debug\Rent_a_Car.modificamasina.resources
+E:\AN3-S2\Info. Indust\Proiect II\Rent_a_Car\Rent_a_Car\obj\Debug\Rent_a_Car.Rezervare.resources

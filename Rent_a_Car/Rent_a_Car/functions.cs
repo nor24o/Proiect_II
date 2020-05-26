@@ -162,6 +162,18 @@ namespace Rent_a_Car
             return value;
         }
 
+        public String getidmasina()
+        {
+            SqlConnection conn = new SqlConnection(argdb);
+            SqlCommand command = new SqlCommand("select TOP 1 idmasini from masini ORDER BY idmasini DESC");
+            command.Connection = conn;
+            conn.Open();
+            string value = (string)command.ExecuteScalar().ToString();
+            conn.Close();
+            //  Console.WriteLine(value);
+            return value;
+        }
+
         public String rezervariUser(String username)
         {
             SqlConnection conn = new SqlConnection(argdb);

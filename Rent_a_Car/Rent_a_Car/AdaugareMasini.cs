@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -24,6 +25,7 @@ namespace Rent_a_Car
 
         private void btn_salvare_masina_Click(object sender, EventArgs e)
         {
+            string observare = textBox105.Text;
             String cale = Directory.GetParent(Environment.CurrentDirectory).Parent.FullName;
             string argdb = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + cale + "\\database.mdf;Integrated Security=True;Connect Timeout=30";
             SqlConnection con = new SqlConnection(argdb);
@@ -31,6 +33,7 @@ namespace Rent_a_Car
             string model = text_model.Text;
             string motorizare = text_motorizare.Text;
             string clientid = "0";
+            
             try
             {
                 con.Open();
@@ -45,8 +48,41 @@ namespace Rent_a_Car
             }
             catch (Exception es)
             { MessageBox.Show(es.Message); }
+            string path = @"" + cale + "\\Resources\\cars\\" + marca;
+            if (!Directory.Exists(path))
+            {
+                Directory.CreateDirectory(path);
+            }
+            string format = null;
+            if (ImageFormat.Jpeg.Equals(pictureBox1.Image.RawFormat))
+            {
+                format = ".jpeg";
+            }
+            else if (ImageFormat.Png.Equals(pictureBox1.Image.RawFormat))
+            {
+                format = ".png";
+            }
+            else if (".jpg".Equals(pictureBox1.Image.RawFormat))
+            {
+                format = ".jpg";
+            }
+            functions f = new functions();
+            File.Copy(pathimg.Text, Path.Combine(path, Path.GetFileName(marca+"-"+ f.getidmasina()+format)), true);
+  
+            if (!textBox105.Text.Equals("null"))
+            {
+                string bzbz = @"" + cale + "\\Resources\\cars\\" + marca + "\\" + marca + "-" + f.getidmasina() + ".txt";
+                if (!File.Exists(bzbz)){
+                    var da = File.Create(bzbz);
+                    da.Close();
+                    var tw = new StreamWriter(bzbz, true);
+                    tw.WriteLine(""+ observare + "");
+                    tw.Close();
+                }
+ 
+            }
 
-
+            
         }
 
         private void usersBindingNavigatorSaveItem_Click(object sender, EventArgs e)
@@ -63,5 +99,17 @@ namespace Rent_a_Car
 
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog open = new OpenFileDialog();
+            open.Filter = "Image Files(*.jpg; *.jpeg; *.png;)|*.jpg; *.jpeg; *.png;";
+
+            if(open.ShowDialog() == DialogResult.OK)
+            {
+                pathimg.Text = open.FileName;
+                pictureBox1.Image = new Bitmap(open.FileName);
+                pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            }
+        }
     }
 }

@@ -1,55 +1,41 @@
-Generic EULA template
-________________________________________
-End-User License Agreement ("Agreement")
+1. OBLIGATIILE NOASTRE
+1.1. Sa transmita Clientului dreptul de folosinta asupra autovehiculului ce constituie obiectul Contractului prin: livrarea autovehiculului, completarea si semnarea fisei de predare-preluare, inmanarea cheilor si a actelor masinii (certificat de inmatriculare, polita de asigurare RCA) in original.
+1.2. Sa asigure Clientului asistenta rutiera, pe teritoriul Romaniei, pe toata durata contractului, 24h/24, 7zile/7 in caz de accident sau pana mecanica (defectiune tehnica). Noi nu suntem responsabili de remedierea anvelopei in caz de pana.
+1.3. Sa inlocuiasca autovehiculul (in limita disponibilitatii), in caz de avarie care nu poate fi remediata pe loc, daca dauna nu este din vina Clientului, intr-un interval de 24 ore, in functie de locatia in care s-a constatat defectiunea. In cazul in care dauna este din vina Clientului se va solicita blocarea unei noi garantii pentru livrarea unui nou autoturism.
+1.4. In cazul in care vom fi in imposibilitatea de a inlocui Autovehiculul, Clientului i se va restitui partea aferenta costului chiriei calculate proportional cu durata in care autovehiculul nu a putut fi folosit. 
+1.5. Noi nu suntem responsabili de pierderile suportate de catre Client in caz de defectare sau avarie a autovehiculului, cu exceptia cheltuielilor autorizate de noi pentru reparatii. 
+1.6. Din momentul livrarii autovehiculului si pana la reintrarea in posesia acestuia, noi suntem exonerati de raspundere pentru daunele provocate in trafic de autovehiculul inchiriat Clientului, precum si de taxele de drum ori de pod sau amenzi rezultate din ocuparea abuziva a unui loc de parcare, nerespectarea legislatiei rutiere sau a legilor Romaniei. 
+1.7. Prin eliberarea chitantelor de completare si anulare ale depozitelor preautorizate de noi se degreveaza de indisponibilitatea sumelor din contul Clientului si recomanda contactarea si prezentarea chitantelor catre banca de la care Clientul detine cardul.
 
-Last updated: (add date)
+2. OBLIGATIILE CLIENTULUI 
 
-Please read this End-User License Agreement ("Agreement") carefully before clicking the "I Agree" button, downloading or using My Application (change this) ("Application").
+Observatie: In conditiile unei rezervari efectuate telefonic, prin e-mail sau prin parteneri, rezervarea poate fi anulata de UTCN-RENT-A-CAR, fara a datora nimic Clientului sau intermediarului, in cazul in care Clientul final nu indeplineste cerintele minime obligatorii pentru inchiriere prevazute in contract si publicate pe site-ul UTCN-RENT-A-CAR.
+2.1. Sa fie posesorul unui permis de conducere national si/sau international valabil (obligatoriu permis international pentru acte emise in tari cu alta scriere decat in alfabetul Latin si pentru cele obtinute prin conducere auto cu volan pe dreapta, Ex.: UK, India, Australia, Japonia). La semnarea Contractului, trebuie prezentate in original permisul de conducere impreuna cu un act de identitate si un card de credit. Utilizarea cardului de credit este obligatorie pentru blocarea depozitului. Nu sunt acceptate carduri pre-pay sau Diners Club. Se pot folosi carduri de tip fintech (Revolut, Monese, N26 etc.) pentru plata serviciilor, dar nu si pentru blocarea garantiei.
+2.2. Pentru soferii cu experienta intre 0-1 ani se va percepe o taxa dupa cum urmeaza: 300 € pentru clasele A, B, C, D, D2, E, F inclusiv si 500 € pentru clasele F1, G2, G1, G, GP, L, L1, P0, 0, P1, V, V0, V2, V3, X inclusiv. Pentru soferii cu experienta intre 1-3 ani se va percepe o taxa de 100 € pentru clasele A, B, C, D, D2, E, F inclusiv si 300 € pentru clasele F1, G2, G1, G, GP, L, L1, P0, 0, P1, V, V0, V2, V3, X inclusiv. Taxa se aplica per inchiriere, indiferent de durata ei. Daca exista soferi aditionali in aceleasi conditii, cu experienta intre 0-1 ani, respectiv 1-3 ani, taxa se va incasa o singura data. 
+2.3. In cazul rezervarilor confirmate, UTCN-RENT-A-CAR isi rezerva dreptul de anulare a acestora in cazul in care Clientul intarzie ridicarea autoturismului cu peste 3 ore fata de ora stabilita de comun acord, daca Clientul nu anunta in prealabil.
+2.4. Sa permita conducerea autovehiculului doar persoanelor autorizate de UTCN-RENT-A-CAR si mentionate in Contract, sau reprezentantilor UTCN-RENT-A-CAR.
+2.5. Taxa pentru soferii suplimentari va fi de 15 €/utilizator. Prin inscrierea in Contract a acestora accepta faptul ca trebuie sa indeplineasca conditiile de inchiriere UTCN-RENT-A-CAR. 
+2.6. Sa nu conduca autovehiculul in afara suprafetelor carosabile, pe drumuri nepavate, neasfaltate, inchise circulatiei publice. In caz contrar, UTCN-RENT-A-CAR va incasa valoarea reparatiei, indiferent de tipul garantiei alese de client (inclusiv in cazul taxei SCDW/SCDW+), din garantie sau va debita cardul de debit/credit al clientului prezentat la semnarea contractului, cu notificare in prealabil. 
+2.7. Sa nu faca si sa nu permita interventii tehnice sau estetice asupra autovehiculului fara consimtamantul scris al UTCN-RENT-A-CAR.
+2.8. Sa instiinteze UTCN-RENT-A-CAR, la solicitarea acesteia, cu privire la locul unde se afla autovehiculul si sa permita examinarea autovehiculului de catre reprezentantii UTCN-RENT-A-CAR, in maxim 24 de ore de la cererea acesteia.
+2.9. Sa nu foloseasca autovehiculul pentru taximetrie, transport alternativ - (ridesharing (ex. Uber, Bolt, Bla Bla Car ect.), scoala de soferi, activitati de impingere sau tractare, curse, antrenamente, concursuri, in scopul transportarii unor substante periculoase sau activitati ilegale, care pot deteriora starea Autovehiculului, precum si sa nu ii dea nicio alta destinatie, alta decat pentru transport de persoane in regim de inchiriere. In cazul in care autoturismul inchiriat este pus sub sechestru sau distrus/deteriorat de catre autoritati sau Client, in urma folosirii lui pentru obtinerea unor foloase necuvenite din transportul unor obiecte sau substante interzise, Clientul se afla raspunzator de intreaga contravaloare a autovehiculului.
+2.10. Animalele de companie (ex.: caini, pisici) pot fi transportate in autoturismele UTCN-RENT-A-CAR numai in cutii (custi, genti) speciale, inchise pe durata calatoriei. In caz contrar, se vor aplica aceleasi conditii mentionate la punctul 3.10.
+2.11. Pentru nerespectarea prevederilor privind obligatiile Clientului – prevazute in Capitolul 2 (exceptie punct 2.1 – caz in care UTCN-RENT-A-CAR are dreptul de anula unilateral rezervarea fara restituirea sumelor in caz de avans incasat) se incaseaza integral depozitul de garantie (inclusiv in cazul taxelor SCDW).
+2.12. Clientul are obligatia de a mentine autoturismul in stare corespunzatore de folosinta pe toata perioada contractuala si de a preda autoturismul in aceeasi stare ca acea de la data luarii in primire. In cazul oricaror daune produse autoturismului pe perioada contractuala, (inclusiv daune cauzate de lovirea animalelor sau daune cu autor necunoscut) clientul are obligatia de a suporta costurile tuturor reparatiilor necesare pentru a readuce autoturismul in starea existenta la data luarii in primire.
 
-By clicking the "I Agree" button, downloading or using the Application, you are agreeing to be bound by the terms and conditions of this Agreement.
+3. DESFASURAREA CONTRACTULUI. LIVRAREA, INLOCUIREA SI RESTITUIREA AUTOVEHICULULUI. 
 
-If you do not agree to the terms of this Agreement, do not click on the "I Agree" button and do not download or use the Application.
+3.1. Livrarea si restituirea autovehiculului se vor face la locul, data si ora stabilite de Client impreuna cu UTCN-RENT-A-CAR si mentionate in formularul de rezervare si Contract. 
+3.2. Predarea si preluarea masinii in afara orelor de program (L-V 09:00 -18:00) se poate realiza la cererea clientului. In acest caz se va percepe o taxa suplimentara de 20 € per preluare/predare. 
+3.2.1. Deteriorarea sau distrugerea jantelor sau a anvelopelor atrage dupa sine obligatia Clientului de a achita o taxa de serviciu de 50 euro si costul de reparatie sau inlocuire al elementului deteriorat/distrus.
+3.2.2. Avarierea partii inferioare a autovehiculului, reprezentand elementele de sub masina (scut, baie de ulei, esapament, toba etc.) atrage dupa sine obligatia Clientului de a achita o taxa de serviciu de 50 euro si costul de reparatie sau inlocuire al elementului deteriorat/distrus.
+3.3. Restituirea autovehiculului in alt loc decat cel in care a fost livrat se face numai cu acordul UTCN-RENT-A-CAR si se va percepe o taxa suplimentara de dislocare, cuprinsa intre 30 € si 250 €. In cazul in care Clientul solicita restituirea autovehiculului intr-o alta locatie ulterior preluarii masinii, va informa UTCN-RENT-A-CAR in scris sau sunand la numarul de telefon suport non-stop 0721442266. UTCN-RENT-A-CAR va trebui sa isi dea acordul asupra acestei modificari contractuale, iar Clientul va achita taxa suplimentara de dislocare mentionata anterior, taxa care va fi comunicata in scris de catre UTCN-RENT-A-CAR, prin SMS sau e-mail. Incasarea taxei se va face la returul autoturismului din garantie, cash sau pe baza cardului de credit/debit prezentat de catre Client la semnarea contractului de inchiriere.
+3.4. In cazul in care Clientul lasa masina intr-o alta agentie decat stabilita initial prin contract, fara sa anunte modificarea locatiei de predare i se va incasa o taxa suplimentara de 250 €.
+3.5. La restituirea autovehiculului peste ora limita conform contractului, se va percepe un tarif suplimentar de 10 €/ora, agreat prin contract. Daca Clientul intarzie predarea autovehiculului fara a avea acordul UTCN-RENT-A-CAR, compania are dreptul sa reintre in posesie pe cheltuiala si riscul Clientului.
 
-License
+4. GARANTIA PENTRU DAUNE SI TAXE PENTRU REDUCEREA ACESTEIA
 
-My Company (change this) grants you a revocable, non-exclusive, non-transferable, limited license to download, install and use the Application solely for your personal, non-commercial purposes strictly in accordance with the terms of this Agreement.
-
-Restrictions
-
-You agree not to, and you will not permit others to:
-
-a) license, sell, rent, lease, assign, distribute, transmit, host, outsource, disclose or otherwise commercially exploit the Application or make the Application available to any third party.
-
-The Restrictions section is for applying certain restrictions on the app usage, e.g. user can't sell app, user can't distribute the app. For the full disclosure section, create your own EULA.
-
-
-Modifications to Application
-
-My Company (change this) reserves the right to modify, suspend or discontinue, temporarily or permanently, the Application or any service to which it connects, with or without notice and without liability to you.
-
-The Modifications to Application section is for apps that will be updated or regularly maintained. For the full disclosure section, create your own EULA.
-
-
-
-
-Term and Termination
-
-This Agreement shall remain in effect until terminated by you or My Company (change this). 
-
-My Company (change this) may, in its sole discretion, at any time and for any or no reason, suspend or terminate this Agreement with or without prior notice.
-
-This Agreement will terminate immediately, without prior notice from My Company (change this), in the event that you fail to comply with any provision of this Agreement. You may also terminate this Agreement by deleting the Application and all copies thereof from your mobile device or from your desktop.
-
-Upon termination of this Agreement, you shall cease all use of the Application and delete all copies of the Application from your mobile device or from your desktop.
-
-Severability
-
-If any provision of this Agreement is held to be unenforceable or invalid, such provision will be changed and interpreted to accomplish the objectives of such provision to the greatest extent possible under applicable law and the remaining provisions will continue in full force and effect.
-
-Amendments to this Agreement
-
-My Company (change this) reserves the right, at its sole discretion, to modify or replace this Agreement at any time. If a revision is material we will provide at least 30 (changes this) days' notice prior to any new terms taking effect. What constitutes a material change will be determined at our sole discretion.
-
-Contact Information
-
-If you have any questions about this Agreement, please contact us.
+4.1. Autovehiculul are incheiata polita de asigurare RCA, conform legii.  Asigurarea RCA este o asigurare prin care tertii prejudiciati in urma unui accident auto produs din vina conducatorului auto asigurat, primesc despagubiri pentru daunele materiale si/sau decesul ori vatamarile corporale suferite in acel accident.
+4.2. Clientul opteaza la semnarea Contractului pentru una dintre urmatoarele garantii si taxe pentru reducerea ei: Collision Damage Waiver (CDW), Theft Protection (TP), incluse in tarif, la care se pot adauga Super Collision Damage Waiver (SCDW) sau Super Cover Plus (SCDW +).
+4.2.1. Collision Damage Waiver (CDW) reprezinta o fransiza pentru avarii (responsabilitate), numita si Garantie pentru daune, (specificata in Tarifele Publice), care poate varia intre 500 € si 3000 € in functie de clasa autovehiculului specificat in Contractul semnat de parti. Garantia obligatorie se depune la semnarea Contractului, va fi blocata de catre UTCN-RENT-A-CAR pe un card de credit si va fi restituita Clientului la returnarea autovehiculului (cu exceptia cazurilor prevazute la punctul 4.4.).
+4.2.2. Theft protection (TP) reprezinta o protectie impotriva furtului care are rolul de a limita raspunderea conducatorului auto pentru costurile generate de furtul sau tentativa de furt a autovehiculului inchiriat, in limita garantiei aferente clasei stabilite in contractul de inchiriere. Protectia impotriva furtului nu acopera bunurile personale ale conducatorului auto, aceastea putand fi acoperite potrivit politicilor de calatorie.

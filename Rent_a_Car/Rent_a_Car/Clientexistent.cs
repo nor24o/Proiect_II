@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using System.IO;
 
 namespace Rent_a_Car
 {
@@ -27,6 +28,8 @@ namespace Rent_a_Car
         );
         #endregion
         functions fun = new functions();
+        string idmasina;
+       
         public Clientexistent(string id)
         {
             this.Icon = Properties.Resources.rencar;
@@ -42,7 +45,9 @@ namespace Rent_a_Car
             textBox3.Text = fun.prenumeUser(id);
             textBox4.Text = fun.adresaUser(id);
             textBox5.Text = fun.rezervariUser(id);
-            int  id_user = Int32.Parse(fun.getIDUser(id));
+            textBox8.Text = id;
+            int id_user = Int32.Parse(fun.getIDUser(id));
+            textBox7.Text = id_user.ToString(); // global id
             rezervariDataGridView.DataSource = fun.getfreecars(id_user);
 
           //  rezervariDataGridView.DataSource = fun.getfreecars(Int32.Parse(id));
@@ -104,7 +109,58 @@ namespace Rent_a_Car
  
         }
 
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
 
+        }
 
+        private void rezervariDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex != -1)
+            {
+                DataGridViewRow row = rezervariDataGridView.Rows[e.RowIndex];
+                this.idmasina = row.Cells[0].Value.ToString();
+                string marca = row.Cells[1].Value.ToString();
+                textBox6.Text = this.idmasina; // idmasina global
+                textBox2.Text = marca; // marca global
+                String cale = Directory.GetParent(Environment.CurrentDirectory).Parent.FullName;
+                if (rezervariDataGridView.CurrentCell != null)
+                {
+                        if (!Image.FromFile(@"" + cale + "\\Resources\\cars\\" + marca + "\\" + marca + "-" + this.idmasina + ".jpeg").Equals(null))
+                        {
+                            pictureBox2.Image = Image.FromFile(@"" + cale + "\\Resources\\cars\\" + marca + "\\" + marca + "-" + this.idmasina + ".jpeg");
+                        }
+                        else if (!Image.FromFile(@"" + cale + "\\Resources\\cars\\" + marca + "\\" + marca + "-" + this.idmasina + ".png").Equals(null))
+                        {
+                            pictureBox2.Image = Image.FromFile(@"" + cale + "\\Resources\\cars\\" + marca + "\\" + marca + "-" + this.idmasina + ".png");
+                        }
+                        pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
+
+                }
+                else if (row.Cells[1].Value.ToString() != "")
+                {
+                    pictureBox2.Image = Image.FromFile(@"" + cale + "\\Resources\\cars\\Default.png");
+                    pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
+                }
+
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            opresteaplicatia();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Rezervare rezerva = new Rezervare(textBox7.Text);
+            rezerva.Show();
+        }
+
+        private void button5_Click(object sender, EventArgs e) // refresh forms
+        {
+            rezervariDataGridView.DataSource = fun.getfreecars(Int32.Parse(textBox7.Text));
+            textBox5.Text = fun.rezervariUser(textBox8.Text);
+        }
     }
 }

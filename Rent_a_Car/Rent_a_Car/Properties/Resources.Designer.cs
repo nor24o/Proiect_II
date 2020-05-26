@@ -22,7 +22,7 @@ namespace Rent_a_Car.Properties {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Resources {
+    public class Resources {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +36,7 @@ namespace Rent_a_Car.Properties {
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Rent_a_Car.Properties.Resources", typeof(Resources).Assembly);
@@ -51,7 +51,7 @@ namespace Rent_a_Car.Properties {
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -63,7 +63,7 @@ namespace Rent_a_Car.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _0dxVte {
+        public static System.Drawing.Bitmap _0dxVte {
             get {
                 object obj = ResourceManager.GetObject("0dxVte", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -73,7 +73,7 @@ namespace Rent_a_Car.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _32394 {
+        public static System.Drawing.Bitmap _32394 {
             get {
                 object obj = ResourceManager.GetObject("32394", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -83,7 +83,7 @@ namespace Rent_a_Car.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _5e487c8509d8586866427ea4d165e5f8 {
+        public static System.Drawing.Bitmap _5e487c8509d8586866427ea4d165e5f8 {
             get {
                 object obj = ResourceManager.GetObject("5e487c8509d8586866427ea4d165e5f8", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -93,7 +93,7 @@ namespace Rent_a_Car.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap bg_login {
+        public static System.Drawing.Bitmap bg_login {
             get {
                 object obj = ResourceManager.GetObject("bg-login", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -103,7 +103,7 @@ namespace Rent_a_Car.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap blurred_traffic_light_trails_road_1359_1009 {
+        public static System.Drawing.Bitmap blurred_traffic_light_trails_road_1359_1009 {
             get {
                 object obj = ResourceManager.GetObject("blurred-traffic-light-trails-road_1359-1009", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -113,7 +113,7 @@ namespace Rent_a_Car.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap close_window_24px {
+        public static System.Drawing.Bitmap close_window_24px {
             get {
                 object obj = ResourceManager.GetObject("close_window_24px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -123,7 +123,7 @@ namespace Rent_a_Car.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap computer {
+        public static System.Drawing.Bitmap computer {
             get {
                 object obj = ResourceManager.GetObject("computer", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -133,7 +133,7 @@ namespace Rent_a_Car.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap computer__1_ {
+        public static System.Drawing.Bitmap computer__1_ {
             get {
                 object obj = ResourceManager.GetObject("computer (1)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -143,7 +143,7 @@ namespace Rent_a_Car.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap computer__2_ {
+        public static System.Drawing.Bitmap computer__2_ {
             get {
                 object obj = ResourceManager.GetObject("computer (2)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -153,7 +153,7 @@ namespace Rent_a_Car.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap detail_one_led_headlights_modern_car_black_background_67340_221 {
+        public static System.Drawing.Bitmap detail_one_led_headlights_modern_car_black_background_67340_221 {
             get {
                 object obj = ResourceManager.GetObject("detail-one-led-headlights-modern-car-black-background_67340-221", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -163,7 +163,7 @@ namespace Rent_a_Car.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap food {
+        public static System.Drawing.Bitmap food {
             get {
                 object obj = ResourceManager.GetObject("food", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -173,7 +173,7 @@ namespace Rent_a_Car.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap minimize_window_24px {
+        public static System.Drawing.Bitmap minimize_window_24px {
             get {
                 object obj = ResourceManager.GetObject("minimize_window_24px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -183,7 +183,7 @@ namespace Rent_a_Car.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap n1hm8ralgeh2txi4h5hf78vuoghjjebm9psbdshg8fixiwivqipn9d4d0tkpmckp_ {
+        public static System.Drawing.Bitmap n1hm8ralgeh2txi4h5hf78vuoghjjebm9psbdshg8fixiwivqipn9d4d0tkpmckp_ {
             get {
                 object obj = ResourceManager.GetObject("n1hm8ralgeh2txi4h5hf78vuoghjjebm9psbdshg8fixiwivqipn9d4d0tkpmckp-", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -193,7 +193,7 @@ namespace Rent_a_Car.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap original {
+        public static System.Drawing.Bitmap original {
             get {
                 object obj = ResourceManager.GetObject("original", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -203,7 +203,7 @@ namespace Rent_a_Car.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap qIlKE1 {
+        public static System.Drawing.Bitmap qIlKE1 {
             get {
                 object obj = ResourceManager.GetObject("qIlKE1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -213,7 +213,7 @@ namespace Rent_a_Car.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap red_modern_car_headlights_black_background_67340_169 {
+        public static System.Drawing.Bitmap red_modern_car_headlights_black_background_67340_169 {
             get {
                 object obj = ResourceManager.GetObject("red-modern-car-headlights-black-background_67340-169", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -223,7 +223,7 @@ namespace Rent_a_Car.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
-        internal static System.Drawing.Icon rencar {
+        public static System.Drawing.Icon rencar {
             get {
                 object obj = ResourceManager.GetObject("rencar", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
@@ -233,7 +233,7 @@ namespace Rent_a_Car.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap turn_32px {
+        public static System.Drawing.Bitmap turn_32px {
             get {
                 object obj = ResourceManager.GetObject("turn_32px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));

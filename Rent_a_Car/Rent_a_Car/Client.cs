@@ -16,6 +16,7 @@ using System.Threading;
 
 namespace Rent_a_Car
 {
+
     public partial class Client : Form
     {
         #region
@@ -340,6 +341,7 @@ namespace Rent_a_Car
 
         private void updatemasina_neutilizat()
         {
+
             iduser =Int32.Parse( fun.getIDUser(numeutilizator.Text));
             String cale = Directory.GetParent(Environment.CurrentDirectory).Parent.FullName;
             string argdb = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + cale + "\\database.mdf;Integrated Security=True;Connect Timeout=30";
@@ -365,6 +367,7 @@ namespace Rent_a_Car
             if (aceptEULA && masinaselectata)
             {
                 cautareuser();
+                MessageBox.Show("Masina dvs a fost rezervata cu succes! Va asteptam in agentie.");
             }
             else if(aceptEULA && !masinaselectata)
             {
@@ -459,12 +462,27 @@ namespace Rent_a_Car
                 this.masinaselectata = true;
                 DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
                 this.idmasina = row.Cells[0].Value.ToString();
+                string marca = row.Cells[1].Value.ToString();
+                textBox1.Text = this.idmasina; // idmasina global
+                textBox2.Text = marca; // marca global
                 if (row.Cells[1].Value.ToString() != "")
                 {
                     try
                     {
-                        pictureBox2.Image = Image.FromFile(@""+cale+"\\Resources\\cars\\"+ row.Cells[1].Value.ToString() + ".jpeg");
-                        pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
+                        button7.Visible = false;
+                        if(!Image.FromFile(@"" + cale + "\\Resources\\cars\\" + marca + "\\" + marca + "-" + this.idmasina + ".jpeg").Equals(null))
+                        {
+                            pictureBox2.Image = Image.FromFile(@"" + cale + "\\Resources\\cars\\" + marca + "\\" + marca + "-" + this.idmasina + ".jpeg");
+                        }else if(!Image.FromFile(@"" + cale + "\\Resources\\cars\\" + marca + "\\" + marca + "-" + this.idmasina + ".png").Equals(null))
+                        {
+                            pictureBox2.Image = Image.FromFile(@"" + cale + "\\Resources\\cars\\" + marca + "\\" + marca + "-" + this.idmasina + ".png");
+                        }
+                            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
+
+                        if(File.Exists(@"" + cale + "\\Resources\\cars\\" + marca + "\\" + marca + "-" + this.idmasina + ".txt"))
+                        {
+                            button7.Visible = true;
+                        }
                     }
                     catch
                     {
@@ -473,7 +491,7 @@ namespace Rent_a_Car
                     
                 }
                 else if(row.Cells[1].Value.ToString() != ""){
-                    pictureBox2.Image = Image.FromFile(@"" + cale + "\\Resources\\cars\\Default.jpeg");
+                    pictureBox2.Image = Image.FromFile(@"" + cale + "\\Resources\\cars\\Default.png");
                     pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
                 }
 
@@ -524,6 +542,29 @@ namespace Rent_a_Car
         private void dataGridView1_MouseClick(object sender, MouseEventArgs e)
         {
 
+        }
+
+        private void button6_Click(object sender, EventArgs e) //buton inainte
+        {
+
+
+        }
+
+        private void button5_Click(object sender, EventArgs e) //buton inapoi
+        {
+
+        }
+
+        private void button7_Click(object sender, EventArgs e) //buton observatii
+        {
+            string idmasina = textBox1.Text;
+            string marca = textBox2.Text;
+            string path = @"" + cale + "\\Resources\\cars\\" + marca + "\\" + marca + "-" + this.idmasina + ".txt";
+
+            string message = File.ReadAllText(path);
+            string title = "Mentiuni ref. - "+marca+"/"+idmasina;
+            MessageBoxButtons buttons = MessageBoxButtons.OK;
+            DialogResult result = MessageBox.Show(message, title, buttons);
         }
     }
 }
