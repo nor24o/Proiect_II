@@ -33,19 +33,13 @@ namespace Rent_a_Car
                 text_model.Text = (array[2].ToString());
                 text_motorizare.Text = (array[3].ToString());
 
-                Console.WriteLine(array[4].ToString());
-                Console.WriteLine(array[5].ToString());
                 if((array[4].ToString()!= "Nerezervat")&&(array[5].ToString()!= "Nerezervat"))
                 {
-                DateTime date = DateTime.ParseExact(array[4].ToString(), "dd/MMM/yy", null);
-                DateTime date2 = DateTime.ParseExact(array[5].ToString(), "dd/MMM/yy", null);
-                monthCalendar1.SetDate(date);
-                monthCalendar2.SetDate(date2);
-
-                }
-                else
-                {
-
+                    Console.WriteLine(array[4].ToString() + " " + array[5].ToString());
+                    DateTime date = Convert.ToDateTime(array[4].ToString());
+                    DateTime date2 = Convert.ToDateTime(array[5].ToString());
+                    monthCalendar1.SetDate(date);
+                    monthCalendar2.SetDate(date2);
                 }
 
                 textBox1.Text = (array[6].ToString());

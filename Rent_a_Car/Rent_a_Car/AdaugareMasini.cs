@@ -48,26 +48,35 @@ namespace Rent_a_Car
             }
             catch (Exception es)
             { MessageBox.Show(es.Message); }
-            string path = @"" + cale + "\\Resources\\cars\\" + marca;
-            if (!Directory.Exists(path))
-            {
-                Directory.CreateDirectory(path);
-            }
-            string format = null;
-            if (ImageFormat.Jpeg.Equals(pictureBox1.Image.RawFormat))
-            {
-                format = ".jpeg";
-            }
-            else if (ImageFormat.Png.Equals(pictureBox1.Image.RawFormat))
-            {
-                format = ".png";
-            }
-            else if (".jpg".Equals(pictureBox1.Image.RawFormat))
-            {
-                format = ".jpg";
-            }
+
             functions f = new functions();
-            File.Copy(pathimg.Text, Path.Combine(path, Path.GetFileName(marca+"-"+ f.getidmasina()+format)), true);
+
+            if (pictureBox1.Image != null) {
+                string path = @"" + cale + "\\Resources\\cars\\" + marca;
+                if (!Directory.Exists(path))
+                {
+                    Directory.CreateDirectory(path);
+                }
+                string format = null;
+                if (ImageFormat.Jpeg.Equals(pictureBox1.Image.RawFormat))
+                {
+                    format = ".jpeg";
+                }
+                else if (ImageFormat.Png.Equals(pictureBox1.Image.RawFormat))
+                {
+                    format = ".png";
+                }
+                else if (".jpg".Equals(pictureBox1.Image.RawFormat))
+                {
+                    format = ".jpg";
+                }
+                
+                File.Copy(pathimg.Text, Path.Combine(path, Path.GetFileName(marca + "-" + f.getidmasina() + format)), true);
+            }
+            else
+            {
+                MessageBox.Show("Nu a fost introdusa o imagine! Nu este o problema.");
+            }
   
             if (!textBox105.Text.Equals("null"))
             {
