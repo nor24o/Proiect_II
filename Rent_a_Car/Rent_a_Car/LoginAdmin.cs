@@ -70,7 +70,8 @@ namespace Rent_a_Car
                     AdminCP admincp = new AdminCP();
                     admincp.Location = this.Location;
                     Hide();
-                    admincp.ShowDialog();
+                    admincp.Show();
+                   
                 }
 
                 else

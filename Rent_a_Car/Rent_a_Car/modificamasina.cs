@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -35,11 +36,31 @@ namespace Rent_a_Car
 
                 if((array[4].ToString()!= "Nerezervat")&&(array[5].ToString()!= "Nerezervat"))
                 {
+<<<<<<< HEAD
+                    try
+                    {
+                        DateTime date = DateTime.ParseExact(array[4].ToString(), "dd/MMM/yy", new CultureInfo("en-GB"));
+                        DateTime date2 = DateTime.ParseExact(array[5].ToString(), "dd/MMM/yy", new CultureInfo("en-GB"));
+
+                        monthCalendar1.SetDate(date);
+                        monthCalendar2.SetDate(date2);
+                    }
+                    catch(Exception e)
+                    {
+
+                    }
+
+                }
+                else
+                {
+
+=======
                     Console.WriteLine(array[4].ToString() + " " + array[5].ToString());
                     DateTime date = Convert.ToDateTime(array[4].ToString());
                     DateTime date2 = Convert.ToDateTime(array[5].ToString());
                     monthCalendar1.SetDate(date);
                     monthCalendar2.SetDate(date2);
+>>>>>>> 8f285777ce64dc6417b1d702bf5e32f4d6f00a84
                 }
 
                 textBox1.Text = (array[6].ToString());
@@ -51,13 +72,22 @@ namespace Rent_a_Car
 
         private void btn_salvare_masina_Click(object sender, EventArgs e)
         {
-            if (id != "" && id.Length > 0)
+            Console.WriteLine(rez, pred);
+            if ((id != "" && id.Length > 0)&&(rez!=""||pred!=""))
             {
                 Console.WriteLine(ids);
                 fun.UpdateCarRegistrationTable(ids, text_marca.Text, text_model.Text, text_motorizare.Text, rez, pred, id);
                 MessageBox.Show("Masina Actualizata");
-            
-        }
+                this.Close();
+
+            }
+            else if ((id != "" && id.Length > 0) && (rez == "" || pred == ""))
+            {
+                MessageBox.Show("Selectati data pentru Actualizre");
+            }
+
+
+
             }
 
         private void monthCalendar1_DateChanged(object sender, DateRangeEventArgs e)
@@ -80,6 +110,16 @@ namespace Rent_a_Car
 
 
             };
+        }
+
+        private void reset_masina_Click(object sender, EventArgs e)
+        {
+
+            Console.WriteLine(ids);
+            fun.UpdateCarRegistrationTable(ids, text_marca.Text, text_model.Text, text_motorizare.Text, "Nerezervat", "Nerezervat", "0");
+            MessageBox.Show("Masina Resetata");
+            this.Close();
+
         }
     }
 }

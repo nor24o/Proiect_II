@@ -43,6 +43,7 @@
             this.label11 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label3 = new System.Windows.Forms.Label();
+            this.reset_masina = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -137,10 +138,10 @@
             this.btn_salvare_masina.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_salvare_masina.Font = new System.Drawing.Font("Times New Roman", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_salvare_masina.ForeColor = System.Drawing.Color.Black;
-            this.btn_salvare_masina.Location = new System.Drawing.Point(185, 564);
+            this.btn_salvare_masina.Location = new System.Drawing.Point(386, 579);
             this.btn_salvare_masina.Margin = new System.Windows.Forms.Padding(2);
             this.btn_salvare_masina.Name = "btn_salvare_masina";
-            this.btn_salvare_masina.Size = new System.Drawing.Size(365, 47);
+            this.btn_salvare_masina.Size = new System.Drawing.Size(274, 47);
             this.btn_salvare_masina.TabIndex = 151;
             this.btn_salvare_masina.Text = "Actualizare";
             this.btn_salvare_masina.UseVisualStyleBackColor = false;
@@ -200,12 +201,29 @@
             this.label3.TabIndex = 162;
             this.label3.Text = "Current id";
             // 
+            // reset_masina
+            // 
+            this.reset_masina.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.reset_masina.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Green;
+            this.reset_masina.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.reset_masina.Font = new System.Drawing.Font("Times New Roman", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.reset_masina.ForeColor = System.Drawing.Color.Black;
+            this.reset_masina.Location = new System.Drawing.Point(59, 579);
+            this.reset_masina.Margin = new System.Windows.Forms.Padding(2);
+            this.reset_masina.Name = "reset_masina";
+            this.reset_masina.Size = new System.Drawing.Size(274, 47);
+            this.reset_masina.TabIndex = 163;
+            this.reset_masina.Text = "Reset";
+            this.reset_masina.UseVisualStyleBackColor = false;
+            this.reset_masina.Click += new System.EventHandler(this.reset_masina_Click);
+            // 
             // modificamasina
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Rent_a_Car.Properties.Resources.original;
             this.ClientSize = new System.Drawing.Size(719, 656);
+            this.Controls.Add(this.reset_masina);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.textBox1);
@@ -247,5 +265,6 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button reset_masina;
     }
 }

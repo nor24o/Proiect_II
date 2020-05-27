@@ -173,9 +173,13 @@ namespace Rent_a_Car
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (masinaselectata)
+            if ((masinaselectata)&&(data_predare!=""|| data_predare != ""))
             {
                 cautareuser();
+            }
+            else if ((masinaselectata) && (data_predare == "" || data_predare == ""))
+            {
+                MessageBox.Show("Nu ati selectat data ");
             }
             else
             {

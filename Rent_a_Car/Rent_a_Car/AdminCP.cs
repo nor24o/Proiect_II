@@ -73,8 +73,10 @@ namespace Rent_a_Car
 
                 // Closes the parent form.
 
-                Application.Exit();
-                //this.Close();
+                 Application.Exit();
+             //   Hide();
+              // this.Close();
+             //   this.Dispose();
             }
 
 
@@ -139,7 +141,7 @@ namespace Rent_a_Car
         {
             if (label2.Text != "")
             {
-                functions fun = new functions();
+               
 
                 Console.WriteLine(label2.Text);
 
@@ -160,9 +162,9 @@ namespace Rent_a_Car
             if (label3.Text != "")
             {
 
-                functions fun = new functions();
+                
 
-                Console.WriteLine(label3.Text);
+                
 
                 fun.stergeutilizator(Int32.Parse(label3.Text), "masini", "Idmasini");
 
@@ -197,8 +199,17 @@ namespace Rent_a_Car
         {
             AdaugareMasini newcar = new AdaugareMasini();
             newcar.Location = this.Location;
-            newcar.Show();
-            dataGridView1.DataSource = fun.afisaredb("masini");
+           // newcar.Show();
+            if (newcar.ShowDialog() == DialogResult.Cancel)
+            {
+                dataGridView1.DataSource = fun.afisaredb("masini");
+            }
+            else
+            {
+                dataGridView1.DataSource = fun.afisaredb("masini");
+            }
+            newcar.Dispose();
+            
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -208,8 +219,21 @@ namespace Rent_a_Car
 
                 modificamasina modcar = new modificamasina(Int32.Parse(label3.Text));
                 modcar.Location = this.Location;
-                modcar.Show();
+             //   modcar.Show();
+                
                 dataGridView1.DataSource = fun.afisaredb("masini");
+
+                if (modcar.ShowDialog() == DialogResult.Cancel)
+                {
+                   dataGridView1.DataSource = fun.afisaredb("masini");
+                }
+                else
+                {
+                   dataGridView1.DataSource = fun.afisaredb("masini");
+                }
+                modcar.Dispose();
+
+
 
             }
         }
@@ -221,8 +245,17 @@ namespace Rent_a_Car
 
                 modifuser moduser = new modifuser(Int32.Parse(label2.Text));
                 moduser.Location = this.Location;
-                moduser.Show();
-                dataGridView2.DataSource = fun.afisaredb("users");
+             //   moduser.Show();
+                if (moduser.ShowDialog() == DialogResult.Cancel)
+                {
+                   dataGridView2.DataSource = fun.afisaredb("users");
+                }
+                else
+                {
+                    dataGridView2.DataSource = fun.afisaredb("users");
+                }
+                moduser.Dispose();
+                
 
             }
 

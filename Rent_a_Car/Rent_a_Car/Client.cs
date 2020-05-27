@@ -38,6 +38,7 @@ namespace Rent_a_Car
             InitializeComponent();
             this.Text = "Rent A Car";
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
+            Thread.CurrentThread.CurrentCulture = new CultureInfo("en-GB");
             calendar_returnare.MinDate = DateTime.Now;
             calendar_ridicare.MinDate = DateTime.Now;
 
