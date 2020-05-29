@@ -34,8 +34,15 @@ namespace Rent_a_Car
                 text_marca.Text = (array[1].ToString());
                 text_model.Text = (array[2].ToString());
                 text_motorizare.Text = (array[3].ToString());
-
-                if((array[4].ToString()!= "Nerezervat")&&(array[5].ToString()!= "Nerezervat"))
+                if ((array[4].ToString() != ""))
+                {
+                    array[4] = "Nerezervat";
+                }
+                if (array[5].ToString() != "")
+                {
+                    array[5] = "Nerezervat";
+                }
+                if ((array[4].ToString()!= "Nerezervat")&&(array[5].ToString()!= "Nerezervat"))
                 {
 
                     Console.WriteLine(array[4].ToString() + " " + array[5].ToString());
@@ -46,7 +53,7 @@ namespace Rent_a_Car
 
                 }
 
-                textBox1.Text = (array[6].ToString());
+
                 idcl = textBox1.Text;
             }
             dataGridView1.RowHeadersVisible = false;
@@ -56,20 +63,16 @@ namespace Rent_a_Car
 
         private void btn_salvare_masina_Click(object sender, EventArgs e)
         {
+            idcl = textBox1.Text;
             Console.WriteLine(rez, pred);
-            if(textBox1.Text == "0")
-            {
-                MessageBox.Show("ID client neselectat!");
-            }
-            if ((idcl != "" && idcl.Length > 0)&&(rez!=""||pred!=""))
+            if ((idcl != "" && idcl.Length > 0) && (rez != "" && pred != ""))
             {
                 Console.WriteLine(ids);
                 fun.UpdateCarRegistrationTable(ids, text_marca.Text, text_model.Text, text_motorizare.Text, rez, pred, idcl);
                 MessageBox.Show("Masina Actualizata");
                 this.Close();
-
             }
-            else if ((idcl != "" && idcl.Length > 0) && (rez == "" || pred == ""))
+            else if ((idcl != "" && idcl.Length > 0) && (rez == "" && pred == ""))
             {
                 MessageBox.Show("Selectati data pentru Actualizre");
             }
@@ -95,7 +98,7 @@ namespace Rent_a_Car
             {
                 DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
                 id = row.Cells[0].Value.ToString();
-
+                textBox1.Text = id;
 
             };
         }
