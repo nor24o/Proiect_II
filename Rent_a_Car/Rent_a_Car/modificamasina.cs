@@ -17,6 +17,7 @@ namespace Rent_a_Car
         string rez = "";
         string pred = "";
         string id = "";
+        string idcl = "";
         functions fun = new functions();
 
         public modificamasina(int id)
@@ -36,34 +37,17 @@ namespace Rent_a_Car
 
                 if((array[4].ToString()!= "Nerezervat")&&(array[5].ToString()!= "Nerezervat"))
                 {
-<<<<<<< HEAD
-                    try
-                    {
-                        DateTime date = DateTime.ParseExact(array[4].ToString(), "dd/MMM/yy", new CultureInfo("en-GB"));
-                        DateTime date2 = DateTime.ParseExact(array[5].ToString(), "dd/MMM/yy", new CultureInfo("en-GB"));
 
-                        monthCalendar1.SetDate(date);
-                        monthCalendar2.SetDate(date2);
-                    }
-                    catch(Exception e)
-                    {
-
-                    }
-
-                }
-                else
-                {
-
-=======
                     Console.WriteLine(array[4].ToString() + " " + array[5].ToString());
                     DateTime date = Convert.ToDateTime(array[4].ToString());
                     DateTime date2 = Convert.ToDateTime(array[5].ToString());
                     monthCalendar1.SetDate(date);
                     monthCalendar2.SetDate(date2);
->>>>>>> 8f285777ce64dc6417b1d702bf5e32f4d6f00a84
+
                 }
 
                 textBox1.Text = (array[6].ToString());
+                idcl = textBox1.Text;
             }
             dataGridView1.RowHeadersVisible = false;
             dataGridView1.DataSource = fun.afisaredb_client();
@@ -73,15 +57,19 @@ namespace Rent_a_Car
         private void btn_salvare_masina_Click(object sender, EventArgs e)
         {
             Console.WriteLine(rez, pred);
-            if ((id != "" && id.Length > 0)&&(rez!=""||pred!=""))
+            if(textBox1.Text == "0")
+            {
+                MessageBox.Show("ID client neselectat!");
+            }
+            if ((idcl != "" && idcl.Length > 0)&&(rez!=""||pred!=""))
             {
                 Console.WriteLine(ids);
-                fun.UpdateCarRegistrationTable(ids, text_marca.Text, text_model.Text, text_motorizare.Text, rez, pred, id);
+                fun.UpdateCarRegistrationTable(ids, text_marca.Text, text_model.Text, text_motorizare.Text, rez, pred, idcl);
                 MessageBox.Show("Masina Actualizata");
                 this.Close();
 
             }
-            else if ((id != "" && id.Length > 0) && (rez == "" || pred == ""))
+            else if ((idcl != "" && idcl.Length > 0) && (rez == "" || pred == ""))
             {
                 MessageBox.Show("Selectati data pentru Actualizre");
             }
@@ -119,6 +107,11 @@ namespace Rent_a_Car
             fun.UpdateCarRegistrationTable(ids, text_marca.Text, text_model.Text, text_motorizare.Text, "Nerezervat", "Nerezervat", "0");
             MessageBox.Show("Masina Resetata");
             this.Close();
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
         }
     }
